@@ -1,23 +1,23 @@
 
 
-var category = document.querySelector('.')
+var category = "document.querySelector('.')";
 var description = document.querySelector('.description').value //accomplish entry field
 var minutes = document.querySelector('.minutes');
-var seconds = document.querySelector()
-
+var seconds = document.querySelector('.seconds');
 var studyButton = document.querySelector('.study-button');
 var meditateButton = document.querySelector('.meditate-button');
 var exerciseButton = document.querySelector('.exercise-button');
 var startActivityButton = document.querySelector('.start-activity');
+var activitiesList = [];
 
-// # id's for category buttons
-
+// EVENT LISTENERS
 
 studyButton.addEventListener('click', study);
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 startActivityButton.addEventListener('click', startActivity);
 
+// EVENT HANDLERS
 
 function study () {
   category = "Study";
@@ -34,19 +34,21 @@ function exercise() {
   exercise.classList.add('buttonChange');
 };
 
+function startActivity() {
+  hideForm();
+  createActivity();
+  currentActivity = new Activity();
+  clearForm();
+};
+
+// HELPER FUNCTIONS
+
 function createActivity() {
   var userActivity = {};
   userActivity.category = category;
   userActivity.description = description.value;
   userActivity.minutes = minutes.value;
   userActivity.seconds = seconds.value;
-};
-
-function startActivity() {
-  hideForm();
-  createActivity();
-  currentActivity = new Activity();
-  clearForm();
 };
 
 function hideForm() {
