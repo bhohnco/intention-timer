@@ -7,6 +7,16 @@ class Activity {
     this.completed = false;
     this.id = Date.now();
   };
-};
 
-module.exports = Activity;
+  startTimer () {
+
+  };
+
+  markComplete() {
+    this.completed = true;
+  };
+
+  saveToStorage() {
+    activitiesList.push(this);
+  };
+};
