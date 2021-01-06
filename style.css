@@ -1,1 +1,51 @@
-var array = [];
+body {
+  background-color: #46424D;
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+main {
+  display:flex;
+  flex-direction: column;
+}
+
+/* Left side of main form */ 
+.header1 {
+  background-color: #2B2733;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  height: 500px;
+  width: 900px;
+  padding-left: 2%;
+}
+
+.boxes {
+  background-color: #46424D;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding-top: 2%;
+  padding-left: 12%;
+  margin-left: 1%;
+  top: -440px;
+  position: relative;
+}
+
+.btn-category {
+  background-color: #46424D;
+  border-color: white;
+  color: white;
+  padding: 25px 50px;
+  margin-left 1%;
+}
+
+.active {
+  width: 100%;
+  height: auto;
+}
+
+
+
