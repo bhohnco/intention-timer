@@ -19,9 +19,10 @@ startActivityButton.addEventListener('click', startActivity);
 
 // EVENT HANDLERS
 
+   //category button changes
 function study () {
   category = "Study";
-  study.classList.add('buttonChange'); //category button changes
+  study.classList.add('buttonChange');
 };
 
 function meditate() {
@@ -33,15 +34,34 @@ function exercise() {
   category = "Exercise";
   exercise.classList.add('buttonChange');
 };
-
+  // start Activity button
 function startActivity() {
   hideForm();
   createActivity();
   currentActivity = new Activity();
   clearForm();
+  timer = setInterval(showRemaining, 1000);
 };
 
 // HELPER FUNCTIONS
+
+
+var startMinutes = minutes.value;// input
+var startSeconds = seconds.value;
+var second = 1000;
+var minute = second * 60;
+var timer;
+var minutesLeft = document.querySelector('.minutesLeft');
+var secondsLeft = document.querySelector('.secondsLeft');
+
+function showRemaining() {
+  minutesLeft.innerHTML = minutes - 1;
+  secondsLeft.innerHTML = seconds - 1;
+  if (minutes === 0 && seconds === 0) {
+    clearInterval(timer);
+    return;
+  };
+};
 
 function createActivity() {
   var userActivity = {};
@@ -52,13 +72,11 @@ function createActivity() {
 };
 
 function hideForm() {
-  hide(studyButton);
-  hide(meditateButton);
-  hide(exerciseButton);
-  hide(description);
-  hide(minutes);
-  hide(seconds);
-  hide(startActivityButton);
+  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, startActivityButton]);
+};
+
+function showForm() {
+  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, startActivityButton]);
 };
 
 function clearForm() {
@@ -66,4 +84,17 @@ function clearForm() {
   description.innerText = "";
   minutes.innerText = "";
   seconds.innerText = "";
+};
+
+//refactor hidden!
+function show(elements) {
+  for (var i - 0; i < elements.length; i++) {
+    elements[i].classList.add('hidden');
+  }
+
+
+function hide(elements) {
+  for (var i - 0; i < elements.length; i++) {
+    elements[i].classList.remove('hidden');
+  }
 };
