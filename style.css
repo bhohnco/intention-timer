@@ -15,7 +15,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   text-align: center;
-  
 }
 
 main {
@@ -31,7 +30,6 @@ main {
   height: 500px;
   width: 900px;
   padding-left: 2%;
-  z-index: 1;
 }
 
 .boxes {
@@ -40,24 +38,23 @@ main {
   color: white;
   padding-top: 2%;
   padding-left: 12%;
-  padding-bottom: 0;
   margin-left: 1%;
   top: -440px;
-  z-index: 2;
   position: relative;
 }
 
-.category {
-  
+.btn-category {
   background-color: #46424D;
   border-color: white;
   color: white;
   padding: 25px 50px;
   margin-left 1%;
 }
-/* .derscription {
-  top: -340px;
-  z-index: 3;
-  position: relative;
-} */
+
+.active {
+  width: 100%;
+  height: auto;
+}
+
+
 
