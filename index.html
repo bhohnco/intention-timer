@@ -6,27 +6,50 @@
     <title>Intention Timer</title>
 </head>
 <body>
-  <header class ="header"><h1>INTENTION TIMER</h1>
-  </header>
-    <main>
-  <div class ="header1"><h2>New Activity</h2>
-  </div>
-  <section class="boxes" id="box1">
-      <h2 class="box1-lead">Select a category:</h2>
-      <br>
-      <div class="category">
-        <button class="category" id="study-button" type="button">Study</button>
-        <button class="category" id="meditate-button" type="button">Meditate</button>
-        <button class="category" id="exercise-button" type="button">Exercise</button>
+<header class ="header">
+    <h1>INTENTION TIMER</h1>
+</header>
+<main>
+    <div class ="header1">
+        <h2>New Activity</h2>
     </div>
-  </section>
-  <br>
-  <section class="description" id="accomplish"><h1>What would you like to accomplish during this time?</h1>
-    <form>
-        <input class="accomplish-time" id="accomplish-t" type="text"/>
-    </form>
-    </main>
- </body>
- <script src ="main.js"></script>
- <script src ="Activity.js"></script>
+    <section class="boxes" id="box1">
+        <h2 class="box1-lead">Select a category:</h2>
+        <br>
+        <div class="category">
+            <button class="btn-category" id="study" type="button">Study
+              <!-- <img class="active" src="./assets/study.svg"> -->
+            </button>
+            <button class="btn-category" id="meditate" type="button">Meditate
+              <!-- <img class="active" src="./assets/meditate.svg"> -->
+            </button>
+            <button class="btn-category" id="exercise" type="button">Exercise
+              <!-- <img class="active" src="./assets/exercise.svg"> -->
+            </button>
+        </div>
+        <form>
+            <div>
+                <label class="description" id="accomplish">
+                    <h1>What would you like to accomplish during this time?</h1>
+                    <input class="accomplish-time" id="accomplish-t" type="text"/>
+            </div>
+            <div>
+                <label class="minute-label" for="minutes">Minutes</label>
+                <br>
+                <input class="minutes" id="minutes" type="text"/>
+            </div>
+            <div>
+                <label class="seconds-label" for="seconds">Seconds</label>
+                <br>
+                <input class="seconds" id="seconds" type="text"/>
+            </div>
+            <button class="activity" id="activity" type="button">START ACTIVITY</button>
+        </form>
+    </section>
+    <section class="boxes2" id="box2">
+        <h2 class="box2-lead">Past Activities</h2>
+        <p>You haven't logged any activities yet.<br>Complete the form to the left to get started!</p>
+    </section>
+</main>
+</body>
 </html>
