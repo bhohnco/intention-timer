@@ -6,7 +6,7 @@ var studyButton = document.querySelector('#study');
 var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
 var storeActivityButton = document.querySelector('.activity');
-var startTimer = ducument.querySelector('.timerDialogue');
+var startTimer = document.querySelector('.timer-dialogue');
 
 var activitiesList = [];
 var currentActivity;
@@ -24,20 +24,20 @@ startTimer.addEventListener('click', beginTimer);
    //category button changes
 function study () {
   category = "Study";
-  study.classList.add('buttonChange');
+  studyButton.classList.add('btn-category');
 };
 
 function meditate() {
   category = "Meditate";
-  meditate.classList.add('buttonChange');
+  meditateButton.classList.add('btn-category');
 };
 
 function exercise() {
   category = "Exercise";
-  exercise.classList.add('buttonChange');
+  exerciseButton.classList.add('btn-category');
 };
 
-beginTimer() {
+function beginTimer() {
   currentActivity.startTimer;
 };
 
@@ -56,10 +56,28 @@ var secondsLeft = document.querySelector('.secondsLeft');
 function createActivity() {
   var userActivity = {};
   userActivity.category = category;
-  userActivity.description = description.value;
-  userActivity.minutes = minutes.value;
-  userActivity.seconds = seconds.value;
-  return userActivity;0
+  if (!description.value = "") {
+    userActivity.description = description.value;
+  } else showError('desc');
+  if (verify(minutes.value)) {
+    userActivity.minutes = minutes.value;
+  } else showError('min');
+  if (verify(seconds.value)) {
+    userActivity.seconds = seconds.value;
+  } else showError('sec');
+  return userActivity;  // to instantiation below
+};
+
+function showError(data) {
+  if (data = 'desc') {
+    show(description-error);
+  }
+  if (data = 'min') {
+    show(minutes-error);   //document minute error message
+  };
+  if (data = 'sec') {
+    show(seconds-error)
+  };
 };
 
 // start Activity button
@@ -81,11 +99,11 @@ function showRemaining() {
 };
 
 function hideForm() {
-  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, startActivityButton]);
+  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, storeActivityButton]);
 };
 
 function showForm() {
-  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, startActivityButton]);
+  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, storeActivityButton]);
 };
 
 function clearForm() {

@@ -8,7 +8,7 @@ class Activity {
     this.id = Date.now();
   };
 
-  startTimer () {
+  startTimer() {
     timer = setInterval(showRemaining, 1000);
   };
 
