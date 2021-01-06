@@ -5,7 +5,9 @@ var seconds = document.querySelector('.seconds');
 var studyButton = document.querySelector('#study');
 var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
-var startActivityButton = document.querySelector('.activity');
+var storeActivityButton = document.querySelector('.activity');
+var startTimer = ducument.querySelector('.timerDialogue');
+
 var activitiesList = [];
 var currentActivity;
 
@@ -14,7 +16,8 @@ var currentActivity;
 studyButton.addEventListener('click', study);
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
-startActivityButton.addEventListener('click', startActivity);
+storeActivityButton.addEventListener('click', storeActivity);
+startTimer.addEventListener('click', beginTimer);
 
 // EVENT HANDLERS
 
@@ -32,6 +35,10 @@ function meditate() {
 function exercise() {
   category = "Exercise";
   exercise.classList.add('buttonChange');
+};
+
+beginTimer() {
+  currentActivity.startTimer;
 };
 
 // HELPER FUNCTIONS
@@ -56,19 +63,19 @@ function createActivity() {
 };
 
 // start Activity button
-function startActivity() {
+function storeActivity() {
   hideForm();
   currentActivity = new Activity(createActivity());
   clearForm();
-  currentActivity.startTimer();
-  // moved to Activity.js : timer = setInterval(showRemaining, 1000);
 };
 
 function showRemaining() {
+  userDescription.innerText = userActivity['description']; // show second page descriptor
   minutesLeft.innerHTML = minutes - 1;
   secondsLeft.innerHTML = seconds - 1;
   if (minutes === 0 && seconds === 0) {
     clearInterval(timer);
+    currentActivity.markComplete;
     return;
   };
 };
