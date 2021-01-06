@@ -1,44 +1,15 @@
 
 
-var category = "document.querySelector('.')";
-var description = document.querySelector('.description').value //accomplish entry field
+var category = "";
+var description = document.querySelector('.description'); //accomplish entry field
 var minutes = document.querySelector('.minutes');
 var seconds = document.querySelector('.seconds');
-var studyButton = document.querySelector('#study-button');
-var meditateButton = document.querySelector('#meditate-button');
-var exerciseButton = document.querySelector('#exercise-button');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var startActivityButton = document.querySelector('#start-activity');
+var studyButton = document.querySelector('#study');
+var meditateButton = document.querySelector('#meditate');
+var exerciseButton = document.querySelector('#exercise');
+var startActivityButton = document.querySelector('.activity');
 var activitiesList = [];
-
+var currentActivity;
 // EVENT LISTENERS
 
 studyButton.addEventListener('click', study);
@@ -66,8 +37,7 @@ function exercise() {
   // start Activity button
 function startActivity() {
   hideForm();
-  createActivity();
-  currentActivity = new Activity();
+  currentActivity = new Activity(createActivity());
   clearForm();
   timer = setInterval(showRemaining, 1000);
 };
@@ -98,6 +68,7 @@ function createActivity() {
   userActivity.description = description.value;
   userActivity.minutes = minutes.value;
   userActivity.seconds = seconds.value;
+  return userActivity;0
 };
 
 function hideForm() {
