@@ -1,5 +1,3 @@
-
-
 var category = "";
 var description = document.querySelector('.description'); //accomplish entry field
 var minutes = document.querySelector('.minutes');
@@ -10,6 +8,7 @@ var exerciseButton = document.querySelector('#exercise');
 var startActivityButton = document.querySelector('.activity');
 var activitiesList = [];
 var currentActivity;
+
 // EVENT LISTENERS
 
 studyButton.addEventListener('click', study);
@@ -34,13 +33,6 @@ function exercise() {
   category = "Exercise";
   exercise.classList.add('buttonChange');
 };
-  // start Activity button
-function startActivity() {
-  hideForm();
-  currentActivity = new Activity(createActivity());
-  clearForm();
-  timer = setInterval(showRemaining, 1000);
-};
 
 // HELPER FUNCTIONS
 
@@ -53,14 +45,6 @@ var timer;
 var minutesLeft = document.querySelector('.minutesLeft');
 var secondsLeft = document.querySelector('.secondsLeft');
 
-function showRemaining() {
-  minutesLeft.innerHTML = minutes - 1;
-  secondsLeft.innerHTML = seconds - 1;
-  if (minutes === 0 && seconds === 0) {
-    clearInterval(timer);
-    return;
-  };
-};
 
 function createActivity() {
   var userActivity = {};
@@ -69,6 +53,24 @@ function createActivity() {
   userActivity.minutes = minutes.value;
   userActivity.seconds = seconds.value;
   return userActivity;0
+};
+
+// start Activity button
+function startActivity() {
+  hideForm();
+  currentActivity = new Activity(createActivity());
+  clearForm();
+  currentActivity.startTimer();
+  // moved to Activity.js : timer = setInterval(showRemaining, 1000);
+};
+
+function showRemaining() {
+  minutesLeft.innerHTML = minutes - 1;
+  secondsLeft.innerHTML = seconds - 1;
+  if (minutes === 0 && seconds === 0) {
+    clearInterval(timer);
+    return;
+  };
 };
 
 function hideForm() {
@@ -86,7 +88,8 @@ function clearForm() {
   seconds.innerText = "";
 };
 
-//refactor hidden!
+  // HIDE FUNCTIONS LAST
+
 function show(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
