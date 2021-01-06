@@ -4,10 +4,39 @@ var category = "document.querySelector('.')";
 var description = document.querySelector('.description').value //accomplish entry field
 var minutes = document.querySelector('.minutes');
 var seconds = document.querySelector('.seconds');
-var studyButton = document.querySelector('.study-button');
-var meditateButton = document.querySelector('.meditate-button');
-var exerciseButton = document.querySelector('.exercise-button');
-var startActivityButton = document.querySelector('.start-activity');
+var studyButton = document.querySelector('#study-button');
+var meditateButton = document.querySelector('#meditate-button');
+var exerciseButton = document.querySelector('#exercise-button');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var startActivityButton = document.querySelector('#start-activity');
 var activitiesList = [];
 
 // EVENT LISTENERS
@@ -88,13 +117,14 @@ function clearForm() {
 
 //refactor hidden!
 function show(elements) {
-  for (var i - 0; i < elements.length; i++) {
+  for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
-  }
+  };
+};
 
 
 function hide(elements) {
-  for (var i - 0; i < elements.length; i++) {
+  for (var i = 0; i < elements.length; i++) {
     elements[i].classList.remove('hidden');
-  }
+  };
 };
