@@ -1,1 +1,63 @@
-var array = [];
+/* Main background: #2B2733
+Text on main background: #CBC9CF
+Header, cards: #46424D
+Card shadow: #26222D
+Text on header and cards: #FFF
+Study: #B3FD78
+Meditate: #C278FD
+Exercise: #FD8078
+Error: #EFB7EC */
+body {
+  background-color: #46424D;
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-align: center;
+  
+}
+
+main {
+  display:flex;
+  flex-direction: column;
+}
+
+/* Left side of main form */ 
+.header1 {
+  background-color: #2B2733;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  height: 500px;
+  width: 900px;
+  padding-left: 2%;
+  z-index: 1;
+}
+
+.boxes {
+  background-color: #46424D;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding-top: 2%;
+  padding-left: 12%;
+  padding-bottom: 0;
+  margin-left: 1%;
+  top: -440px;
+  z-index: 2;
+  position: relative;
+}
+
+.category {
+  
+  background-color: #46424D;
+  border-color: white;
+  color: white;
+  padding: 25px 50px;
+  margin-left 1%;
+}
+/* .derscription {
+  top: -340px;
+  z-index: 3;
+  position: relative;
+} */
+
