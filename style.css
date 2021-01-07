@@ -1,7 +1,7 @@
 body {
   background-color: #46424D;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 }
 
 .header {
@@ -43,18 +43,51 @@ main {
   background-color: #46424D;
   border-color: white;
   color: white;
-  height:100px;
+  /* height:100px; */
   padding: 25px 50px;
   margin-left 1%;
 }
 
-// Buttons 
 .active { 
   width: 100%;
   height: auto;
   background-size: contain;
 }
 
+.description {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 10px;  
+  outline:none;  
+  box-shadow:none;
+}
+
+.minutes {
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
+  box-shadow:none;
+}
+
+.seconds {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
+  box-shadow:none;
+}
+
+/* Right side of main form */ 
 .boxes2 {
   background-color: #2B2733;  
   color: white; 
