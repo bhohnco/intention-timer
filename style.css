@@ -1,7 +1,7 @@
 body {
   background-color: #46424D;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 }
 
 .header {
@@ -39,23 +39,61 @@ main {
   position: relative;
 }
 
-.btn-category {
+.category {
+ margin-right: 5px;  
+}
+
+.active-button {
   background-color: #46424D;
   border-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
   color: white;
-  height:100px;
-  padding: 25px 50px;
-  margin-left 1%;
+  margin-right: 5%;
 }
 
-// Buttons 
 .active { 
-  width: 100%;
-  height: auto;
-  background-size: contain;
+  background-color: #46424D;
+  width: 13vw;
+  height: 4vh;
+  display:block;
 }
 
+.description {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 300px;  
+  outline:none;  
+  box-shadow:none;
+}
 
+.minutes {
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
+  box-shadow:none;
+}
+
+.seconds {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
+  box-shadow:none;
+  /* position: absolute; */
+}
+
+/* Right side of main form */ 
 .boxes2 {
   background-color: #2B2733;  
   color: white; 
@@ -70,4 +108,5 @@ main {
 .hidden {
   display: none;
 }
+
 
