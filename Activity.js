@@ -8,8 +8,8 @@ class Activity {
     this.id = Date.now();
   };
 
-  startTimer () {
-    timer = setInterval(showRemaining, 1000);
+  startTimer() {
+    var timer = setInterval(showRemaining, 1000);
   };
 
   markComplete() {

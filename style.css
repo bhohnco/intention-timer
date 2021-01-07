@@ -40,6 +40,7 @@ main {
 }
 
 .category {
+<<<<<<< HEAD
   background-size: contain;
 }
 
@@ -72,6 +73,74 @@ main {
   padding:5px 60px;
   outline:none;
   box-shadow:none;
+=======
+margin-right: 5px;  
+}
+
+.active-button {
+  background-color: #46424D;
+  border-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-right: 5%;
+}
+
+.active { 
+  background-color: #46424D;
+  width: 13vw;
+  height: 4vh;
+  display:block;
+}
+
+.description {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 300px;  
+  outline:none;  
+  box-shadow:none;
+}
+
+.minutes {
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
+  box-shadow:none;
+}
+
+.seconds {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
+  box-shadow:none;
+}
+
+/* Right side of main form */ 
+.boxes2 {
+  background-color: #2B2733;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  height: 1000px;
+  width: 900px;
+  padding-left: 2%;
+  left: 65%;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+>>>>>>> 12500d19719860ca9e819b4039d5bc4bbd37ad95
 }
 
 .seconds {
