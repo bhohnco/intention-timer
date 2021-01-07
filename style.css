@@ -43,10 +43,13 @@ main {
  margin-right: 5px;  
 }
 
-.activity-button {
+.active-button {
   background-color: #46424D;
   border-color: white;
+  color: white;
+  margin-right: 5%;
 }
+
 .active { 
   background-color: #46424D;
   width: 13vw;
