@@ -40,14 +40,14 @@ main {
 }
 
 .category {
- background-size: contain;
+ margin-right: 5px;  
 }
 
 .active { 
-  color: white; 
-  width: 100%;
-  height: auto;
- 
+  background-color: #46424D;
+  width: 13vw;
+  height: 6vh;
+  display:block;
 }
 
 .description {  

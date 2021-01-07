@@ -18,27 +18,30 @@
         <br>
         <div class="category">
           <button><img class="active" src="./assets/study.svg" alt="study button">Study</button>
-          <!-- <button><img class="active" src="./assets/meditate.svg" alt="meditate button"></button> -->
-          <!-- <button><img class="active" src="./assets/exercise.svg" alt="exercise button"></button> -->
+          <button><img class="active" src="./assets/meditate.svg" alt="meditate button">Meditate</button>
+          <button><img class="active" src="./assets/exercise.svg" alt="exercise button">Exercise</button>
         </div>
         <form>
-            <div>
-                <label class="accomplish">
-                    <h1>What would you like to accomplish during this time?</h1>
-                    <input class="description" id="description" type="text"/>
-            </div>
-            <div>
-                <label class="minutes-label" for="minutes">Minutes</label>
-                <br>
-                <input class="minutes" id="minutes" type="text"/>
-            </div>
-            <div>
-                <label class="seconds-label" for="seconds">Seconds</label>
-                <br>
-                <input class="seconds" id="seconds" type="text"/>
-            </div>
-            <button class="activity" id="start-activity" type="button">START ACTIVITY</button>
-        </form>
+          <div>
+              <label class="accomplish">
+                  <h1>What would you like to accomplish during this time?</h1>
+                  <input class="description" id="description" type="text"/>
+                  <p class="description-error" hidden src="./assets/warning.svg">A description is required!</p>
+          </div>
+          <div>
+              <label class="minutes-label" for="minutes">Minutes</label>
+              <br>
+              <input class="minutes" id="minutes" type="text"/>
+              <p class="minutes-error" hidden src="./assets/warning.svg">Invalid number!</p>
+          </div>
+          <div>
+              <label class="seconds-label" for="seconds">Seconds</label>
+              <br>
+              <input class="seconds" id="seconds" type="text"/>
+              <p class="seconds-error" hidden src="./assets/warning.svg">Invalid number!</p>
+          </div>
+          <button class="activity" id="start-activity" type="button">START ACTIVITY</button>
+      </form>
     </section>
     <section class="boxes2" id="box2">
         <h2 class="box2-lead">Past Activities</h2>
