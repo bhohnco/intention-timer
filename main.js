@@ -1,15 +1,19 @@
 var category = "";
 var description = document.querySelector('.description'); //accomplish entry field
-var minutes = document.querySelector('.minutes');
-var seconds = document.querySelector('.seconds');
+var inputMinutes = document.querySelector('.minutes');
+var inputSeconds = document.querySelector('.seconds');
 var studyButton = document.querySelector('#study');
 var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
 var storeActivityButton = document.querySelector('.activity');
-var startTimer = document.querySelector('.timer-dialogue');
-
+var timerDialogue = document.querySelector('.timer-dialogue');
 var activitiesList = [];
 var currentActivity;
+// for use only with timer countdown
+var minutes;
+var seconds;
+var minutesLeft = document.querySelector('.minutes-left');
+var secondsLeft = document.querySelector('.seconds-left');
 
 // EVENT LISTENERS
 
@@ -17,7 +21,7 @@ studyButton.addEventListener('click', study);
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
-startTimer.addEventListener('click', beginTimer);
+timerDialogue.addEventListener('click', beginTimer);
 
 // EVENT HANDLERS
 
@@ -37,34 +41,20 @@ function exercise() {
   exerciseButton.classList.add('btn-category');
 };
 
-function beginTimer() {
-  currentActivity.startTimer;
-};
-
 // HELPER FUNCTIONS
-
-
-var startMinutes = minutes.value;// input
-var startSeconds = seconds.value;
-var second = 1000;
-var minute = second * 60;
-var timer;
-var minutesLeft = document.querySelector('.minutesLeft');
-var secondsLeft = document.querySelector('.secondsLeft');
-
 
 function createActivity() {
   var userActivity = {};
   userActivity.category = category;
   if (description.value != "") {
     userActivity.description = description.value;
-  } else showError('desc');
-  if (verifyNumber(minutes.value)) {
-    userActivity.minutes = minutes.value;
-  } else showError('min');
-  if (verifyNumber(seconds.value)) {
-    userActivity.seconds = seconds.value;
-  } else showError('sec');
+  } //else showError('desc');
+  if (verifyNumber(inputMinutes.value)) {
+    userActivity.minutes = inputMinutes.value;
+  } //else showError('min');
+  if (verifyNumber(inputSeconds.value)) {
+    userActivity.seconds = inputSeconds.value;
+  } //else showError('sec');
   return userActivity;  // to instantiation below
 };
 
@@ -85,44 +75,67 @@ function showError(data) {
 };
 
 function verifyNumber(data) {
-  if (isNaN(data) || data < 1 || data > 300) {
+  if (isNaN(data) || data < 0 || data > 300) {
     return false;
   } else return true;
 };
 
-
-// start Activity button
+// start Activity button = store activity
 function storeActivity() {
   hideForm();
   currentActivity = new Activity(createActivity());
   console.log(currentActivity);
   clearForm();
+  setTimer();
+};
+
+
+function setTimer() {
+  minutes = currentActivity.minutes;
+  seconds = currentActivity.seconds;
+  updateTimer();
+};
+
+function updateTimer() {
+  minutesLeft.innerHTML = minutes;
+  if (seconds < 10) {
+    secondsLeft.innerHTML = "0" + seconds; // keeps seconds inline
+  } else secondsLeft.innerHTML = seconds;
+};
+
+function beginTimer() {
+  currentActivity.startTimer();
 };
 
 function showRemaining() {
-  userDescription.innerText = userActivity['description']; // show second page descriptor
-  minutesLeft.innerHTML = minutes - 1;
-  secondsLeft.innerHTML = seconds - 1;
-  if (minutes === 0 && seconds === 0) {
-    clearInterval(timer);
+  //userDescription.innerText = userActivity['description']; // show second page descriptor
+  if (seconds === -1) {
+    minutes--;
+    seconds = 59;
+  };
+  if (minutes == 0 && seconds == 0) {
+    updateTimer(); //clearInterval(timer);
+    timerDialogue.innerText = "Complete"
     currentActivity.markComplete;
     return;
   };
+  seconds--;
+  updateTimer();
 };
 
 function hideForm() {
-  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, storeActivityButton]);
+  hide([studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
 };
 
 function showForm() {
-  hide([studyButton, meditateButton, exerciseButton, description, minutes, seconds, storeActivityButton]);
+  hide([studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
 };
 
 function clearForm() {
-  //category = "";
+  category = "";
   description.innerText = "";
-  minutes.innerText = "";
-  seconds.innerText = "";
+  inputMinutes.innerText = "";
+  inputSeconds.innerText = "";
 };
 
   // HIDE FUNCTIONS LAST

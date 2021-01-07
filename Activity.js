@@ -9,7 +9,7 @@ class Activity {
   };
 
   startTimer() {
-    timer = setInterval(showRemaining, 1000);
+    var timer = setInterval(showRemaining, 1000);
   };
 
   markComplete() {
