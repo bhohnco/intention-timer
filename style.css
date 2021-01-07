@@ -40,55 +40,59 @@ main {
 }
 
 .category {
- background-size: contain;
+margin-right: 5px;  
 }
 
-.active {
-  display: block;
+.active-button {
+  background-color: #46424D;
+  border-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
   color: white;
+  margin-right: 5%;
+}
+
+.active { 
+  background-color: #46424D;
   width: 13vw;
-  height: 5vh;
-  padding: 3px;
+  height: 4vh;
+  display:block;
 }
 
-.countdown {
-  margin-top: 20vh;
-}
-
-.description {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  border-bottom-color: white;
-  border-bottom-width: thin;
-  padding:5px 10px;
-  outline:none;
+.description {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 300px;  
+  outline:none;  
   box-shadow:none;
 }
 
 .minutes {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  border-bottom-color: white;
-  border-bottom-width: thin;
-  padding:5px 60px;
-  outline:none;
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
   box-shadow:none;
 }
 
-.seconds {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  border-bottom-color: white;
-  border-bottom-width: thin;
-  padding:5px 60px;
-  outline:none;
+.seconds {  
+  background: transparent;  
+  border: none;  
+  border-bottom: 1px solid #000000;  
+  border-bottom-color: white;  
+  border-bottom-width: thin;  
+  padding:5px 60px;  
+  outline:none;  
   box-shadow:none;
 }
 
-/* Right side of main form */
+/* Right side of main form */ 
 .boxes2 {
   background-color: #2B2733;
   color: white;
