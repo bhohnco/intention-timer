@@ -43,6 +43,10 @@ main {
  margin-right: 5px;  
 }
 
+.activity-button {
+  background-color: #46424D;
+  border-color: white;
+}
 .active { 
   background-color: #46424D;
   width: 13vw;
@@ -98,4 +102,5 @@ main {
 .hidden {
   display: none;
 }
+
 
