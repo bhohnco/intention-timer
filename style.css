@@ -39,19 +39,15 @@ main {
   position: relative;
 }
 
-.btn-category {
-  background-color: #46424D;
-  border-color: white;
-  color: white;
-  /* height:100px; */
-  padding: 25px 50px;
-  margin-left 1%;
+.category {
+ background-size: contain;
 }
 
 .active { 
+  color: white; 
   width: 100%;
   height: auto;
-  background-size: contain;
+ 
 }
 
 .description {  
