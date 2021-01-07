@@ -59,10 +59,10 @@ function createActivity() {
   if (!description.value = "") {
     userActivity.description = description.value;
   } else showError('desc');
-  if (verify(minutes.value)) {
+  if (verifyNumber(minutes.value)) {
     userActivity.minutes = minutes.value;
   } else showError('min');
-  if (verify(seconds.value)) {
+  if (verifyNumber(seconds.value)) {
     userActivity.seconds = seconds.value;
   } else showError('sec');
   return userActivity;  // to instantiation below
@@ -79,6 +79,13 @@ function showError(data) {
     show(seconds-error)
   };
 };
+
+function verifyNumber(data) {
+  if (isNaN(data) || data < 1 || data > 300) {
+    return false;
+  } else return true;
+};
+
 
 // start Activity button
 function storeActivity() {
