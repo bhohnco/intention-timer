@@ -56,7 +56,7 @@ var secondsLeft = document.querySelector('.secondsLeft');
 function createActivity() {
   var userActivity = {};
   userActivity.category = category;
-  if (!description.value = "") {
+  if (description.value != "") {
     userActivity.description = description.value;
   } else showError('desc');
   if (verifyNumber(minutes.value)) {
@@ -68,15 +68,19 @@ function createActivity() {
   return userActivity;  // to instantiation below
 };
 
+var descriptionError = document.querySelector('.description-error');
+var minutesError = document.querySelector('.minutes-error');
+var secondsError = document.querySelector('.seconds-error');
+
 function showError(data) {
   if (data = 'desc') {
-    show(description-error);
-  }
+    show(descriptionError);
+  };
   if (data = 'min') {
-    show(minutes-error);   //document minute error message
+    show(minutesError);   //document minute error message
   };
   if (data = 'sec') {
-    show(seconds-error)
+    show(secondsError)
   };
 };
 
@@ -91,6 +95,7 @@ function verifyNumber(data) {
 function storeActivity() {
   hideForm();
   currentActivity = new Activity(createActivity());
+  console.log(currentActivity);
   clearForm();
 };
 
