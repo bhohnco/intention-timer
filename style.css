@@ -20,16 +20,16 @@ main {
 .header1 {
   background-color: #2B2733;
   font-family: 'Montserrat', sans-serif;
-  color: white; 
+  color: white;
   height: 1000px;
   width: 63%;
   padding-left: 2%;
-  margin-left: -1%; 
+  margin-left: -1%;
   position: relative;
-} 
+}
 
 .boxes {
-  background-color: #46424D;          
+  background-color: #46424D;
   font-family: 'Montserrat', sans-serif;
   color: white;
   height: 600px;
@@ -40,7 +40,7 @@ main {
 }
 
 .category {
- margin-right: 5px;  
+margin-right: 5px;  
 }
 
 .active-button {
@@ -90,23 +90,20 @@ main {
   padding:5px 60px;  
   outline:none;  
   box-shadow:none;
-  /* position: absolute; */
 }
 
 /* Right side of main form */ 
 .boxes2 {
-  background-color: #2B2733;  
-  color: white; 
+  background-color: #2B2733;
+  color: white;
   font-family: 'Montserrat', sans-serif;
   height: 1000px;
   width: 900px;
   padding-left: 2%;
   left: 65%;
   position: absolute;
-} 
+}
 
 .hidden {
   display: none;
 }
-
-
