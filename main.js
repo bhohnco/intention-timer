@@ -50,7 +50,6 @@ function exercise() {
 };
 
 // HELPER FUNCTIONS
-
 function verifyNumber(node, data) {
   if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 300) {
     node.innerText = "";
@@ -62,7 +61,7 @@ function validate() {
   if (description.value != "") {
     userActivity.description = description.value;
   } else {
-    alert('No description entered!') //showError('desc');
+    t('No description entered!') //showError('desc');
     return false;
   };
   if (verifyNumber(inputMinutes, inputMinutes.value)) {
