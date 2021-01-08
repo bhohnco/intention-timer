@@ -11,7 +11,9 @@ var chooseActivityText = document.querySelector('.box1-lead');
 var questionText = document.querySelector('.questionText');
 var minutesLabel = document.querySelector('.minutes-label');
 var secondsLabel = document.querySelector('.seconds-label');
-
+var descriptionError = document.querySelector('.description-error');
+var minutesError = document.querySelector('.minutes-error');
+var secondsError = document.querySelector('.seconds-error');
 var activitiesList = [];
 var currentActivity;
 // for use only with timer countdown
@@ -48,24 +50,38 @@ function exercise() {
 
 // HELPER FUNCTIONS
 
-function createActivity() {
-  var userActivity = {};
-  userActivity.category = category;
-  if (description.value != "") {
-    userActivity.description = description.value;
-  } //else showError('desc');
-  if (verifyNumber(inputMinutes, inputMinutes.value)) {
-    userActivity.minutes = inputMinutes.value;
-  } //else showError('min');
-  if (verifyNumber(inputSeconds, inputSeconds.value)) {
-    userActivity.seconds = inputSeconds.value;
-  } //else showError('sec');
-  return userActivity;  // to instantiation below
+// function createActivity() {
+//   return userActivity;  // to instantiation below
+// };
+
+function verifyNumber(node, data) {
+  if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 300) {
+    node.innerText = "";
+    return false;
+  } else return true;
 };
 
-var descriptionError = document.querySelector('.description-error');
-var minutesError = document.querySelector('.minutes-error');
-var secondsError = document.querySelector('.seconds-error');
+function validate() {
+  if (description.value != "") {
+    userActivity.description = description.value;
+  } else {
+    alert('No description entered!') //showError('desc');
+    return false;
+  };
+  if (verifyNumber(inputMinutes, inputMinutes.value)) {
+    userActivity.minutes = inputMinutes.value;
+  } else {
+    alert('Not a number!'); //showError('min');
+    return false;
+  };
+  if (verifyNumber(inputSeconds, inputSeconds.value)) {
+    userActivity.seconds = inputSeconds.value;
+  } else {
+    alert('Not a number!'); //showError('sec');
+    return false;
+  };
+  return true;
+};
 
 function showError(data) {
   if (data = 'desc') {
@@ -79,20 +95,17 @@ function showError(data) {
   };
 };
 
-function verifyNumber(node, data) {
-  if (isNaN(data) || data < 0 || data > 300) {
-    node.innerText = "";
-    return false;
-  } else return true;
-};
-
+var userActivity = {};
 // start Activity button = store activity
 function storeActivity() {
-  hideForm();
-  currentActivity = new Activity(createActivity());
-  console.log(currentActivity);
-  clearForm();
-  setTimer();
+  userActivity.category = category;
+  if (validate()) {
+    hideForm();
+    currentActivity = new Activity(userActivity);
+    console.log(currentActivity);
+    clearForm();
+    setTimer();
+  };
 };
 
 
