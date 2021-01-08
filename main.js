@@ -14,6 +14,8 @@ var secondsLabel = document.querySelector('.seconds-label');
 var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
+var countdown = document.querySelector('.countdown');
+
 var activitiesList = [];
 var currentActivity;
 // for use only with timer countdown
@@ -96,18 +98,18 @@ function showError(data) {
 };
 
 var userActivity = {};
-// start Activity button = store activity
+// storeActivity fired by Start Activity button
 function storeActivity() {
   userActivity.category = category;
   if (validate()) {
-    hideForm();
+    hide([descriptionError, minutesError, secondsError]);
     currentActivity = new Activity(userActivity);
     console.log(currentActivity);
     clearForm();
+    hideForm();
     setTimer();
   };
 };
-
 
 function setTimer() {
   minutes = currentActivity.minutes;
@@ -143,11 +145,13 @@ function showRemaining() {
 };
 
 function hideForm() {
-  hide([studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+  hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+  show([countdown, timerDialogue]);
 };
 
 function showForm() {
-  hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+  show([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+  hide([countdown, timerDialogue]);
 };
 
 function clearForm() {
