@@ -54,10 +54,10 @@ function createActivity() {
   if (description.value != "") {
     userActivity.description = description.value;
   } //else showError('desc');
-  if (verifyNumber(inputMinutes.value)) {
+  if (verifyNumber(inputMinutes, inputMinutes.value)) {
     userActivity.minutes = inputMinutes.value;
   } //else showError('min');
-  if (verifyNumber(inputSeconds.value)) {
+  if (verifyNumber(inputSeconds, inputSeconds.value)) {
     userActivity.seconds = inputSeconds.value;
   } //else showError('sec');
   return userActivity;  // to instantiation below
@@ -79,8 +79,9 @@ function showError(data) {
   };
 };
 
-function verifyNumber(data) {
+function verifyNumber(node, data) {
   if (isNaN(data) || data < 0 || data > 300) {
+    node.innerText = "";
     return false;
   } else return true;
 };
@@ -133,7 +134,7 @@ function hideForm() {
 };
 
 function showForm() {
-  hide([studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+  hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
 };
 
 function clearForm() {
@@ -157,5 +158,3 @@ function hide(elements) {
     elements[i].classList.add('hidden');
   };
 };
-
-hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
