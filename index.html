@@ -24,7 +24,7 @@
         <form>
             <div>
                 <label class="accomplish">
-                    <h1>What would you like to accomplish during this time?</h1>
+                    <h1 class="questionText">What would you like to accomplish during this time?</h1>
                     <input class="description" id="description" type="text"/>
                     <p class="description-error" hidden src="./assets/warning.svg">A description is required!</p>
             </div>
@@ -42,8 +42,13 @@
             </div>
             <button class="activity" id="start-activity" type="button">START ACTIVITY</button>
         </form>
-        <div class="countdown"><span class="minutes-left">0</span><span>:</span><span class="seconds-left">00</span></div>
-        <button class="timer-dialogue" type="button">START</button>
+        <h1 class="activity-display">Deep Breathing</h1>
+          <div class="countdown">
+            <span class="minutes-left">00</span>
+            <span>:</span>
+            <span class="seconds-left">00</span>  
+         </div>
+         <button class="timer-dialogue" type="button">START</button>
     </section>
     <section class="boxes2" id="box2">
         <h2 class="box2-lead">Past Activities</h2>

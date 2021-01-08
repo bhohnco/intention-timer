@@ -7,6 +7,11 @@ var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
 var storeActivityButton = document.querySelector('.activity');
 var timerDialogue = document.querySelector('.timer-dialogue');
+var chooseActivityText = document.querySelector('.box1-lead');
+var questionText = document.querySelector('.questionText');
+var minutesLabel = document.querySelector('.minutes-label');
+var secondsLabel = document.querySelector('.seconds-label');
+
 var activitiesList = [];
 var currentActivity;
 // for use only with timer countdown
@@ -142,13 +147,15 @@ function clearForm() {
 
 function show(elements) {
   for (var i = 0; i < elements.length; i++) {
-    elements[i].classList.add('hidden');
+    elements[i].classList.remove('hidden');
   };
 };
 
 
 function hide(elements) {
   for (var i = 0; i < elements.length; i++) {
-    elements[i].classList.remove('hidden');
+    elements[i].classList.add('hidden');
   };
 };
+
+hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);

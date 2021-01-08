@@ -107,3 +107,26 @@ margin-right: 5px;
 .hidden {
   display: none;
 }
+
+/* Timer Screem */
+.activity-display {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  position: fixed;
+  top: 14%;
+  left: 23%;
+}
+
+.countdown {
+  font-family: 'Lilita One', sans-serif;
+  font-size: 91px;
+  position: fixed;
+  top: 18%;
+  left: 22%;
+}
+
+.timer-dialogue{
+  position: fixed;
+  top: 32%;
+  left: 29%;
+}
