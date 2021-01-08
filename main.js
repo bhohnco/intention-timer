@@ -113,7 +113,9 @@ function setTimer() {
 };
 
 function updateTimer() {
-  minutesLeft.innerHTML = minutes;
+  if (minutes < 10) {
+    minutesLeft.innerHTML = "0" + minutes;
+  } else minutesLeft.innerHTML = minutes;
   if (seconds < 10) {
     secondsLeft.innerHTML = "0" + seconds; // keeps seconds inline
   } else secondsLeft.innerHTML = seconds;
@@ -125,18 +127,18 @@ function beginTimer() {
 
 function showRemaining() {
   //userDescription.innerText = userActivity['description']; // show second page descriptor
+  seconds--;
   if (seconds === -1) {
     minutes--;
     seconds = 59;
   };
-  if (minutes == 0 && seconds == 0) {
-    updateTimer(); //clearInterval(timer);
-    timerDialogue.innerText = "Complete"
-    currentActivity.markComplete;
-    return;
-  };
-  seconds--;
   updateTimer();
+  if (parseInt(minutes) == 0 && parseInt(seconds) == 0) {
+    timerDialogue.innerText = "Complete";
+    currentActivity.markComplete();
+    currentActivity.stopTimer();
+    //return;
+  };
 };
 
 function hideForm() {

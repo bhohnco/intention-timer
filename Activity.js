@@ -1,3 +1,5 @@
+var timer;
+
 class Activity {
   constructor(data) {
     this.category = data.category;
@@ -9,10 +11,16 @@ class Activity {
   };
 
   startTimer() {
-    var timer = setInterval(showRemaining, 1000);
+    timer = setInterval(showRemaining, 1000);
   };
 
+  stopTimer() {
+    clearInterval(timer);
+  }
+
+
   markComplete() {
+
     this.completed = true;
   };
 
