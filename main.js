@@ -15,7 +15,6 @@ var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
 var countdown = document.querySelector('.countdown');
-
 var activitiesList = [];
 var currentActivity;
 // for use only with timer countdown
@@ -51,10 +50,6 @@ function exercise() {
 };
 
 // HELPER FUNCTIONS
-
-// function createActivity() {
-//   return userActivity;  // to instantiation below
-// };
 
 function verifyNumber(node, data) {
   if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 300) {
@@ -161,7 +156,11 @@ function clearForm() {
   inputSeconds.innerText = "";
 };
 
-  // HIDE FUNCTIONS LAST
+function saveToLog() {
+  activities.push(currentActivity);
+}
+
+  // HIDE FUNCTIONS
 
 function show(elements) {
   for (var i = 0; i < elements.length; i++) {
