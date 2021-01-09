@@ -22,14 +22,15 @@ var completeAlert = document.querySelector('.complete');
 var logButton = document.querySelector('.log');
 var activitiesDialogue = document.querySelector('.activities-dialogue');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
-var clear = document.querySelector('.clear'); //end of box 2
-var pastActivitiesButton = document.querySelector('.past-activities');m
+var clearButton = document.querySelector('.clear'); //end of box 2
+var pastActivitiesButtons = document.querySelector('.past-activities');
+
 var minutes;
 var seconds;
-var userActivitiesList = [];
 var userActivity = {};
 var currentActivity;
-
+var userActivitiesList = [];
+//var updatedActivitiesList;
 // EVENT LISTENERS
 
 studyButton.addEventListener('click', study);
@@ -38,6 +39,7 @@ exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
+clearButton.addEventListener('click', showForm);
 window.addEventListener('load', retrieveActivities);
 // EVENT HANDLERS
 
@@ -153,7 +155,7 @@ function hideForm() {
 };
 
 function showForm() {
-  activityHeader.innerText = "New Activity";
+    activityHeader.innerText = "New Activity";
   show([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
   hide([countdown, startButton]);
 };
@@ -169,31 +171,47 @@ function logActivity() {
   userActivitiesList.push(currentActivity);
   var localActivity = JSON.stringify(userActivitiesList);
   localStorage.setItem("storedActivities", localActivity);
-  console.log(userActivitiesList);
-  console.log(localActivity);
+  hide([countdown, startButton, logButton, completeAlert, activitiesDialogue]);
+  show([clearButton]);
 };
 
 function retrieveActivities() {
   var packedActivity = localStorage.getItem("storedActivities");
-  userActivitiesList = JSON.parse(packedActivity);
+  var userActivitiesList = JSON.parse(packedActivity);
   if (userActivitiesList.length > 0) { //if we have any activities logged
-    hide([activitiesDialogue]);
+    //console.log("activities should show");
+    hide([]);
     show([activitiesWrapper]);
     list(event);
   };
-
-  console.log(userActivitiesList);
 };
 
 function list(event) {
   event.preventDefault();
-  for (i = 0; i < userActivitiesList.length; i++) {
-    createActBox(userActivitiesList[i]);
+  console.log('userActivitiesList')
+  if (userActivitiesList.length > 0) {
+    for (i = 0; i < userActivitiesList.length; i++) {
+      createActivityBox(userActivitiesList[i], i);
+    };
   };
 };
 
-function createActBox(act) {
-  activitiesWrapper.innerHTML += <div class = "past-activities">act</div>;
+var pastActivity; // node //object to load
+
+function createActivityBox(act, i) {
+  if (userActivitiesList.length > 0) {   //likely won't need this conditional
+    console.log('hello');
+    pastActivitiesButtons.innerHTML = "HIII";
+  //activitiesWrapper.innerHTML += "Hi"; // +`<div class="past-activities" id="act${i}">${act}</div>`;
+  // pastActivity = document.getElementById(`act${i}`);  //assign node
+  // pastActivity.addEventListener('click', loadPastActivity);
+  };
+};
+
+function loadPastActivity() {
+  show([countdown, startButton, log, completeAlert]);
+  hide([clear]);
+  currentActivity = pastActivity;
 }
 
 // Our userActivities array has objects retrieved from JSON
