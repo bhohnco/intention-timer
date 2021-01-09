@@ -11,14 +11,10 @@ var chooseActivityText = document.querySelector('.box1-lead');
 var questionText = document.querySelector('.questionText');
 var minutesLabel = document.querySelector('.minutes-label');
 var secondsLabel = document.querySelector('.seconds-label');
-<<<<<<< HEAD
-
-=======
 var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
 var countdown = document.querySelector('.countdown');
->>>>>>> main
 var activitiesList = [];
 var currentActivity;
 // for use only with timer countdown
