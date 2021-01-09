@@ -1,3 +1,7 @@
+
+* {
+  /* border: 1px solid red; */
+}
 body {
   background-color: #46424D;
   /* overflow-y: hidden; */
@@ -108,25 +112,53 @@ margin-right: 5px;
   display: none;
 }
 
-/* Timer Screem */
+/* Timer Screen */
 .activity-display {
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   position: fixed;
-  top: 14%;
-  left: 23%;
+  margin-top: -3%;
+  margin-left: 14%;
 }
 
 .countdown {
-  font-family: 'Lilita One', sans-serif;
-  font-size: 91px;
+  font-family: 'Arial', sans-serif;
+  font-size: 9em;
   position: fixed;
-  top: 18%;
-  left: 22%;
+  margin-top: -1%;
+  margin-left: 7%;
 }
 
-.timer-dialogue{
+/* circle */
+.timer-dialogue {
+  background-color: #46424D;
+  font-size: 2em;
+  color: white;
+  border: none;
   position: fixed;
-  top: 32%;
-  left: 29%;
+  margin-top: 16%;
+  margin-left: 17%;
+}
+
+.circle {
+  position: relative;
+  fill: none;
+  stroke: none;
+  height: 28vh;
+  width: 42vw;
+  margin-top: 20%;
+  margin-left: 24%;
+}
+
+.circle-svg {
+  display: flex;
+  align-items: center;
+}
+
+.circle-path {
+  stroke-width: -1em;
+  stroke: #9370DB;
+  cx: 50;
+  cy: 50;
+  r: 50; 
 }
