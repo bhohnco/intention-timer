@@ -21,7 +21,7 @@ var completeAlert = document.querySelector('.complete');
 var logButton = document.querySelector('.log');
 var minutes;
 var seconds;
-var activitiesList = [];
+var userActivitiesList = [];
 var userActivity = {};
 var currentActivity;
 
@@ -33,7 +33,7 @@ exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
-
+window.addEventListener('load', retrieveActivities);
 // EVENT HANDLERS
 
    //category button changes
@@ -158,16 +158,26 @@ function clearForm() {
 };
 
 function logActivity() {
-  //activities.push(currentActivity); LOCAL
-  var localActivity = JSON.stringify(currentActivity);
-  localStorage.setItem("storedActivity", localActivity);
+  userActivitiesList.push(currentActivity);
+  var localActivity = JSON.stringify(userActivitiesList);
+  localStorage.setItem("storedActivities", localActivity);
+  console.log(userActivitiesList);
+  console.log(localActivity);
 };
 
-function retrieveActivity() {
-  var packedActivity = localStorage.getItem("storedActivity");
-  var parsedActivity = JSON.parse(packedActivity);
-  console.log(parsedActivity);
-}
+function retrieveActivities() {
+  var packedActivity = localStorage.getItem("storedActivities");
+  userActivitiesList = JSON.parse(packedActivity);
+
+  console.log(userActivitiesList);
+};
+
+// Our userActivities array has objects retrieved from JSON
+// upon completion of an event we
+  //add the activity itself then store the whole array
+  //as the same descriptor, overwriting old array
+
+// upon load we retrieve the array
 
   // HIDE FUNCTIONS
 
