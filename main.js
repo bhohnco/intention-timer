@@ -22,6 +22,11 @@ meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
 timerDialogue.addEventListener('click', beginTimer);
+// studyButton.addEventListener('click', changeButtonColors);
+
+// function changeButtonColors(){
+//   console.log("hello");
+//   studyButton.classList.add('studycolor');
 
 // EVENT HANDLERS
 
@@ -29,16 +34,19 @@ timerDialogue.addEventListener('click', beginTimer);
 function study () {
   category = "Study";
   studyButton.classList.add('btn-category');
+  studyButton.classList.add('studycolor');
 };
 
 function meditate() {
   category = "Meditate";
   meditateButton.classList.add('btn-category');
+  meditateButton.classList.add('meditatecolor');
 };
 
 function exercise() {
   category = "Exercise";
   exerciseButton.classList.add('btn-category');
+  exerciseButton.classList.add('exercisecolor');
 };
 
 // HELPER FUNCTIONS

@@ -17,34 +17,32 @@
         <h2 class="box1-lead">Select a category:</h2>
         <br>
         <div class="category">
-<<<<<<< HEAD
-            <button><img class="active" src="./assets/study.svg" alt="study button">Study</button>
-             <button><img class="active" src="./assets/meditate.svg" alt="meditate button">Meditate</button>
-             <button><img class="active" src="./assets/exercise.svg" alt="exercise button">Exercise</button>
-=======
-          <button class="active-button" id="study"><img class="active" src="./assets/study.svg" alt="study button">Study</button>
-          <button class="active-button" id="meditate"><img class="active" src="./assets/meditate.svg" alt="meditate button">Meditate</button>
-          <button class="active-button" id="exercise"><img class="active" src="./assets/exercise.svg" alt="exercise button">Exercise</button>
->>>>>>> 12500d19719860ca9e819b4039d5bc4bbd37ad95
+            <button class="active-button" id="study"><img class="active" src="./assets/study.svg" alt="study button">
+                <img class="active-color" src ="assets/study-active.svg" alt="Study button active">Study</button>
+            <button class="active-button" id="meditate"><img class="active" src="./assets/meditate.svg" alt="meditate button">
+                <img class="active-color" src ="assets/meditate-active.svg" alt="Meditate button active">Meditate</button>
+            <button class="active-button" id="exercise"><img class="active" src="./assets/exercise.svg" alt="exercise button">
+                <img class="active-color" src ="assets/exercise-active.svg" alt="Exercise button active">Exercise</button>
         </div>
         <form>
             <div>
-                <label class="accomplish">
-                    <h1>What would you like to accomplish during this time?</h1>
+<!--                <label class="accomplish">-->
+                    <h1 class="questionText">What would you like to accomplish during this time?</h1>
                     <input class="description" id="description" type="text"/>
-                    <p class="description-error" hidden src="./assets/warning.svg">A description is required!</p>
+                    <p class="description-error" hidden><img class="warning" src="./assets/warning.svg" alt="warning">A description is required!</p>
             </div>
-            <div>
+            <div class="display">
+            </div>
+            <div class="input">
                 <label class="minutes-label" for="minutes">Minutes</label>
                 <br>
                 <input class="minutes" id="minutes" type="text"/>
-                <p class="minutes-error" hidden src="./assets/warning.svg">Invalid number!</p>
-            </div>
-            <div>
+                <p class="minutes-error" hidden><img class="warning" src="./assets/warning.svg" alt="warning">Invalid number!</p>
+                <br>
                 <label class="seconds-label" for="seconds">Seconds</label>
                 <br>
                 <input class="seconds" id="seconds" type="text"/>
-                <p class="seconds-error" hidden src="./assets/warning.svg">Invalid number!</p>
+                <p class="seconds-error" hidden><img class="warning" src="./assets/warning.svg">Invalid number!</p>
             </div>
             <button class="activity" id="start-activity" type="button">START ACTIVITY</button>
         </form>
@@ -53,7 +51,10 @@
     </section>
     <section class="boxes2" id="box2">
         <h2 class="box2-lead">Past Activities</h2>
-        <p>You haven't logged any activities yet.<br>Complete the form to the left to get started!</p>
+        <p class="logged-form">You haven't logged any activities yet.
+            <br>
+            <br>
+            Complete the form to the left to get started!</p>
     </section>
 </main>
 </body>
