@@ -6,7 +6,7 @@ var studyButton = document.querySelector('#study');
 var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
 var storeActivityButton = document.querySelector('.activity');
-var timerDialogue = document.querySelector('.timer-dialogue');
+var startButton = document.querySelector('.start-button');
 var chooseActivityText = document.querySelector('.box1-lead');
 var questionText = document.querySelector('.questionText');
 var minutesLabel = document.querySelector('.minutes-label');
@@ -14,14 +14,16 @@ var secondsLabel = document.querySelector('.seconds-label');
 var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
-var countdown = document.querySelector('.countdown');
-var activitiesList = [];
-var currentActivity;
-// for use only with timer countdown
-var minutes;
-var seconds;
 var minutesLeft = document.querySelector('.minutes-left');
 var secondsLeft = document.querySelector('.seconds-left');
+var countdown = document.querySelector('.countdown');
+var completeAlert = document.querySelector('.complete');
+var logButton = document.querySelector('.log');
+var minutes;
+var seconds;
+var activitiesList = [];
+var userActivity = {};
+var currentActivity;
 
 // EVENT LISTENERS
 
@@ -29,7 +31,8 @@ studyButton.addEventListener('click', study);
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
-timerDialogue.addEventListener('click', beginTimer);
+startButton.addEventListener('click', beginTimer);
+logButton.addEventListener('click', logActivity);
 
 // EVENT HANDLERS
 
@@ -63,7 +66,7 @@ function validate() {
     userActivity.description = description.value;
   } else {
     alert('No description entered!') //showError('desc');
-    return false;
+    return false;       // these false returns ensure that the form won't submit with click
   };
   if (verifyNumber(inputMinutes, inputMinutes.value)) {
     userActivity.minutes = inputMinutes.value;
@@ -83,23 +86,19 @@ function validate() {
 function showError(data) {
   if (data = 'desc') {
     show(descriptionError);
-  };
-  if (data = 'min') {
-    show(minutesError);   //document minute error message
-  };
-  if (data = 'sec') {
+  } else if (data = 'min') {
+    show(minutesError);    //document minute error message
+  } else if (data = 'sec') {
     show(secondsError)
   };
 };
 
-var userActivity = {};
 // storeActivity fired by Start Activity button
 function storeActivity() {
   userActivity.category = category;
   if (validate()) {
     hide([descriptionError, minutesError, secondsError]);
     currentActivity = new Activity(userActivity);
-    console.log(currentActivity);
     clearForm();
     hideForm();
     setTimer();
@@ -134,21 +133,21 @@ function showRemaining() {
   };
   updateTimer();
   if (parseInt(minutes) == 0 && parseInt(seconds) == 0) {
-    timerDialogue.innerText = "Complete";
+    hide([startButton]);
+    show([completeAlert, logButton]);
     currentActivity.markComplete();
     currentActivity.stopTimer();
-    //return;
   };
 };
 
 function hideForm() {
   hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
-  show([countdown, timerDialogue]);
+  show([countdown, startButton]);
 };
 
 function showForm() {
   show([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
-  hide([countdown, timerDialogue]);
+  hide([countdown, startButton]);
 };
 
 function clearForm() {
@@ -158,8 +157,16 @@ function clearForm() {
   inputSeconds.innerText = "";
 };
 
-function saveToLog() {
-  activities.push(currentActivity);
+function logActivity() {
+  //activities.push(currentActivity); LOCAL
+  var localActivity = JSON.stringify(currentActivity);
+  localStorage.setItem("storedActivity", localActivity);
+};
+
+function retrieveActivity() {
+  var packedActivity = localStorage.getItem("storedActivity");
+  var parsedActivity = JSON.parse(packedActivity);
+  console.log(parsedActivity);
 }
 
   // HIDE FUNCTIONS

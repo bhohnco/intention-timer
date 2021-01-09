@@ -16,11 +16,9 @@ class Activity {
 
   stopTimer() {
     clearInterval(timer);
-  }
-
+  };
 
   markComplete() {
-
     this.completed = true;
   };
 
