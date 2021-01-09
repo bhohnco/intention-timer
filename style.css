@@ -1,6 +1,6 @@
 
 * {
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 body {
   background-color: #46424D;
@@ -169,19 +169,16 @@ main {
 /* Timer Screen */ 
 .activity-display {
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  position: fixed;
-  margin-top: -12%;
-  margin-left: 14%;
+  margin-top: -25%;
+  margin-left: 23%;
 }
 
 /* Timer page */
 .countdown {
   font-family: 'Arial', sans-serif;
   font-size: 9em;
-  position: fixed;
-  margin-top: -10%;
-  margin-left: 10%;
+  margin-top: -5%;
+  margin-left: 12%;
 }
 
 .minutes-left {
@@ -197,39 +194,29 @@ main {
   font-size: 2em;
   color: white;
   border: none;
-  position: fixed;
-  margin-top: 8%;
-  margin-left: 18%;
+  /* margin-top: 8%; */
+  /* margin-left: 11%; */
 }
 
-.circle {
-  position: relative;
-  fill: none;
-  stroke: none;
-  height: 28vh;
-  width: 42vw;
-  margin-top: 4%;
-  margin-left: 26%;
-}
-
-.circle-svg {
-  display: flex;
-  align-items: center;
+.circle-container {
+  width: 20em;
+  height: 19em;
+  margin-left: -12%;
 }
 
 .circle-path {
-  stroke-width: -1em;
+  fill: none;
   stroke: #9370DB;
-  cx: 50;
-  cy: 50;
-  r: 50; 
+  stroke-width: .3em;
+  cx: 10em;
+  cy: 9.5em;
+  r: 9em;
 }
 
 .log-activity {
   font-family: 'Montaga', sans-serif;
   font-size: 1em;
-  text-align: center;
   margin-top: 6%;
-  margin-left: 20%;
+  margin-left: 22%;
   padding: .5em 6em;
 }
