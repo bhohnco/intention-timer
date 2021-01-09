@@ -1,4 +1,5 @@
 var category = "";
+var activityHeader = document.querySelector('.activity-header');
 var description = document.querySelector('.description'); //accomplish entry field
 var inputMinutes = document.querySelector('.minutes');
 var inputSeconds = document.querySelector('.seconds');
@@ -19,6 +20,10 @@ var secondsLeft = document.querySelector('.seconds-left');
 var countdown = document.querySelector('.countdown');
 var completeAlert = document.querySelector('.complete');
 var logButton = document.querySelector('.log');
+var activitiesDialogue = document.querySelector('.activities-dialogue');
+var activitiesWrapper = document.querySelector('.activities-wrapper');
+var clear = document.querySelector('.clear'); //end of box 2
+var pastActivitiesButton = document.querySelector('.past-activities');m
 var minutes;
 var seconds;
 var userActivitiesList = [];
@@ -37,6 +42,7 @@ window.addEventListener('load', retrieveActivities);
 // EVENT HANDLERS
 
    //category button changes
+
 function study () {
   category = "Study";
   studyButton.classList.add('btn-category');
@@ -141,11 +147,13 @@ function showRemaining() {
 };
 
 function hideForm() {
+  activityHeader.innerText = "Current Activity";
   hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
   show([countdown, startButton]);
 };
 
 function showForm() {
+  activityHeader.innerText = "New Activity";
   show([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
   hide([countdown, startButton]);
 };
@@ -168,9 +176,25 @@ function logActivity() {
 function retrieveActivities() {
   var packedActivity = localStorage.getItem("storedActivities");
   userActivitiesList = JSON.parse(packedActivity);
+  if (userActivitiesList.length > 0) { //if we have any activities logged
+    hide([activitiesDialogue]);
+    show([activitiesWrapper]);
+    list(event);
+  };
 
   console.log(userActivitiesList);
 };
+
+function list(event) {
+  event.preventDefault();
+  for (i = 0; i < userActivitiesList.length; i++) {
+    createActBox(userActivitiesList[i]);
+  };
+};
+
+function createActBox(act) {
+  activitiesWrapper.innerHTML += <div class = "past-activities">act</div>;
+}
 
 // Our userActivities array has objects retrieved from JSON
 // upon completion of an event we
