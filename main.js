@@ -173,23 +173,25 @@ function logActivity() {
   localStorage.setItem("storedActivities", localActivity);
   hide([countdown, startButton, logButton, completeAlert, activitiesDialogue]);
   show([clearButton]);
+  retrieveActivities();
 };
 
 function retrieveActivities() {
-  var packedActivity = localStorage.getItem("storedActivities");
-  var userActivitiesList = JSON.parse(packedActivity);
-  if (userActivitiesList.length > 0) { //if we have any activities logged
-    //console.log("activities should show");
+  if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
+    console.log(userActivitiesList);
+  } else {
+    var packedActivity = localStorage.getItem("storedActivities");
+    var userActivitiesList = JSON.parse(packedActivity);
     hide([]);
     show([activitiesWrapper]);
-    list(event);
+    list();
   };
 };
 
-function list(event) {
-  event.preventDefault();
-  console.log('userActivitiesList')
+function list() {
+  console.log(userActivitiesList);
   if (userActivitiesList.length > 0) {
+    console.log('hola')
     for (i = 0; i < userActivitiesList.length; i++) {
       createActivityBox(userActivitiesList[i], i);
     };
@@ -201,8 +203,10 @@ var pastActivity; // node //object to load
 function createActivityBox(act, i) {
   if (userActivitiesList.length > 0) {   //likely won't need this conditional
     console.log('hello');
-    pastActivitiesButtons.innerHTML = "HIII";
-  //activitiesWrapper.innerHTML += "Hi"; // +`<div class="past-activities" id="act${i}">${act}</div>`;
+    activitiesWrapper.innerHTML = "<h2>wily</h2>";
+    pastActivitiesButtons.innerHTML += `<div class="past-activities" >Howdy</div>`;
+    activitiesWrapper.innerHTML += `<h2 class="past-activities" >hoot</h2>`
+    activitiesWrapper.innerHTML += `<div class="past-activities" >hoot</div>`; // +`<div class="past-activities" id="act${i}">${act}</div>`;
   // pastActivity = document.getElementById(`act${i}`);  //assign node
   // pastActivity.addEventListener('click', loadPastActivity);
   };
