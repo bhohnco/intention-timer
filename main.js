@@ -19,7 +19,7 @@ var minutesLeft = document.querySelector('.minutes-left');
 var secondsLeft = document.querySelector('.seconds-left');
 var countdown = document.querySelector('.countdown');
 var completeAlert = document.querySelector('.complete');
-var logButton = document.querySelector('.log');
+var logButton = document.querySelector('.log-button');
 var activitiesDialogue = document.querySelector('.activities-dialogue');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
 var clearButton = document.querySelector('.clear'); //end of box 2
@@ -40,7 +40,8 @@ storeActivityButton.addEventListener('click', storeActivity);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
-window.addEventListener('load', retrieveActivities);
+
+//window.addEventListener('load', retrieveActivities)
 // EVENT HANDLERS
 
    //category button changes
@@ -130,6 +131,7 @@ function updateTimer() {
 
 function beginTimer() {
   currentActivity.startTimer();
+  hide([startButton]);
 };
 
 function showRemaining() {
@@ -141,8 +143,8 @@ function showRemaining() {
   };
   updateTimer();
   if (parseInt(minutes) == 0 && parseInt(seconds) == 0) {
-    hide([startButton]);
     show([completeAlert, logButton]);
+    show([clearButton]);
     currentActivity.markComplete();
     currentActivity.stopTimer();
   };
@@ -171,12 +173,13 @@ function logActivity() {
   userActivitiesList.push(currentActivity);
   var localActivity = JSON.stringify(userActivitiesList);
   localStorage.setItem("storedActivities", localActivity);
-  hide([countdown, startButton, logButton, completeAlert, activitiesDialogue]);
+  hide([countdown, logButton, completeAlert, activitiesDialogue]);
   show([clearButton]);
   retrieveActivities();
 };
 
 function retrieveActivities() {
+  console.log(userActivitiesList);
   if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
     console.log(userActivitiesList);
   } else {
@@ -220,10 +223,11 @@ function loadPastActivity() {
 
 // Our userActivities array has objects retrieved from JSON
 // upon completion of an event we
-  //add the activity itself then store the whole array
+  //add the event to array then store the whole array
   //as the same descriptor, overwriting old array
 
-// upon load we retrieve the array
+// upon load and after every save we retrieve the array and parse
+
 
   // HIDE FUNCTIONS
 
