@@ -47,7 +47,7 @@ main {
 }
 
 .active {
-  display:block;
+  display: block;
   width: 9vw;
   height: 5vh;
   background: transparent;
@@ -63,9 +63,9 @@ main {
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:0.313em 0.625em;
-  outline:none;
-  box-shadow:none;
+  padding: 0.313em 0.625em;
+  outline: none;
+  box-shadow: none;
 }
 
 .active-button {
@@ -88,9 +88,7 @@ main {
   border-bottom-color: white;  
   border-bottom-width: thin;  
   width: 90%; 
-  padding-top: 1.5%;
-  padding-bottom: 0%;
-  padding-left: 0%;
+  padding: 1.5% 0 0 0;
   outline: none;  
   box-shadow:none;
 }
