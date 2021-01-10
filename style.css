@@ -40,9 +40,9 @@ main {
   color: white;
   height: 37.500em;
   padding: 2% 0 0 8%;
-  margin: 0 38% 0 1%;
+  margin: 0 36% 0 1%;
   top: -930px;
-  position: relative;
+  position: relative; 
 }
 
 .category {
@@ -62,7 +62,7 @@ main {
   font-size: 0.813em;
   display: none;
 }
-.description {
+.description { 
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -170,17 +170,20 @@ main {
 }
 
 /* Timer Screen */ 
-.activity-display {
-  font-family: 'Montserrat', sans-serif;
-  padding-left: 23%;
+.current-activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -15%;
 }
 
-/* Timer page */
+.activity-display {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .countdown {
   font-family: 'Arial', sans-serif;
   font-size: 9em;
-  margin-top: -5%;
-  margin-left: 12%;
 }
 
 .minutes-left {
@@ -191,23 +194,26 @@ main {
   margin-left: -.3em;
 }
 
+.circle-button-container {
+  position: relative;
+}
+
 .timer-dialogue {
   background-color: #46424D;
   font-size: 2em;
   color: white;
   border: none;
   position: absolute;
-  margin-top: 4em;
-  margin-left: 7em;
+  margin-top: 43%;
+  margin-left: 33%;
 }
 
 .circle-container {
   width: 20em;
   height: 19em;
-  margin-left: 15%;
 }
 
-.circle-path {
+.circle-characteristics {
   fill: none;
   stroke: #9370DB;
   stroke-width: .3em;
@@ -219,8 +225,7 @@ main {
 .log-activity {
   font-family: 'Montaga', sans-serif;
   font-size: 1em;
-  /* position: absolute; */
   margin-top: 2%;
-  margin-left: 17%;
-  padding: .5em 6em;
+  width: 15em;
+  height: 2.3em;
 }
