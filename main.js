@@ -15,6 +15,9 @@ var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
 var countdown = document.querySelector('.countdown');
+var categoryButtons = document.querySelector('.category');
+var input = document.querySelector('.input');
+var accomplish = document.querySelector('.accomplish');
 var activitiesList = [];
 var currentActivity;
 // for use only with timer countdown
@@ -174,4 +177,4 @@ function hide(elements) {
   };
 };
 
-hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+// hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton, categoryButtons, input, accomplish ]);

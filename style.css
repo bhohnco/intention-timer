@@ -1,7 +1,11 @@
+* {
+  /* border: 1px solid red */
+  }  
+
 body {
   background-color: #46424D;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 }
 
 .header {
@@ -44,7 +48,6 @@ main {
 .category {
   background-size: contain;
   padding-bottom: 3.125em;
-  display: none;
 }
 
 .active {
@@ -56,7 +59,6 @@ main {
 
 .accomplish{
   font-size: 0.813em;
-  display: none;
 }
 
 .description { 
@@ -81,51 +83,57 @@ main {
 }
 
 .description {  
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  color: white;
   background: transparent;  
   border: none;  
   border-bottom: 1px solid #000000;  
   border-bottom-color: white;  
   border-bottom-width: thin;  
-  padding:5px 300px;
-  outline:none;  
+  padding-top: 1.5%;
+  padding-right: 68%;
+  outline: none;  
   box-shadow:none;
 }
 
 .minutes-label {
-  display:grid;
-  padding-top: 10px;
-  margin-bottom: 55px;
+  padding-top: 3%;
   margin-right: -65px;
 }
 
 .minutes {
-  display:grid;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: white;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:25px 90px;
+  padding-top: 10%; 
+  padding-right: 18%;
   outline:none;
   box-shadow:none;
-  margin-right: 5px;
 }
 
 .seconds-label {
-  padding-top: 10px;
-  margin-bottom: 40px;
+  padding-top: 3%;
   margin-left: 90px;
   margin-right: -65px;
 }
 
 .seconds {
-  display: grid;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: white;
   background: transparent;  
   border: none;  
   border-bottom: 1px solid #000000;  
   border-bottom-color: white;  
   border-bottom-width: thin;  
-  padding:5px 90px;
+  padding-top: 10%;
+  padding-right: 18%;
   outline:none;  
   box-shadow:none;
 }
@@ -136,7 +144,7 @@ main {
   align-self: flex-end;
   justify-content: flex-start;
   margin-top: 5.000em;
-  display: none;
+  /* display: none; */
 }
 
 .activity{
@@ -165,10 +173,6 @@ main {
 
 .box2-lead {
   font-size: 24px;
-}
-
-.hidden {
-  display: none;
 }
 
 /* Timer Screen */ 
@@ -232,4 +236,8 @@ main {
   margin-top: 2%;
   width: 15em;
   height: 2.3em;
+}
+
+.hidden {
+  display: none;
 }
