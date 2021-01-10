@@ -1,9 +1,3 @@
-//var questionText = document.querySelector('.question-text');
-//var minutesLabel = document.querySelector('.minutes-label');
-// var secondsLabel = document.querySelector('.seconds-label');
-//var countdown = document.querySelector('.countdown');
-//var activityDisplay = document.querySelector('.activity-display');
-//var circleContainer = document.querySelector('.circle-button-container');
 var category = "";
 var activityHeader = document.querySelector('.activity-header');
 var tab1 = document.getElementById('tab1');  // choice Window
@@ -43,7 +37,7 @@ storeActivityButton.addEventListener('click', storeActivity);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
-window.addEventListener('load', retrieveActivities)  // @ line 187
+window.addEventListener('load', retrieveActivities)
 
 // EVENT HANDLERS
 
@@ -62,7 +56,54 @@ function exercise() {
   exerciseButton.classList.add('btn-category');
 };
 
+function storeActivity() {
+  userActivity.category = category;
+  if (validate()) {
+    hide([descriptionError, minutesError, secondsError]);
+    currentActivity = new Activity(userActivity);
+    clearForm();
+    hideForm();
+    setTimer();
+    show([tab2]);
+  };
+};
+
+function beginTimer() {
+  currentActivity.startTimer();
+  hide([startButton]);
+};
+
+function logActivity() {
+  userActivitiesList.push(currentActivity);
+  var localActivity = JSON.stringify(userActivitiesList);
+  localStorage.setItem("storedActivities", localActivity);
+  hide([tab2]);
+  show([clearButton]);
+  retrieveActivities();
+};
+
+function showForm() {
+  clearForm();
+  activityHeader.innerText = "New Activity";
+  hide([clearButton]);
+  show([tab1]);
+};
+
+function retrieveActivities() {
+  hide([tab2]);
+  console.log(userActivitiesList);
+  if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
+    console.log(userActivitiesList);
+  } else {
+    var packedActivity = localStorage.getItem("storedActivities");
+    var userActivitiesList = JSON.parse(packedActivity);
+    show([activitiesWrapper]);
+    list();
+  };
+};
+
 // HELPER FUNCTIONS
+
 function verifyNumber(node, data) {
   if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 300) {
     node.innerText = "";
@@ -102,18 +143,6 @@ function showError(data) {
   };
 };
 
-// storeActivity fired by Start Activity button
-function storeActivity() {
-  userActivity.category = category;
-  if (validate()) {
-    hide([descriptionError, minutesError, secondsError]);
-    currentActivity = new Activity(userActivity);
-    clearForm();
-    hideForm();
-    setTimer();
-    show([tab2]);
-  };
-};
 
 function setTimer() {
   minutes = currentActivity.minutes;
@@ -130,10 +159,6 @@ function updateTimer() {
   } else secondsLeft.innerHTML = seconds;
 };
 
-function beginTimer() {
-  currentActivity.startTimer();
-  hide([startButton]);
-};
 
 function showRemaining() {
   //userDescription.innerText = userActivity['description']; // show second page descriptor
@@ -152,16 +177,8 @@ function showRemaining() {
 
 function hideForm() {
   activityHeader.innerText = "Current Activity";
-  //hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
   hide([tab1]);
   show([tab2]);
-};
-
-function showForm() {
-  clearForm();
-  activityHeader.innerText = "New Activity";
-  hide([clearButton]);
-  show([tab1]);
 };
 
 function clearForm() {
@@ -171,27 +188,6 @@ function clearForm() {
   inputSeconds.value = "";
 };
 
-function logActivity() {
-  userActivitiesList.push(currentActivity);
-  var localActivity = JSON.stringify(userActivitiesList);
-  localStorage.setItem("storedActivities", localActivity);
-  hide([tab2]);
-  show([clearButton]);
-  retrieveActivities();
-};
-
-function retrieveActivities() {
-  hide([tab2]);
-  console.log(userActivitiesList);
-  if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
-    console.log(userActivitiesList);
-  } else {
-    var packedActivity = localStorage.getItem("storedActivities");
-    var userActivitiesList = JSON.parse(packedActivity);
-    show([activitiesWrapper]);
-    list();
-  };
-};
 
 function list() {
   console.log(userActivitiesList);
