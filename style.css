@@ -1,7 +1,11 @@
+* {
+border: 1px solid red
+}
+
 body {
   background-color: #46424D;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 }
 
 .header {
@@ -38,13 +42,12 @@ main {
   padding: 2% 0 5% 8%;
   margin: 0 36% 0 1%;
   top: -67em;
-  position: relative; 
+  position: relative;
 }
 
 .category {
   background-size: contain;
   padding-bottom: 3.125em;
-  display: none;
 }
 
 .active {
@@ -56,10 +59,9 @@ main {
 
 .accomplish{
   font-size: 0.813em;
-  display: none;
 }
 
-.description { 
+.description {
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -80,14 +82,14 @@ main {
   border-radius: 0.52vh;
 }
 
-.description {  
-  background: transparent;  
-  border: none;  
-  border-bottom: 1px solid #000000;  
-  border-bottom-color: white;  
-  border-bottom-width: thin;  
+.description {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-bottom-color: white;
+  border-bottom-width: thin;
   padding:5px 300px;
-  outline:none;  
+  outline:none;
   box-shadow:none;
 }
 
@@ -119,13 +121,13 @@ main {
 
 .seconds {
   display: grid;
-  background: transparent;  
-  border: none;  
-  border-bottom: 1px solid #000000;  
-  border-bottom-color: white;  
-  border-bottom-width: thin;  
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-bottom-color: white;
+  border-bottom-width: thin;
   padding:5px 90px;
-  outline:none;  
+  outline:none;
   box-shadow:none;
 }
 
@@ -135,10 +137,9 @@ main {
   align-self: flex-end;
   justify-content: flex-start;
   margin-top: 5.000em;
-  display: none;
 }
 
-.activity{
+.start-activity{
   border-radius: 4px;
   text-align: center;
   width:11vw;
@@ -150,7 +151,7 @@ main {
   margin-left: 540px;
 }
 
-/* Right side of main form *
+/* Right side of main form */
 .boxes2 {
   background-color: #2B2733;
   color: #CBC9CF;
@@ -171,21 +172,17 @@ main {
 }
 
 .past-activities {
-  width: 20vw;
+  width: inherit;
   height: 5vh;
   background-color: blue;
-  margin-left: -45vw;
 }
 
 .box2-lead {
   font-size: 24px;
 }
 
-.hidden {
-  display: none;
-}
 
-/* Timer Screen */ 
+/* Timer Screen */
 .current-activity {
   display: flex;
   flex-direction: column;
@@ -216,7 +213,7 @@ main {
   position: relative;
 }
 
-.timer-dialogue {
+.start-button {
   background-color: #46424D;
   font-size: 2em;
   color: white;
@@ -246,4 +243,9 @@ main {
   margin-top: 2%;
   width: 15em;
   height: 2.3em;
+}
+
+
+.hidden {
+  display: none;
 }

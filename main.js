@@ -1,15 +1,16 @@
 var category = "";
 var activityHeader = document.querySelector('.activity-header');
+var tab1 = document.getElementById('tab1');
 var description = document.querySelector('.description'); //accomplish entry field
 var inputMinutes = document.querySelector('.minutes');
 var inputSeconds = document.querySelector('.seconds');
 var studyButton = document.querySelector('#study');
 var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
-var storeActivityButton = document.querySelector('.activity');
+var storeActivityButton = document.querySelector('.start-activity');
 var startButton = document.querySelector('.start-button');
 var chooseActivityText = document.querySelector('.box1-lead');
-var questionText = document.querySelector('.questionText');
+var questionText = document.querySelector('.question-text');
 var minutesLabel = document.querySelector('.minutes-label');
 var secondsLabel = document.querySelector('.seconds-label');
 var descriptionError = document.querySelector('.description-error');
@@ -20,10 +21,13 @@ var secondsLeft = document.querySelector('.seconds-left');
 var countdown = document.querySelector('.countdown');
 var completeAlert = document.querySelector('.complete');
 var logButton = document.querySelector('.log-button');
-var activitiesDialogue = document.querySelector('.activities-dialogue');
+var activityDisplay = document.querySelector('.activity-display');
+var circleContainer = document.querySelector('.circle-button-container');
+var activitiesDialogue = document.querySelector('.none-logged-text');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
 var clearButton = document.querySelector('.clear'); //end of box 2
 var pastActivitiesButtons = document.querySelector('.past-activities');
+var currentActivitySection = document.querySelector('.current-activity');
 
 var minutes;
 var seconds;
@@ -41,7 +45,7 @@ startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
 
-//window.addEventListener('load', retrieveActivities)
+window.addEventListener('load', retrieveActivities)
 // EVENT HANDLERS
 
    //category button changes
@@ -110,6 +114,7 @@ function storeActivity() {
     clearForm();
     hideForm();
     setTimer();
+    show([currentActivitySection]);
   };
 };
 
@@ -151,7 +156,8 @@ function showRemaining() {
 
 function hideForm() {
   activityHeader.innerText = "Current Activity";
-  hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+  //hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+  hide([tab1]);
   show([countdown, startButton]);
 };
 
@@ -172,12 +178,13 @@ function logActivity() {
   userActivitiesList.push(currentActivity);
   var localActivity = JSON.stringify(userActivitiesList);
   localStorage.setItem("storedActivities", localActivity);
-  hide([countdown, logButton, completeAlert, activitiesDialogue]);
+  hide([countdown, logButton, completeAlert, activitiesDialogue, activityDisplay, circleContainer]);
   show([clearButton]);
   retrieveActivities();
 };
 
 function retrieveActivities() {
+  hide([currentActivitySection]);
   console.log(userActivitiesList);
   if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
     console.log(userActivitiesList);
@@ -203,7 +210,7 @@ function list() {
 var pastActivity; // node //object to load
 
 function createActivityBox(act, i) {
-  if (userActivitiesList.length > 0) {   //likely won't need this conditional
+  //if (userActivitiesList.length > 0) {   //likely won't need this conditional
     console.log('hello');
     activitiesWrapper.innerHTML = "<h2>wily</h2>";
     pastActivitiesButtons.innerHTML += `<div class="past-activities" >Howdy</div>`;
@@ -211,7 +218,7 @@ function createActivityBox(act, i) {
     activitiesWrapper.innerHTML += `<div class="past-activities" >hoot</div>`; // +`<div class="past-activities" id="act${i}">${act}</div>`;
   // pastActivity = document.getElementById(`act${i}`);  //assign node
   // pastActivity.addEventListener('click', loadPastActivity);
-  };
+  //};
 };
 
 function loadPastActivity() {
@@ -243,4 +250,4 @@ function hide(elements) {
   };
 };
 
-hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
+//hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);

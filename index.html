@@ -14,6 +14,7 @@
         <h2 class="activity-header">New Activity</h2>
     </div>
     <section class="boxes" id="box1">
+      <div class="SELECT" id="tab1">
         <h2 class="box1-lead">Select a category:</h2>
         <br>
         <div class="category">
@@ -21,16 +22,14 @@
           <button class="active-button" id="meditate"><img class="active" src="./assets/meditate.svg" alt="meditate button">Meditate</button>
           <button class="active-button" id="exercise"><img class="active" src="./assets/exercise.svg" alt="exercise button">Exercise</button>
         </div>
-        <form>
-            <div>
-                <label class="accomplish">
-                    <h1 class="questionText">What would you like to accomplish during this time?</h1>
-                    <input class="description" id="description" type="text"/>
-                    <p class="description-error" hidden src="./assets/warning.svg">A description is required!</p>
-            </div>
-            <div class="display">
-            </div>
-            <div class="input">
+         <form>
+          <div>
+            <label class="accomplish">
+            <h1 class="question-text">What would you like to accomplish during this time?</h1>
+            <input class="description" id="description" type="text"/>
+            <p class="description-error" hidden src="./assets/warning.svg">A description is required!</p>
+          </div>
+          <div class="input">
                 <label class="minutes-label" for="minutes">Minutes</label>
                 <br>
                 <input class="minutes" id="minutes" type="text"/>
@@ -40,33 +39,34 @@
                 <br>
                 <input class="seconds" id="seconds" type="text"/>
                 <p class="seconds-error" hidden src="./assets/warning.svg">Invalid number!</p>
-            </div>
-            <button class="activity" id="startActivity" type="button">START ACTIVITY</button>
+          </div>
+          <button class="start-activity" id="startActivity" type="button">START ACTIVITY</button>
         </form>
-        <section class="current-activity">
-          <h1 class="activity-display">Deep Breathing</h1> 
-          <div class="countdown">
-            <span class="minutes-left">00</span>
-            <span>:</span>
-            <span class="seconds-left">00</span>  
+      </div>
+      <section class="current-activity" id="tab2">
+        <h1 class="activity-display">Deep Breathing</h1>
+        <div class="countdown">
+          <span class="minutes-left">00</span>
+          <span>:</span>
+          <span class="seconds-left">00</span>
          </div>
          <div class="circle-button-container">
-            <button class="timer-dialogue" type="button">START</button> 
-         <svg class="circle-container">
-            <circle class="circle-characteristics"></circle>
-         </svg>
+            <button class="start-button" type="button">START</button>
+            <svg class="circle-container">
+              <circle class="circle-characteristics"></circle>
+            </svg>
          </div>
-         <button class="log-activity">LOG ACTIVITY</button> 
+         <button class="log-button">LOG ACTIVITY</button>
         </section>
-    </section>
-    <section class="boxes2" id="box2">
+     </section>
+      <section class="boxes2" id="box2">
         <h2 class="box2-lead">Past Activities</h2>
-        <p class="activities-dialogue">You haven't logged any activities yet.<br>Complete the form to the left to get started!</p>
+        <p class="none-logged-text">You haven't logged any activities yet.<br>Complete the form to the left to get started!</p>
         <section class="activities-wrapper">
           <!-- These are the User activities Array -->
           <div class="past-activities" >yooo</div>
         </section>
-        <button class="clear">CREATE A NEW ACTIVITY></button>
+        <button class="clear" hidden>CREATE A NEW ACTIVITY></button>
     </section>
 </main>
 </body>
