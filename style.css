@@ -1,6 +1,6 @@
-* {
+/* * {
 border: 1px solid red
-}
+} */
 
 body {
   background-color: #46424D;
@@ -245,6 +245,11 @@ main {
   height: 2.3em;
 }
 
+.clear-button {
+  position: absolute;
+  height: 4vh;
+  width: 30vw;
+}
 
 .hidden {
   display: none;

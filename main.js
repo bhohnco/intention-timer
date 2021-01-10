@@ -1,7 +1,14 @@
+//var questionText = document.querySelector('.question-text');
+//var minutesLabel = document.querySelector('.minutes-label');
+// var secondsLabel = document.querySelector('.seconds-label');
+//var countdown = document.querySelector('.countdown');
+//var activityDisplay = document.querySelector('.activity-display');
+//var circleContainer = document.querySelector('.circle-button-container');
 var category = "";
 var activityHeader = document.querySelector('.activity-header');
-var tab1 = document.getElementById('tab1');
-var description = document.querySelector('.description'); //accomplish entry field
+var tab1 = document.getElementById('tab1');  // choice Window
+var tab2 = document.getElementById('tab2');  //current Activity Window
+var description = document.querySelector('.description');
 var inputMinutes = document.querySelector('.minutes');
 var inputSeconds = document.querySelector('.seconds');
 var studyButton = document.querySelector('#study');
@@ -10,25 +17,17 @@ var exerciseButton = document.querySelector('#exercise');
 var storeActivityButton = document.querySelector('.start-activity');
 var startButton = document.querySelector('.start-button');
 var chooseActivityText = document.querySelector('.box1-lead');
-var questionText = document.querySelector('.question-text');
-var minutesLabel = document.querySelector('.minutes-label');
-var secondsLabel = document.querySelector('.seconds-label');
 var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
 var minutesLeft = document.querySelector('.minutes-left');
 var secondsLeft = document.querySelector('.seconds-left');
-var countdown = document.querySelector('.countdown');
-var completeAlert = document.querySelector('.complete');
-var logButton = document.querySelector('.log-button');
-var activityDisplay = document.querySelector('.activity-display');
-var circleContainer = document.querySelector('.circle-button-container');
 var activitiesDialogue = document.querySelector('.none-logged-text');
+var completeAlert = document.getElementById('complete');
+var logButton = document.querySelector('.log-button');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
-var clearButton = document.querySelector('.clear'); //end of box 2
+var clearButton = document.querySelector('.clear-button');
 var pastActivitiesButtons = document.querySelector('.past-activities');
-var currentActivitySection = document.querySelector('.current-activity');
-
 var minutes;
 var seconds;
 var userActivity = {};
@@ -44,11 +43,9 @@ storeActivityButton.addEventListener('click', storeActivity);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
+window.addEventListener('load', retrieveActivities)  // @ line 187
 
-window.addEventListener('load', retrieveActivities)
 // EVENT HANDLERS
-
-   //category button changes
 
 function study () {
   category = "Study";
@@ -78,7 +75,7 @@ function validate() {
     userActivity.description = description.value;
   } else {
     alert('No description entered!') //showError('desc');
-    return false;       // these false returns ensure that the form won't submit with click
+    return false;       //false returns ensure that the form won't submit with click
   };
   if (verifyNumber(inputMinutes, inputMinutes.value)) {
     userActivity.minutes = inputMinutes.value;
@@ -114,7 +111,7 @@ function storeActivity() {
     clearForm();
     hideForm();
     setTimer();
-    show([currentActivitySection]);
+    show([tab2]);
   };
 };
 
@@ -148,7 +145,6 @@ function showRemaining() {
   updateTimer();
   if (parseInt(minutes) == 0 && parseInt(seconds) == 0) {
     show([completeAlert, logButton]);
-    show([clearButton]);
     currentActivity.markComplete();
     currentActivity.stopTimer();
   };
@@ -158,40 +154,40 @@ function hideForm() {
   activityHeader.innerText = "Current Activity";
   //hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
   hide([tab1]);
-  show([countdown, startButton]);
+  show([tab2]);
 };
 
 function showForm() {
-    activityHeader.innerText = "New Activity";
-  show([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
-  hide([countdown, startButton]);
+  clearForm();
+  activityHeader.innerText = "New Activity";
+  hide([clearButton]);
+  show([tab1]);
 };
 
 function clearForm() {
   category = "";
-  description.innerText = "";
-  inputMinutes.innerText = "";
-  inputSeconds.innerText = "";
+  description.value = "";
+  inputMinutes.value = "";
+  inputSeconds.value = "";
 };
 
 function logActivity() {
   userActivitiesList.push(currentActivity);
   var localActivity = JSON.stringify(userActivitiesList);
   localStorage.setItem("storedActivities", localActivity);
-  hide([countdown, logButton, completeAlert, activitiesDialogue, activityDisplay, circleContainer]);
+  hide([tab2]);
   show([clearButton]);
   retrieveActivities();
 };
 
 function retrieveActivities() {
-  hide([currentActivitySection]);
+  hide([tab2]);
   console.log(userActivitiesList);
   if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
     console.log(userActivitiesList);
   } else {
     var packedActivity = localStorage.getItem("storedActivities");
     var userActivitiesList = JSON.parse(packedActivity);
-    hide([]);
     show([activitiesWrapper]);
     list();
   };

@@ -14,7 +14,7 @@
         <h2 class="activity-header">New Activity</h2>
     </div>
     <section class="boxes" id="box1">
-      <div class="SELECT" id="tab1">
+      <div class="SELECTION AREA" id="tab1">
         <h2 class="box1-lead">Select a category:</h2>
         <br>
         <div class="category">
@@ -32,7 +32,7 @@
           <div class="input">
                 <label class="minutes-label" for="minutes">Minutes</label>
                 <br>
-                <input class="minutes" id="minutes" type="text"/>
+                <input class="minutes" id="minutes" type="text"></input>
                 <p class="minutes-error" hidden src="./assets/warning.svg">Invalid number!</p>
                 <br>
                 <label class="seconds-label" for="seconds">Seconds</label>
@@ -52,21 +52,22 @@
          </div>
          <div class="circle-button-container">
             <button class="start-button" type="button">START</button>
+            <p class="start-button hidden" id="complete">COMPLETE</p>
             <svg class="circle-container">
               <circle class="circle-characteristics"></circle>
             </svg>
          </div>
          <button class="log-button">LOG ACTIVITY</button>
-        </section>
-     </section>
+       </section>
+       <button class="clear-button hidden">CREATE A NEW ACTIVITY></button>
+    </section>
       <section class="boxes2" id="box2">
         <h2 class="box2-lead">Past Activities</h2>
         <p class="none-logged-text">You haven't logged any activities yet.<br>Complete the form to the left to get started!</p>
         <section class="activities-wrapper">
           <!-- These are the User activities Array -->
-          <div class="past-activities" >yooo</div>
+          <div class="past-activities" >Past Activity Box</div>
         </section>
-        <button class="clear" hidden>CREATE A NEW ACTIVITY></button>
     </section>
 </main>
 </body>
