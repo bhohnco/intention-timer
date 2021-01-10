@@ -1,11 +1,6 @@
-* {
-  border: 1px solid red;
-}
 
 body {
   background-color: #46424D;
-  /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
 }
 
 .header {
@@ -57,16 +52,6 @@ main {
   padding-bottom: 3.125em;
 }
 
-/*.active {*/
-/*  display: block;*/
-/*  width: 3.5vw;*/
-/*  height: 2.5vh;*/
-/*  margin-left: 30%;*/
-/*  color:#CBC9CF;*/
-/*  background: transparent;*/
-/*  padding-bottom: 10px;*/
-/*}*/
-
 .active-button {
   background-color: #46424D;
   border-color: white;
@@ -77,9 +62,10 @@ main {
   border-radius: 0.52vh;
   height: 70px;
   width: 180px;
+  outline:none;
 }
 
-.active-color, .active {
+.active-study, .active-meditate, .active-exercise{
   display: block;
   width: 3.5vw;
   height: 2.5vh;
@@ -87,42 +73,53 @@ main {
   background: transparent;
   padding-bottom: 10px;
 }
-.active-color{
-  display:none;
-  color:#CBC9CF;
+.active-color-study, .active-color-meditate, .active-color-exercise{
+  display: block;
+  width: 3.5vw;
+  height: 2.5vh;
+  margin-left: 30%;
+  background: transparent;
+  padding-bottom: 10px;
 }
-.active{
-  display:block;
-}
-
 
 .studycolor {
   border-color: #B3FD78;
   color:#B3FD78;
+
 }
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
+
 }
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
 }
 
-.questionText{
+.questionText {
   font-size: 21px;
   margin-bottom: 20px;
 }
+
 .description {
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1.5em;
+  color: white;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:8px 305px;
-  outline:none;
+  width: 90%;
+  padding: 1.5% 0 0 0;
+  outline: none;
   box-shadow:none;
-  margin-bottom: ;
+}
+
+.warning {
+  width: 3.5vw;
+  height: 2.5vh;
 }
 
 .description-error {
@@ -134,19 +131,23 @@ main {
   margin-right: -85px;
   font-size: 21px;
 }
+
 .minutes {
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1em;
+  color: white;
+  width: 38%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:25px 85px;
+  padding-top: 10%;
   outline:none;
   box-shadow:none;
-  margin-right: 5px;
 }
 
-.minutes-error{
+.minutes-error {
   visibility: hidden;
 }
 
@@ -158,14 +159,18 @@ main {
 }
 
 .seconds {
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1em;
+  color: white;
+  width: 40%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:5px 85px;
-  outline:none;
-  box-shadow:none;
+  padding-top: 10%;
+  outline: none;
+  box-shadow: none;
 }
 
 .seconds-error {
@@ -179,7 +184,8 @@ main {
   justify-content: flex-start;
   margin-top: 5.000em;
 }
-.activity{
+
+.activity {
   border-radius: 6px;
   text-align: center;
   width:11vw;
@@ -202,9 +208,11 @@ main {
   left: 64.05%;
   position: absolute;
 }
+
 .box2-lead {
   font-size: 24px;
 }
+
 .logged-form {
   text-align: center;
   font-size: 18px;

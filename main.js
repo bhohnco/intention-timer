@@ -7,6 +7,12 @@ var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
 var storeActivityButton = document.querySelector('.activity');
 var timerDialogue = document.querySelector('.timer-dialogue');
+var inActiveChoice1 = document.querySelector('.active-study')
+var activeChoice1 = document.querySelector('.active-color-study')
+var inActiveChoice2 = document.querySelector('.active-meditate')
+var activeChoice2 = document.querySelector('.active-color-meditate')
+var inActiveChoice3 = document.querySelector('.active-exercise')
+var activeChoice3 = document.querySelector('.active-color-exercise')
 var activitiesList = [];
 var currentActivity;
 // for use only with timer countdown
@@ -17,37 +23,47 @@ var secondsLeft = document.querySelector('.seconds-left');
 
 // EVENT LISTENERS
 
-studyButton.addEventListener('click', study);
+// studyButton.addEventListener('click', study);
+studyButton.addEventListener('click', function(event){
+  event.preventDefault();
+  study()});
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
 timerDialogue.addEventListener('click', beginTimer);
-// studyButton.addEventListener('click', changeButtonColors);
 
-// function changeButtonColors(){
-//   console.log("hello");
-//   studyButton.classList.add('studycolor');
+
 
 // EVENT HANDLERS
 
    //category button changes
 function study () {
+  // event.preventDefault()
   category = "Study";
   studyButton.classList.add('btn-category');
   studyButton.classList.add('studycolor');
+  inActiveChoice1.classList.add('hidden');
+  activeChoice1.classList.remove('hidden');
+
 };
 
 function meditate() {
   category = "Meditate";
   meditateButton.classList.add('btn-category');
   meditateButton.classList.add('meditatecolor');
+  inActiveChoice2.classList.add('hidden');
+  activeChoice2.classList.remove('hidden');
 };
 
 function exercise() {
   category = "Exercise";
   exerciseButton.classList.add('btn-category');
   exerciseButton.classList.add('exercisecolor');
+  inActiveChoice3.classList.add('hidden');
+  activeChoice3.classList.remove('hidden');
 };
+
+
 
 // HELPER FUNCTIONS
 
