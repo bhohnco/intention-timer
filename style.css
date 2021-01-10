@@ -1,11 +1,7 @@
-
-* {
-  /* border: 1px solid red; */
-}
 body {
   background-color: #46424D;
-  /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .header {
@@ -28,10 +24,10 @@ main {
   color: #CBC9CF;
   height: 62.500em;
   width: 63%;
+  padding-bottom: 10%;
   padding-left: 2%;
   margin-left: -1%;
   position: relative;
-  margin-bottom: -10px;
 }
 
 .boxes {
@@ -39,9 +35,9 @@ main {
   font-family: 'Montserrat', sans-serif;
   color: white;
   height: 37.500em;
-  padding: 2% 0 0 8%;
+  padding: 2% 0 5% 8%;
   margin: 0 36% 0 1%;
-  top: -930px;
+  top: -67em;
   position: relative; 
 }
 
@@ -62,6 +58,7 @@ main {
   font-size: 0.813em;
   display: none;
 }
+
 .description { 
   background: transparent;
   border: none;
@@ -100,6 +97,7 @@ main {
   margin-bottom: 55px;
   margin-right: -65px;
 }
+
 .minutes {
   display:grid;
   background: transparent;
@@ -111,14 +109,15 @@ main {
   outline:none;
   box-shadow:none;
   margin-right: 5px;
-
 }
+
 .seconds-label {
   padding-top: 10px;
   margin-bottom: 40px;
   margin-left: 90px;
   margin-right: -65px;
 }
+
 .seconds {
   display: grid;
   background: transparent;  
@@ -130,6 +129,7 @@ main {
   outline:none;  
   box-shadow:none;
 }
+
 .input {
   display: flex;
   flex-direction: row;
@@ -138,6 +138,7 @@ main {
   margin-top: 5.000em;
   display: none;
 }
+
 .activity{
   border-radius: 4px;
   text-align: center;
@@ -155,12 +156,13 @@ main {
   background-color: #2B2733;
   color: #CBC9CF;
   font-family: 'Montserrat', sans-serif;
-  height: 1000px;
-  width: 900px;
+  height: 78.4em;
+  width: 54.5em;
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
 }
+
 .box2-lead {
   font-size: 24px;
 }
@@ -179,6 +181,8 @@ main {
 
 .activity-display {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.7em;
+  margin-bottom: -1%;
 }
 
 .countdown {
