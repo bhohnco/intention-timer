@@ -173,3 +173,5 @@ function hide(elements) {
     elements[i].classList.add('hidden');
   };
 };
+
+hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);

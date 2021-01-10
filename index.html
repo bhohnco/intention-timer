@@ -11,7 +11,7 @@
 </header>
 <main>
     <div class ="header1">
-        <h2>New Activity</h2>
+        <h2>Current Activity</h2>
     </div>
     <section class="boxes" id="box1">
         <h2 class="box1-lead">Select a category:</h2>
@@ -41,10 +41,23 @@
                 <input class="seconds" id="seconds" type="text"/>
                 <p class="seconds-error" hidden src="./assets/warning.svg">Invalid number!</p>
             </div>
-            <button class="activity" id="start-activity" type="button">START ACTIVITY</button>
+            <button class="activity" id="startActivity" type="button">START ACTIVITY</button>
         </form>
-        <div class="countdown"><span class="minutes-left">0</span><span>:</span><span class="seconds-left">00</span></div>
-        <button class="timer-dialogue" type="button">START</button>
+        <section class="current-activity">
+          <h1 class="activity-display">Deep Breathing</h1> 
+          <div class="countdown">
+            <span class="minutes-left">00</span>
+            <span>:</span>
+            <span class="seconds-left">00</span>  
+         </div>
+         <div class="circle-button-container">
+            <button class="timer-dialogue" type="button">START</button> 
+         <svg class="circle-container">
+            <circle class="circle-characteristics"></circle>
+         </svg>
+         </div>
+         <button class="log-activity">LOG ACTIVITY</button> 
+        </section>
     </section>
     <section class="boxes2" id="box2">
         <h2 class="box2-lead">Past Activities</h2>
