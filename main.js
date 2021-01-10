@@ -62,7 +62,6 @@ function exercise() {
 };
 
 // HELPER FUNCTIONS
-
 function verifyNumber(node, data) {
   if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 300) {
     node.innerText = "";
@@ -243,3 +242,5 @@ function hide(elements) {
     elements[i].classList.add('hidden');
   };
 };
+
+hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
