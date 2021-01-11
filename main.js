@@ -14,6 +14,8 @@ var chooseActivityText = document.querySelector('.box1-lead');
 var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
+// tab2
+var userDescription = document.querySelector('.description-display')
 var minutesLeft = document.querySelector('.minutes-left');
 var secondsLeft = document.querySelector('.seconds-left');
 var activitiesDialogue = document.querySelector('.none-logged-text');
@@ -61,6 +63,7 @@ function storeActivity() {
   if (validate()) {
     hide([descriptionError, minutesError, secondsError]);
     currentActivity = new Activity(userActivity);
+    userDescription.innerText = currentActivity["description"];
     clearForm();
     hideForm();
     setTimer();
@@ -79,27 +82,23 @@ function logActivity() {
   localStorage.setItem("storedActivities", localActivity);
   hide([tab2, activitiesDialogue]);
   show([clearButton]);
-  console.log(userActivitiesList);
-  retrieveActivities(userActivitiesList);
+  retrieveActivities();
 };
 
 function showForm() {
-
   clearForm();
   activityHeader.innerText = "New Activity";
   hide([clearButton, completeAlert]);
   show([tab1, startButton]);
 };
 
-function retrieveActivities(userActivitiesList) {
+function retrieveActivities() {
   hide([tab2]);
-  if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
-    console.log(userActivitiesList);
+  if (!userActivitiesList || !userActivitiesList.length) {
   } else {
     var packedActivity = localStorage.getItem("storedActivities");
     userActivitiesList = JSON.parse(packedActivity);
     show([activitiesWrapper]);
-    console.log(userActivitiesList);
     list();
   };
 };
@@ -157,13 +156,12 @@ function updateTimer() {
     minutesLeft.innerHTML = "0" + minutes;
   } else minutesLeft.innerHTML = minutes;
   if (seconds < 10) {
-    secondsLeft.innerHTML = "0" + seconds; // keeps seconds inline
+    secondsLeft.innerHTML = "0" + seconds;
   } else secondsLeft.innerHTML = seconds;
 };
 
 
 function showRemaining() {
-  //userDescription.innerText = userActivity['description']; // show second page descriptor
   seconds--;
   if (seconds === -1) {
     minutes--;
@@ -179,6 +177,7 @@ function showRemaining() {
 
 function hideForm() {
   activityHeader.innerText = "Current Activity";
+
   hide([tab1]);
   show([tab2]);
 };
@@ -192,7 +191,6 @@ function clearForm() {
 
 
 function list() {
-  console.log(userActivitiesList);
   if (userActivitiesList.length > 0) {
     for (i = 0; i < userActivitiesList.length; i++) {
       createActivityBox(userActivitiesList[i], i);
@@ -223,7 +221,7 @@ function loadPastActivity() {
 // Our userActivities array has objects retrieved from JSON
 // upon completion of an event we
   //add the event to array then store the whole array
-  //as the same descriptor, overwriting old array
+  //as the same descriptor(and different id), overwriting old array
 
 // upon load and after every save we retrieve the array and parse
 
@@ -242,5 +240,3 @@ function hide(elements) {
     elements[i].classList.add('hidden');
   };
 };
-
-//hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
