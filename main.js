@@ -37,7 +37,7 @@ storeActivityButton.addEventListener('click', storeActivity);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
-window.addEventListener('load', retrieveActivities)
+window.addEventListener('load', retrieveActivities);
 
 // EVENT HANDLERS
 
@@ -77,27 +77,29 @@ function logActivity() {
   userActivitiesList.push(currentActivity);
   var localActivity = JSON.stringify(userActivitiesList);
   localStorage.setItem("storedActivities", localActivity);
-  hide([tab2]);
+  hide([tab2, activitiesDialogue]);
   show([clearButton]);
-  retrieveActivities();
+  console.log(userActivitiesList);
+  retrieveActivities(userActivitiesList);
 };
 
 function showForm() {
+
   clearForm();
   activityHeader.innerText = "New Activity";
-  hide([clearButton]);
-  show([tab1]);
+  hide([clearButton, completeAlert]);
+  show([tab1, startButton]);
 };
 
-function retrieveActivities() {
+function retrieveActivities(userActivitiesList) {
   hide([tab2]);
-  console.log(userActivitiesList);
   if (!userActivitiesList || !userActivitiesList.length) { //if we have no activities logged
     console.log(userActivitiesList);
   } else {
     var packedActivity = localStorage.getItem("storedActivities");
-    var userActivitiesList = JSON.parse(packedActivity);
+    userActivitiesList = JSON.parse(packedActivity);
     show([activitiesWrapper]);
+    console.log(userActivitiesList);
     list();
   };
 };
@@ -137,7 +139,7 @@ function showError(data) {
   if (data = 'desc') {
     show(descriptionError);
   } else if (data = 'min') {
-    show(minutesError);    //document minute error message
+    show(minutesError);
   } else if (data = 'sec') {
     show(secondsError)
   };
@@ -192,7 +194,6 @@ function clearForm() {
 function list() {
   console.log(userActivitiesList);
   if (userActivitiesList.length > 0) {
-    console.log('hola')
     for (i = 0; i < userActivitiesList.length; i++) {
       createActivityBox(userActivitiesList[i], i);
     };

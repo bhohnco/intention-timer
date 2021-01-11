@@ -221,6 +221,11 @@ main {
   position: absolute;
   margin-top: 43%;
   margin-left: 33%;
+  outline: none;
+}
+
+#complete {
+  margin-left: 22%;
 }
 
 .circle-container {
@@ -237,7 +242,7 @@ main {
   r: 9em;
 }
 
-.log-activity {
+.log-button {
   font-family: 'Montaga', sans-serif;
   font-size: 1em;
   margin-top: 2%;
@@ -246,9 +251,10 @@ main {
 }
 
 .clear-button {
-  position: absolute;
-  height: 4vh;
-  width: 30vw;
+  height: 5vh;
+  width: 28vw;
+  margin-left: 10vw;
+  margin-top: 10vh;
 }
 
 .hidden {
