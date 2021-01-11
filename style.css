@@ -208,9 +208,9 @@ main {
   position: absolute;
 }
 
-.box2-lead {
+/* .box2-lead {
   font-size: 24px;
-}
+} */
 
 .logged-form {
   text-align: center;
@@ -218,24 +218,42 @@ main {
   padding-top: 25px;
 }
 
-.activities-wrapper{
+/* .activities-wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 77vh;
   width: 28vw
-}
-
-.past-activities {
-  width: inherit;
-  height: 5vh;
-  background-color: blue;
-}
+} */
 
 .box2-lead {
   font-size: 24px;
 }
 
+.activities-wrapper {
+  background-color: #46424D;
+  width: 89%;
+  height: 8%;
+  padding-bottom: 4%;
+  padding-left: 3%;
+  
+}
+
+.minutes {
+  border-bottom: none;
+}
+
+.seconds {
+  border-bottom: none;
+}
+
+.category-color {
+  border-left: 6px solid #9370DB; 
+  height: 2em; 
+  position:absolute; 
+  top: 12%; 
+  left: 89%;
+}
 /* Timer Screen */
 
 .current-activity {
