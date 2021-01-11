@@ -45,16 +45,48 @@ main {
   position: relative;
 }
 
-.category {
-  background-size: contain;
-  padding-bottom: 3.125em;
+
+
+.active-button-study, .active-button-meditate, .active-button-exercise {
+  background-color: #46424D;
+  border-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.10em;
+  color: white;
+  margin-right: 10.4%;
+  border-radius: 0.52vh;
+  height: 70px;
+  width: 180px;
+  outline:none;
+}
+.active-study, .active-meditate, .active-exercise{
+  display: block;
+  width: 3.5vw;
+  height: 2.5vh;
+  margin-left: 30%;
+  background: transparent;
+  padding-bottom: 10px;
+}
+.active-color-study, .active-color-meditate, .active-color-exercise{
+  display: block;
+  width: 3.5vw;
+  height: 2.5vh;
+  margin-left: 30%;
+  background: transparent;
+  padding-bottom: 10px;
 }
 
-.active {
-  display:block;
-  width: 9vw;
-  height: 5vh;
-  background: transparent;
+.studycolor {
+  border-color: #B3FD78;
+  color:#B3FD78;
+}
+.meditatecolor {
+  border-color: #C278FD;
+  color:#C278FD;
+}
+.exercisecolor {
+  border-color:#FD8078;
+  color:#FD8078;
 }
 
 .accomplish{
@@ -62,13 +94,17 @@ main {
 }
 
 .description {
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1.5em;
+  color: white;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:0.313em 0.625em;
-  outline:none;
+  width: 90%;
+  padding: 1.5% 0 0 0;
+  outline: none;
   box-shadow:none;
 }
 
@@ -101,15 +137,18 @@ main {
 }
 
 .minutes {
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1em;
+  color: white;
+  width: 38%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:25px 90px;
-  outline:none;
-  box-shadow:none;
-  margin-right: 5px;
+  padding-top: 10%;
+  outline: none;
+  box-shadow: none;
 }
 
 .seconds-label {
@@ -120,15 +159,18 @@ main {
 }
 
 .seconds {
-  display: grid;
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1em;
+  color: white;
+  width: 40%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:5px 90px;
-  outline:none;
-  box-shadow:none;
+  padding-top: 10%;
+  outline: none;
+  box-shadow: none;
 }
 
 .input {
@@ -196,6 +238,10 @@ main {
   margin-bottom: -1%;
 }
 
+.description-display {
+  font-size: 3em;
+  font-weight: 500;
+}
 .countdown {
   font-family: 'Arial', sans-serif;
   font-size: 9em;

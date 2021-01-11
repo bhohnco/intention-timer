@@ -1,7 +1,8 @@
 var category = "";
 var activityHeader = document.querySelector('.activity-header');
-var tab1 = document.getElementById('tab1');  // choice Window
-var tab2 = document.getElementById('tab2');  //current Activity Window
+
+// tab1 - Choice Window
+var tab1 = document.getElementById('tab1');
 var description = document.querySelector('.description');
 var inputMinutes = document.querySelector('.minutes');
 var inputSeconds = document.querySelector('.seconds');
@@ -14,7 +15,14 @@ var chooseActivityText = document.querySelector('.box1-lead');
 var descriptionError = document.querySelector('.description-error');
 var minutesError = document.querySelector('.minutes-error');
 var secondsError = document.querySelector('.seconds-error');
-// tab2
+var inActiveStudy = document.querySelector('.active-study');
+var activeStudy = document.querySelector('.active-color-study');
+var inActiveMeditate = document.querySelector('.active-meditate');
+var activeMeditate = document.querySelector('.active-color-meditate');
+var inActiveExercise = document.querySelector('.active-exercise');
+var activeExercise = document.querySelector('.active-color-exercise');
+// tab2 - Current Activity Window
+var tab2 = document.getElementById('tab2');
 var userDescription = document.querySelector('.description-display')
 var minutesLeft = document.querySelector('.minutes-left');
 var secondsLeft = document.querySelector('.seconds-left');
@@ -24,8 +32,8 @@ var logButton = document.querySelector('.log-button');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
 var clearButton = document.querySelector('.clear-button');
 var pastActivitiesButtons = document.querySelector('.past-activities');
-var minutes;
-var seconds;
+var minutes = 0;
+var seconds = 0;
 var currentActivity;
 var userActivity = {};
 var userActivitiesList = [];
@@ -45,22 +53,26 @@ window.addEventListener('load', retrieveActivities);
 
 function study () {
   category = "Study";
-  studyButton.classList.add('btn-category');
+  studyButton.classList.add('studycolor');
+  inActiveStudy.classList.add('hidden');
+  activeStudy.classList.remove('hidden');
 };
-
 function meditate() {
   category = "Meditate";
-  meditateButton.classList.add('btn-category');
+  meditateButton.classList.add('meditatecolor');
+  hide([inActiveMeditate]);
+  show([activeMeditate]);
 };
-
 function exercise() {
   category = "Exercise";
-  exerciseButton.classList.add('btn-category');
+  exerciseButton.classList.add('exercisecolor');
+  inActiveExercise.classList.add('hidden');
+  activeExercise.classList.remove('hidden');
 };
 
 function storeActivity() {
   userActivity.category = category;
-  if (validate()) {
+    if (validate()) {
     hide([descriptionError, minutesError, secondsError]);
     currentActivity = new Activity(userActivity);
     userDescription.innerText = currentActivity["description"];
@@ -68,7 +80,7 @@ function storeActivity() {
     hideForm();
     setTimer();
     show([tab2]);
-  };
+    };
 };
 
 function beginTimer() {
@@ -92,8 +104,19 @@ function showForm() {
   show([tab1, startButton]);
 };
 
+function hideForm() {
+  activityHeader.innerText = "Current Activity";
+  hide([tab1]);
+  show([tab2]);
+};
+
+function clearForm() {
+  category = "";
+  description.value = "";
+  inputMinutes.value = "";
+  inputSeconds.value = "";
+};
 function retrieveActivities() {
-  hide([tab2]);
   if (!userActivitiesList || !userActivitiesList.length) {
   } else {
     var packedActivity = localStorage.getItem("storedActivities");
@@ -146,7 +169,7 @@ function showError(data) {
 
 
 function setTimer() {
-  minutes = currentActivity.minutes;
+    minutes = currentActivity.minutes;
   seconds = currentActivity.seconds;
   updateTimer();
 };
@@ -175,18 +198,6 @@ function showRemaining() {
   };
 };
 
-function hideForm() {
-  activityHeader.innerText = "Current Activity";
-  hide([tab1]);
-  show([tab2]);
-};
-
-function clearForm() {
-  category = "";
-  description.value = "";
-  inputMinutes.value = "";
-  inputSeconds.value = "";
-};
 
 
 function list() {
@@ -201,9 +212,8 @@ var pastActivity; // node //object to load
 
 function createActivityBox(act, i) {
     console.log(act);
-    activitiesWrapper.innerHTML += 
     var objCategory = act.category
-    activitiesWrapper.innerHTML += `<div class="past-activities" id="act${i}">${act}</div>`;
+    activitiesWrapper.innerHTML += `<div class="past-activities" id="act${i}">${act.category}</div>`;
     //pastActivitiesButtons.innerHTML += `<div class="past-activities" >Howdy</div>`;
 
 
