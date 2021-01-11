@@ -1,6 +1,7 @@
-/* * {
+/* {
 border: 1px solid red
 } */
+
 
 body {
   background-color: #46424D;
@@ -12,7 +13,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #CBC9CF;
   text-align: center;
-  font-size: 0.688em;
+  font-size: 0.758em;
+  padding-top: .0015em;
+  padding-bottom: .2em;
+
 }
 
 main {
@@ -32,6 +36,11 @@ main {
   padding-left: 2%;
   margin-left: -1%;
   position: relative;
+  margin-bottom: -10px;
+}
+
+.box1-lead {
+  font-size:21px;
 }
 
 .boxes {
@@ -45,8 +54,6 @@ main {
   position: relative;
 }
 
-
-
 .active-button-study, .active-button-meditate, .active-button-exercise {
   background-color: #46424D;
   border-color: white;
@@ -59,6 +66,7 @@ main {
   width: 180px;
   outline:none;
 }
+
 .active-study, .active-meditate, .active-exercise{
   display: block;
   width: 3.5vw;
@@ -67,6 +75,7 @@ main {
   background: transparent;
   padding-bottom: 10px;
 }
+
 .active-color-study, .active-color-meditate, .active-color-exercise{
   display: block;
   width: 3.5vw;
@@ -108,14 +117,9 @@ main {
   box-shadow:none;
 }
 
-.active-button {
-  background-color: #46424D;
-  border-color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.938em;
-  color: white;
-  margin-right: 8.4%;
-  border-radius: 0.52vh;
+.warning {
+  width: 3.5vw;
+  height: 2.5vh;
 }
 
 .description {
@@ -130,10 +134,9 @@ main {
 }
 
 .minutes-label {
-  display:grid;
-  padding-top: 10px;
   margin-bottom: 55px;
-  margin-right: -65px;
+  margin-right: -85px;
+  font-size: 21px;
 }
 
 .minutes {
@@ -152,10 +155,10 @@ main {
 }
 
 .seconds-label {
-  padding-top: 10px;
   margin-bottom: 40px;
-  margin-left: 90px;
-  margin-right: -65px;
+  margin-left: 115px;
+  margin-right: -90px;
+  font-size: 21px;
 }
 
 .seconds {
@@ -181,12 +184,12 @@ main {
   margin-top: 5.000em;
 }
 
-.start-activity{
+.start-activity {
   border-radius: 4px;
   text-align: center;
   width:11vw;
-  height: 2vw;
-  font-size: 16px;
+  height: 2.5vw;
+  font-size: 18px;
   margin-bottom: 8vh;
   padding: 0;
   margin-top: 65px;
@@ -203,6 +206,16 @@ main {
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
+}
+
+.box2-lead {
+  font-size: 24px;
+}
+
+.logged-form {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 25px;
 }
 
 .activities-wrapper{
@@ -223,8 +236,8 @@ main {
   font-size: 24px;
 }
 
-
 /* Timer Screen */
+
 .current-activity {
   display: flex;
   flex-direction: column;

@@ -44,24 +44,29 @@ studyButton.addEventListener('click', study);
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
+timerDialogue.addEventListener('click', beginTimer);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
 window.addEventListener('load', retrieveActivities);
 
+
 // EVENT HANDLERS
 
 function study () {
+  // event.preventDefault()
   category = "Study";
   studyButton.classList.add('studycolor');
   inActiveStudy.classList.add('hidden');
   activeStudy.classList.remove('hidden');
+
 };
 function meditate() {
   category = "Meditate";
   meditateButton.classList.add('meditatecolor');
   hide([inActiveMeditate]);
   show([activeMeditate]);
+
 };
 function exercise() {
   category = "Exercise";
@@ -167,7 +172,6 @@ function showError(data) {
   };
 };
 
-
 function setTimer() {
     minutes = currentActivity.minutes;
   seconds = currentActivity.seconds;
@@ -175,9 +179,11 @@ function setTimer() {
 };
 
 function updateTimer() {
+  minutesLeft.innerHTML = minutes;
   if (minutes < 10) {
     minutesLeft.innerHTML = "0" + minutes;
   } else minutesLeft.innerHTML = minutes;
+
   if (seconds < 10) {
     secondsLeft.innerHTML = "0" + seconds;
   } else secondsLeft.innerHTML = seconds;
@@ -190,15 +196,20 @@ function showRemaining() {
     minutes--;
     seconds = 59;
   };
+  if (minutes == 0 && seconds == 0) {
+    updateTimer(); //clearInterval(timer);
+    timerDialogue.innerText = "Complete"
+    currentActivity.markComplete;
+    return;
   updateTimer();
   if (parseInt(minutes) == 0 && parseInt(seconds) == 0) {
     show([completeAlert, logButton]);
     currentActivity.markComplete();
     currentActivity.stopTimer();
   };
+  seconds--;
+  updateTimer();
 };
-
-
 
 function list() {
   if (userActivitiesList.length > 0) {
