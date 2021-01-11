@@ -89,15 +89,27 @@ main {
 .studycolor {
   border-color: #B3FD78;
   color:#B3FD78;
-
 }
+
+.green {
+  color:#B3FD78;
+}
+
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
 }
 
+.purple {
+  color:#C278FD;
+}
+
 .exercisecolor {
   border-color:#FD8078;
+  color:#FD8078;
+}
+
+.orange {
   color:#FD8078;
 }
 
