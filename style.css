@@ -1,8 +1,12 @@
+/* {
+border: 1px solid red
+} */
+
 
 body {
   background-color: #46424D;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 }
 
 .header {
@@ -43,20 +47,14 @@ main {
   background-color: #46424D;
   font-family: 'Montserrat', sans-serif;
   color: white;
-  height: 40.500em;
-  padding: 2% 0 0 8%;
-  margin: 0 38% 0 1%;
-  top: -930px;
+  height: 37.500em;
+  padding: 2% 0 5% 8%;
+  margin: 0 36% 0 1%;
+  top: -67em;
   position: relative;
-  border-radius: 4px;
 }
 
-.category {
-  background-size: contain;
-  padding-bottom: 3.125em;
-}
-
-.active-button {
+.active-button-study, .active-button-meditate, .active-button-exercise {
   background-color: #46424D;
   border-color: white;
   font-family: 'Montserrat', sans-serif;
@@ -77,6 +75,7 @@ main {
   background: transparent;
   padding-bottom: 10px;
 }
+
 .active-color-study, .active-color-meditate, .active-color-exercise{
   display: block;
   width: 3.5vw;
@@ -89,21 +88,18 @@ main {
 .studycolor {
   border-color: #B3FD78;
   color:#B3FD78;
-
 }
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
 }
-
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
 }
 
-.questionText {
-  font-size: 21px;
-  margin-bottom: 20px;
+.accomplish{
+  font-size: 0.813em;
 }
 
 .description {
@@ -126,8 +122,15 @@ main {
   height: 2.5vh;
 }
 
-.description-error {
-  visibility: hidden;
+.description {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-bottom-color: white;
+  border-bottom-width: thin;
+  padding:5px 300px;
+  outline:none;
+  box-shadow:none;
 }
 
 .minutes-label {
@@ -147,12 +150,8 @@ main {
   border-bottom-color: white;
   border-bottom-width: thin;
   padding-top: 10%;
-  outline:none;
-  box-shadow:none;
-}
-
-.minutes-error {
-  visibility: hidden;
+  outline: none;
+  box-shadow: none;
 }
 
 .seconds-label {
@@ -177,10 +176,6 @@ main {
   box-shadow: none;
 }
 
-.seconds-error {
-  visibility: hidden;
-}
-
 .input {
   display: flex;
   flex-direction: row;
@@ -189,8 +184,8 @@ main {
   margin-top: 5.000em;
 }
 
-.activity {
-  border-radius: 6px;
+.start-activity {
+  border-radius: 4px;
   text-align: center;
   width:11vw;
   height: 2.5vw;
@@ -232,13 +227,17 @@ main {
 }
 
 .past-activities {
-  width: 20vw;
+  width: inherit;
   height: 5vh;
   background-color: blue;
-  margin-left: -45vw;
 }
 
-/* Timer Screen */ 
+.box2-lead {
+  font-size: 24px;
+}
+
+/* Timer Screen */
+
 .current-activity {
   display: flex;
   flex-direction: column;
@@ -252,6 +251,10 @@ main {
   margin-bottom: -1%;
 }
 
+.description-display {
+  font-size: 3em;
+  font-weight: 500;
+}
 .countdown {
   font-family: 'Arial', sans-serif;
   font-size: 9em;
@@ -269,7 +272,7 @@ main {
   position: relative;
 }
 
-.timer-dialogue {
+.start-button {
   background-color: #46424D;
   font-size: 2em;
   color: white;
@@ -277,6 +280,11 @@ main {
   position: absolute;
   margin-top: 43%;
   margin-left: 33%;
+  outline: none;
+}
+
+#complete {
+  margin-left: 22%;
 }
 
 .circle-container {
@@ -293,12 +301,19 @@ main {
   r: 9em;
 }
 
-.log-activity {
+.log-button {
   font-family: 'Montaga', sans-serif;
   font-size: 1em;
   margin-top: 2%;
   width: 15em;
   height: 2.3em;
+}
+
+.clear-button {
+  height: 5vh;
+  width: 28vw;
+  margin-left: 10vw;
+  margin-top: 10vh;
 }
 
 .hidden {
