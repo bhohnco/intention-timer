@@ -32,8 +32,8 @@ var logButton = document.querySelector('.log-button');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
 var clearButton = document.querySelector('.clear-button');
 var pastActivitiesButtons = document.querySelector('.past-activities');
-var minutes = 0;
-var seconds = 0;
+var minutes;
+var seconds;
 var currentActivity;
 var userActivity = {};
 var userActivitiesList = [];
@@ -44,7 +44,6 @@ studyButton.addEventListener('click', study);
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
-timerDialogue.addEventListener('click', beginTimer);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
@@ -133,7 +132,7 @@ function retrieveActivities() {
 
 // HELPER FUNCTIONS
 
-function verifyNumber(node, data) {
+function verifyNumber(node, data) {  //gets called from validate()
   if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 300) {
     node.innerText = "";
     return false;
@@ -173,7 +172,7 @@ function showError(data) {
 };
 
 function setTimer() {
-    minutes = currentActivity.minutes;
+  minutes = currentActivity.minutes;
   seconds = currentActivity.seconds;
   updateTimer();
 };
@@ -196,19 +195,18 @@ function showRemaining() {
     minutes--;
     seconds = 59;
   };
-  if (minutes == 0 && seconds == 0) {
-    updateTimer(); //clearInterval(timer);
-    timerDialogue.innerText = "Complete"
-    currentActivity.markComplete;
-    return;
   updateTimer();
   if (parseInt(minutes) == 0 && parseInt(seconds) == 0) {
-    show([completeAlert, logButton]);
-    currentActivity.markComplete();
-    currentActivity.stopTimer();
+    clearTimer(); // calls clearInterval from Activity.js(timer);
+    currentActivity.markComplete;
+    return;
   };
-  seconds--;
-  updateTimer();
+};
+
+function clearTimer() {
+  show([completeAlert, logButton]);
+  currentActivity.markComplete();
+  currentActivity.stopTimer();
 };
 
 function list() {
@@ -237,7 +235,7 @@ function loadPastActivity(thisIsMyArrayAndIndex) {
   hide([clear, tab1]);
   show([tab2]);
   currentActivity = pastActivity;
-}
+};
 
 // Our userActivities array has objects retrieved from JSON
 // upon completion of an event we

@@ -194,6 +194,7 @@ main {
   padding: 0;
   margin-top: 65px;
   margin-left: 540px;
+  outline: none;
 }
 
 /* Right side of main form */
