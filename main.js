@@ -177,4 +177,4 @@ function hide(elements) {
   };
 };
 
-// hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton, categoryButtons, input, accomplish ]);
+hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton, categoryButtons, input, accomplish ]);

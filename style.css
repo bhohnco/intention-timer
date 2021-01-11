@@ -1,3 +1,7 @@
+* {
+  /* border: 1px solid red */
+  }
+  
 body {
   background-color: #46424D;
   /* overflow-y: hidden; */
@@ -17,7 +21,7 @@ main {
   height: auto;
 }
 
-/* Left side of main form */
+/*************** Left side of main form ***************/
 .header1 {
   background-color: #2B2733;
   font-family: 'Montserrat', sans-serif;
@@ -57,7 +61,7 @@ main {
   font-size: 0.813em;
 }
 
-.description { 
+/* .description { 
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -66,7 +70,7 @@ main {
   padding: 0.313em 0.625em;
   outline: none;
   box-shadow: none;
-}
+} */
 
 .active-button {
   background-color: #46424D;
@@ -109,8 +113,8 @@ main {
   border-bottom-color: white;
   border-bottom-width: thin;
   padding-top: 10%; 
-  outline:none;
-  box-shadow:none;
+  outline: none;
+  box-shadow: none;
 }
 
 .seconds-label {
@@ -130,8 +134,8 @@ main {
   border-bottom-color: white;  
   border-bottom-width: thin;  
   padding-top: 10%;
-  outline:none;  
-  box-shadow:none;
+  outline: none;  
+  box-shadow: none;
 }
 
 .input {
@@ -140,7 +144,6 @@ main {
   align-self: flex-end;
   justify-content: flex-start;
   margin-top: 5.000em;
-  /* display: none; */
 }
 
 .activity{
@@ -155,23 +158,50 @@ main {
   margin-left: 540px;
 }
 
-/* Right side of main form */ 
+/*************** Right side of main form ***************/ 
 .boxes2 {
   background-color: #2B2733;
   color: #CBC9CF;
   font-family: 'Montserrat', sans-serif;
   height: 78.4em;
-  width: 54.5em;
+  width: 30em;
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 .box2-lead {
   font-size: 24px;
 }
 
-/* Timer Screen */ 
+.past-activities-container {
+  background-color: #46424D;
+  width: 89%;
+  height: 8%;
+  padding-bottom: 4%;
+  padding-left: 3%;
+  
+}
+
+.minutes {
+  border-bottom: none;
+}
+
+.seconds {
+  border-bottom: none;
+}
+
+.category-color {
+  border-left: 6px solid #9370DB; 
+  height: 2em; 
+  position:absolute; 
+  top: 12%; 
+  left: 89%;
+}
+
+/*************** Timer Screen ***************/ 
 .current-activity {
   display: flex;
   flex-direction: column;
