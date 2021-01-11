@@ -7,39 +7,32 @@ var studyButton = document.querySelector('#study');
 var meditateButton = document.querySelector('#meditate');
 var exerciseButton = document.querySelector('#exercise');
 var storeActivityButton = document.querySelector('.activity');
-var startButton = document.querySelector('.start-button');
-var chooseActivityText = document.querySelector('.box1-lead');
-var questionText = document.querySelector('.questionText');
-var minutesLabel = document.querySelector('.minutes-label');
-var secondsLabel = document.querySelector('.seconds-label');
-var descriptionError = document.querySelector('.description-error');
-var minutesError = document.querySelector('.minutes-error');
-var secondsError = document.querySelector('.seconds-error');
-var minutesLeft = document.querySelector('.minutes-left');
-var secondsLeft = document.querySelector('.seconds-left');
-var countdown = document.querySelector('.countdown');
-var completeAlert = document.querySelector('.complete');
-var logButton = document.querySelector('.log-button');
-var activitiesDialogue = document.querySelector('.activities-dialogue');
-var activitiesWrapper = document.querySelector('.activities-wrapper');
-var clearButton = document.querySelector('.clear'); //end of box 2
-var pastActivitiesButtons = document.querySelector('.past-activities');
-
+var timerDialogue = document.querySelector('.timer-dialogue');
+var inActiveChoice1 = document.querySelector('.active-study')
+var activeChoice1 = document.querySelector('.active-color-study')
+var inActiveChoice2 = document.querySelector('.active-meditate')
+var activeChoice2 = document.querySelector('.active-color-meditate')
+var inActiveChoice3 = document.querySelector('.active-exercise')
+var activeChoice3 = document.querySelector('.active-color-exercise')
+var activitiesList = [];
+var currentActivity;
+// for use only with timer countdown
 var minutes;
 var seconds;
-var userActivity = {};
-var currentActivity;
-var userActivitiesList = [];
-//var updatedActivitiesList;
+var minutesLeft = document.querySelector('.minutes-left');
+var secondsLeft = document.querySelector('.seconds-left');
+
 // EVENT LISTENERS
 
 studyButton.addEventListener('click', study);
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
+timerDialogue.addEventListener('click', beginTimer);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
+
 
 //window.addEventListener('load', retrieveActivities)
 // EVENT HANDLERS
@@ -47,18 +40,34 @@ clearButton.addEventListener('click', showForm);
    //category button changes
 
 function study () {
+  // event.preventDefault()
   category = "Study";
   studyButton.classList.add('btn-category');
+  studyButton.classList.add('studycolor');
+  inActiveChoice1.classList.add('hidden');
+  activeChoice1.classList.remove('hidden');
 };
 
 function meditate() {
   category = "Meditate";
   meditateButton.classList.add('btn-category');
+  meditateButton.classList.add('meditatecolor');
+  inActiveChoice2.classList.add('hidden');
+  activeChoice2.classList.remove('hidden');
 };
 
 function exercise() {
   category = "Exercise";
   exerciseButton.classList.add('btn-category');
+  exerciseButton.classList.add('exercisecolor');
+  inActiveChoice3.classList.add('hidden');
+  activeChoice3.classList.remove('hidden');
+};
+
+
+
+// HELPER FUNCTIONS
+=======
 };
 
 // HELPER FUNCTIONS
@@ -104,6 +113,50 @@ function showError(data) {
 // storeActivity fired by Start Activity button
 function storeActivity() {
   userActivity.category = category;
+  if (description.value != "") {
+    userActivity.description = description.value;
+  } //else showError('desc');
+  if (verifyNumber(inputMinutes.value)) {
+    userActivity.minutes = inputMinutes.value;
+  } //else showError('min');
+  if (verifyNumber(inputSeconds.value)) {
+    userActivity.seconds = inputSeconds.value;
+  } //else showError('sec');
+  return userActivity;  // to instantiation below
+};
+
+var descriptionError = document.querySelector('.description-error');
+var minutesError = document.querySelector('.minutes-error');
+var secondsError = document.querySelector('.seconds-error');
+
+function showError(data) {
+  if (data = 'desc') {
+    show(descriptionError);
+  };
+  if (data = 'min') {
+    show(minutesError);   //document minute error message
+  };
+  if (data = 'sec') {
+    show(secondsError)
+  };
+};
+
+function verifyNumber(data) {
+  if (isNaN(data) || data < 0 || data > 300) {
+    return false;
+  } else return true;
+};
+
+// start Activity button = store activity
+function storeActivity() {
+  hideForm();
+  currentActivity = new Activity(createActivity());
+  console.log(currentActivity);
+  clearForm();
+  setTimer();
+};
+
+
   if (validate()) {
     hide([descriptionError, minutesError, secondsError]);
     currentActivity = new Activity(userActivity);
@@ -112,7 +165,7 @@ function storeActivity() {
     setTimer();
   };
 };
-
+   
 function setTimer() {
   minutes = currentActivity.minutes;
   seconds = currentActivity.seconds;
@@ -120,9 +173,11 @@ function setTimer() {
 };
 
 function updateTimer() {
+  minutesLeft.innerHTML = minutes;
   if (minutes < 10) {
     minutesLeft.innerHTML = "0" + minutes;
   } else minutesLeft.innerHTML = minutes;
+
   if (seconds < 10) {
     secondsLeft.innerHTML = "0" + seconds; // keeps seconds inline
   } else secondsLeft.innerHTML = seconds;
@@ -140,6 +195,11 @@ function showRemaining() {
     minutes--;
     seconds = 59;
   };
+  if (minutes == 0 && seconds == 0) {
+    updateTimer(); //clearInterval(timer);
+    timerDialogue.innerText = "Complete"
+    currentActivity.markComplete;
+    return;
   updateTimer();
   if (parseInt(minutes) == 0 && parseInt(seconds) == 0) {
     show([completeAlert, logButton]);
@@ -147,18 +207,19 @@ function showRemaining() {
     currentActivity.markComplete();
     currentActivity.stopTimer();
   };
+  seconds--;
+  updateTimer();
 };
 
 function hideForm() {
-  activityHeader.innerText = "Current Activity";
-  hide([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
-  show([countdown, startButton]);
+  hide([studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
 };
 
 function showForm() {
     activityHeader.innerText = "New Activity";
   show([chooseActivityText, questionText, minutesLabel, secondsLabel, studyButton, meditateButton, exerciseButton, description, inputMinutes, inputSeconds, storeActivityButton]);
   hide([countdown, startButton]);
+
 };
 
 function clearForm() {

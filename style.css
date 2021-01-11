@@ -1,3 +1,4 @@
+
 body {
   background-color: #46424D;
   overflow-y: hidden;
@@ -8,7 +9,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #CBC9CF;
   text-align: center;
-  font-size: 0.688em;
+  font-size: 0.758em;
+  padding-top: .0015em;
+  padding-bottom: .2em;
+
 }
 
 main {
@@ -28,105 +32,153 @@ main {
   padding-left: 2%;
   margin-left: -1%;
   position: relative;
+  margin-bottom: -10px;
+}
+
+.box1-lead {
+  font-size:21px;
 }
 
 .boxes {
   background-color: #46424D;
   font-family: 'Montserrat', sans-serif;
   color: white;
-  height: 37.500em;
-  padding: 2% 0 5% 8%;
-  margin: 0 36% 0 1%;
-  top: -67em;
-  position: relative; 
+  height: 40.500em;
+  padding: 2% 0 0 8%;
+  margin: 0 38% 0 1%;
+  top: -930px;
+  position: relative;
+  border-radius: 4px;
 }
 
 .category {
   background-size: contain;
   padding-bottom: 3.125em;
-  display: none;
-}
-
-.active {
-  display:block;
-  width: 9vw;
-  height: 5vh;
-  background: transparent;
-}
-
-.accomplish{
-  font-size: 0.813em;
-  display: none;
-}
-
-.description { 
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  border-bottom-color: white;
-  border-bottom-width: thin;
-  padding:0.313em 0.625em;
-  outline:none;
-  box-shadow:none;
 }
 
 .active-button {
   background-color: #46424D;
   border-color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.938em;
+  font-size: 1.10em;
   color: white;
-  margin-right: 8.4%;
+  margin-right: 10.4%;
   border-radius: 0.52vh;
+  height: 70px;
+  width: 180px;
+  outline:none;
 }
 
-.description {  
-  background: transparent;  
-  border: none;  
-  border-bottom: 1px solid #000000;  
-  border-bottom-color: white;  
-  border-bottom-width: thin;  
-  padding:5px 300px;
-  outline:none;  
-  box-shadow:none;
+.active-study, .active-meditate, .active-exercise{
+  display: block;
+  width: 3.5vw;
+  height: 2.5vh;
+  margin-left: 30%;
+  background: transparent;
+  padding-bottom: 10px;
+}
+.active-color-study, .active-color-meditate, .active-color-exercise{
+  display: block;
+  width: 3.5vw;
+  height: 2.5vh;
+  margin-left: 30%;
+  background: transparent;
+  padding-bottom: 10px;
 }
 
-.minutes-label {
-  display:grid;
-  padding-top: 10px;
-  margin-bottom: 55px;
-  margin-right: -65px;
+.studycolor {
+  border-color: #B3FD78;
+  color:#B3FD78;
+
+}
+.meditatecolor {
+  border-color: #C278FD;
+  color:#C278FD;
 }
 
-.minutes {
+.exercisecolor {
+  border-color:#FD8078;
+  color:#FD8078;
+}
+
+.questionText {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1.5em;
+  color: white;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
   border-bottom-color: white;
   border-bottom-width: thin;
-  padding:25px 90px;
+  width: 90%;
+  padding: 1.5% 0 0 0;
+  outline: none;
+  box-shadow:none;
+}
+
+.warning {
+  width: 3.5vw;
+  height: 2.5vh;
+}
+
+.description-error {
+  visibility: hidden;
+}
+
+.minutes-label {
+  margin-bottom: 55px;
+  margin-right: -85px;
+  font-size: 21px;
+}
+
+.minutes {
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1em;
+  color: white;
+  width: 38%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-bottom-color: white;
+  border-bottom-width: thin;
+  padding-top: 10%;
   outline:none;
   box-shadow:none;
-  margin-right: 5px;
+}
+
+.minutes-error {
+  visibility: hidden;
 }
 
 .seconds-label {
-  padding-top: 10px;
   margin-bottom: 40px;
-  margin-left: 90px;
-  margin-right: -65px;
+  margin-left: 115px;
+  margin-right: -90px;
+  font-size: 21px;
 }
 
 .seconds {
-  display: grid;
-  background: transparent;  
-  border: none;  
-  border-bottom: 1px solid #000000;  
-  border-bottom-color: white;  
-  border-bottom-width: thin;  
-  padding:5px 90px;
-  outline:none;  
-  box-shadow:none;
+  font-family: ‘Montserrat’, sans-serif;
+  font-size: 1em;
+  color: white;
+  width: 40%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-bottom-color: white;
+  border-bottom-width: thin;
+  padding-top: 10%;
+  outline: none;
+  box-shadow: none;
+}
+
+.seconds-error {
+  visibility: hidden;
 }
 
 .input {
@@ -135,22 +187,21 @@ main {
   align-self: flex-end;
   justify-content: flex-start;
   margin-top: 5.000em;
-  display: none;
 }
 
-.activity{
-  border-radius: 4px;
+.activity {
+  border-radius: 6px;
   text-align: center;
   width:11vw;
-  height: 2vw;
-  font-size: 16px;
+  height: 2.5vw;
+  font-size: 18px;
   margin-bottom: 8vh;
   padding: 0;
   margin-top: 65px;
   margin-left: 540px;
 }
 
-/* Right side of main form *
+/* Right side of main form */
 .boxes2 {
   background-color: #2B2733;
   color: #CBC9CF;
@@ -160,6 +211,16 @@ main {
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
+}
+
+.box2-lead {
+  font-size: 24px;
+}
+
+.logged-form {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 25px;
 }
 
 .activities-wrapper{
@@ -175,14 +236,6 @@ main {
   height: 5vh;
   background-color: blue;
   margin-left: -45vw;
-}
-
-.box2-lead {
-  font-size: 24px;
-}
-
-.hidden {
-  display: none;
 }
 
 /* Timer Screen */ 
@@ -246,4 +299,8 @@ main {
   margin-top: 2%;
   width: 15em;
   height: 2.3em;
+}
+
+.hidden {
+  display: none;
 }
