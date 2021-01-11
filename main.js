@@ -26,10 +26,10 @@ var clearButton = document.querySelector('.clear-button');
 var pastActivitiesButtons = document.querySelector('.past-activities');
 var minutes;
 var seconds;
-var userActivity = {};
 var currentActivity;
+var userActivity = {};
 var userActivitiesList = [];
-//var updatedActivitiesList;
+
 // EVENT LISTENERS
 
 studyButton.addEventListener('click', study);
@@ -177,7 +177,6 @@ function showRemaining() {
 
 function hideForm() {
   activityHeader.innerText = "Current Activity";
-
   hide([tab1]);
   show([tab2]);
 };
@@ -201,20 +200,21 @@ function list() {
 var pastActivity; // node //object to load
 
 function createActivityBox(act, i) {
-  //if (userActivitiesList.length > 0) {   //likely won't need this conditional
-    console.log('hello');
-    activitiesWrapper.innerHTML = "<h2>wily</h2>";
-    pastActivitiesButtons.innerHTML += `<div class="past-activities" >Howdy</div>`;
-    activitiesWrapper.innerHTML += `<h2 class="past-activities" >hoot</h2>`
-    activitiesWrapper.innerHTML += `<div class="past-activities" >hoot</div>`; // +`<div class="past-activities" id="act${i}">${act}</div>`;
+    console.log(act);
+    activitiesWrapper.innerHTML += 
+    var objCategory = act.category
+    activitiesWrapper.innerHTML += `<div class="past-activities" id="act${i}">${act}</div>`;
+    //pastActivitiesButtons.innerHTML += `<div class="past-activities" >Howdy</div>`;
+
+
   // pastActivity = document.getElementById(`act${i}`);  //assign node
   // pastActivity.addEventListener('click', loadPastActivity);
   //};
 };
 
-function loadPastActivity() {
-  show([countdown, startButton, log, completeAlert]);
-  hide([clear]);
+function loadPastActivity(thisIsMyArrayAndIndex) {
+  hide([clear, tab1]);
+  show([tab2]);
   currentActivity = pastActivity;
 }
 
