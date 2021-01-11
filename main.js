@@ -36,9 +36,7 @@ timerDialogue.addEventListener('click', beginTimer);
 
 // EVENT HANDLERS
 
-   //category button changes
 function study () {
-  // event.preventDefault()
   category = "Study";
   studyButton.classList.add('btn-category');
   studyButton.classList.add('studycolor');
@@ -176,3 +174,11 @@ function hide(elements) {
     elements[i].classList.remove('hidden');
   };
 };
+
+function addHidden(element){
+  element.classList.add("hidden");
+}
+
+function removeHidden(element){
+  element.classList.remove("hidden");
+}

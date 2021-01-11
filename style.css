@@ -52,7 +52,7 @@ main {
   padding-bottom: 3.125em;
 }
 
-.active-button {
+.active-button-study, .active-button-meditate, .active-button-exercise {
   background-color: #46424D;
   border-color: white;
   font-family: 'Montserrat', sans-serif;
