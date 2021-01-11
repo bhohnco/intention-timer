@@ -1,6 +1,8 @@
 
 body {
   background-color: #46424D;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .header {
@@ -10,6 +12,7 @@ body {
   font-size: 0.758em;
   padding-top: .0015em;
   padding-bottom: .2em;
+
 }
 
 main {
@@ -25,6 +28,7 @@ main {
   color: #CBC9CF;
   height: 62.500em;
   width: 63%;
+  padding-bottom: 10%;
   padding-left: 2%;
   margin-left: -1%;
   position: relative;
@@ -90,8 +94,8 @@ main {
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
-
 }
+
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
@@ -202,8 +206,8 @@ main {
   background-color: #2B2733;
   color: #CBC9CF;
   font-family: 'Montserrat', sans-serif;
-  height: 1000px;
-  width: 645px;
+  height: 78.4em;
+  width: 54.5em;
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
@@ -217,6 +221,84 @@ main {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
+}
+
+.activities-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 77vh;
+  width: 28vw
+}
+
+.past-activities {
+  width: 20vw;
+  height: 5vh;
+  background-color: blue;
+  margin-left: -45vw;
+}
+
+/* Timer Screen */ 
+.current-activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -15%;
+}
+
+.activity-display {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.7em;
+  margin-bottom: -1%;
+}
+
+.countdown {
+  font-family: 'Arial', sans-serif;
+  font-size: 9em;
+}
+
+.minutes-left {
+  margin-right: -.3em;
+}
+
+.seconds-left {
+  margin-left: -.3em;
+}
+
+.circle-button-container {
+  position: relative;
+}
+
+.timer-dialogue {
+  background-color: #46424D;
+  font-size: 2em;
+  color: white;
+  border: none;
+  position: absolute;
+  margin-top: 43%;
+  margin-left: 33%;
+}
+
+.circle-container {
+  width: 20em;
+  height: 19em;
+}
+
+.circle-characteristics {
+  fill: none;
+  stroke: #9370DB;
+  stroke-width: .3em;
+  cx: 10em;
+  cy: 9.5em;
+  r: 9em;
+}
+
+.log-activity {
+  font-family: 'Montaga', sans-serif;
+  font-size: 1em;
+  margin-top: 2%;
+  width: 15em;
+  height: 2.3em;
 }
 
 .hidden {
