@@ -1,5 +1,3 @@
-var category = "";
-
 var activityHeader = document.querySelector('.activity-header');
 
 // tab1 - Choice Window
@@ -37,6 +35,7 @@ var pastActivitiesButtons = document.querySelector('.past-activities');
 var clearPastButton = document.querySelector('.clear-past-button');
 var minutes;
 var seconds;
+var category = "";
 var currentActivity;
 var userActivity = {};
 var userActivitiesList = [];
@@ -82,6 +81,7 @@ function storeActivity() {
   userActivity.category = category;
   visualHide([descriptionError, minutesError, secondsError]); // any previous errors
     if (validate()) {
+      console.log('foo')
       currentActivity = new Activity(userActivity);
       userDescription.innerText = currentActivity["description"];
       clearForm();
@@ -136,14 +136,15 @@ function retrieveActivities() {
     } else {
     hide([activitiesDialogue]);
     show([activitiesWrapper]);
+    visualShow([clearPastButton]);
     list();
   };
 };
 
 // HELPER FUNCTIONS
 
-function verifyNumber(node, data) {  //gets called from validate()
-  if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 300) {
+function verifyNumber(node, data) {
+  if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 99) {
     node.innerText = "";
     return false;
   } else return true;
@@ -166,8 +167,8 @@ function validate() {
     userActivity.description = description.value;
   } else {
     showError('desc');
-    return false;      //false returns ensure that the form won't submit with click
-};
+    return false;
+  };
   return true;
 };
 
@@ -220,7 +221,7 @@ function clearTimer() {
 };
 
 function list() {
-  activitiesWrapper.innerHTML = "";  // clear Past activities box
+  activitiesWrapper.innerHTML = "";
   if (userActivitiesList.length > 0) {
     for (i = 0; i < userActivitiesList.length; i++) {
       createActivityBox(userActivitiesList[i], i);
@@ -228,10 +229,8 @@ function list() {
   };
 };
 
-var pastActivity; // node //object to load
+var pastActivity = []; // node //object to load //can be array?
 
-// color-coding the sidebar:
-// change class of div by using variables to access
 function createActivityBox(act, i) {
     var cat = act.category;
     var color = "";
@@ -252,14 +251,14 @@ function createActivityBox(act, i) {
           <p class="activity-description">${act.description}</p>
         </div>`;
 
-  pastActivity = document.getElementById(`act${i}`);  //assign node
-  pastActivity.addEventListener('click', loadPastActivity);
+  pastActivity[i] = document.getElementById(`act${i}`);  //assign node
+  pastActivity[i].addEventListener('click', loadPastActivity);
 };
 
 function loadPastActivity() {
   hide([clearButton, tab1]);
   show([tab2]);
-  currentActivity = pastActivity;
+  currentActivity = pastActivity[i];
 };
 
 function clearAllPast() {
@@ -267,15 +266,8 @@ function clearAllPast() {
   retrieveActivities();
   activitiesWrapper.innerHTML = "";
   show([activitiesDialogue]);
+  visualHide([clearPastButton]);
 }
-
-// Our userActivities array has objects retrieved from JSON
-// upon completion of an event we
-//add the event to array then store the whole array
-//as the same descriptor(and different id), overwriting old array
-
-// upon load and after every save we retrieve the array and parse
-
 
 // HIDE FUNCTIONS
 
@@ -295,7 +287,7 @@ function hide(elements) {
 function toggle(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.toggle('hidden');
-  }
+  };
 }
 
   function changeCircleColor() {
