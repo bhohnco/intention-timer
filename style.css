@@ -1,9 +1,8 @@
 body {
   background-color: #46424D;
-  /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
-
 .header {
   font-family: 'Montserrat', sans-serif;
   color: #CBC9CF;
@@ -12,13 +11,11 @@ body {
   padding-top: .0015em;
   padding-bottom: .2em;
 }
-
 main {
   display:flex;
   flex-direction: column;
   height: auto;
 }
-
 /* Left side of main form */
 .header1 {
   background-color: #2B2733;
@@ -26,35 +23,33 @@ main {
   color: #CBC9CF;
   height: 62.500em;
   width: 63%;
+  padding-top: 2vh;
   padding-bottom: 10%;
   padding-left: 2%;
   margin-left: -1%;
-  position: relative;
   margin-bottom: -10px;
+  position: relative;
 }
-
 .box1-lead {
   font-size:21px;
 }
-
 .boxes {
   background-color: #46424D;
   font-family: 'Montserrat', sans-serif;
   color: white;
   height: 37.500em;
   padding: 2% 0 5% 8%;
-  margin: 0 38% 0 1%;
   top: -67em;
   position: relative;
   border-radius: 5px;
+  max-width: 56vw;
 }
-
-
 .category {
   background-size: contain;
   padding-bottom: 3.125em;
+  display: inline-flex;
+  width: 100%;
 }
-
 .active-button-study, .active-button-meditate, .active-button-exercise {
   background-color: #46424D;
   border-color: white;
@@ -67,7 +62,6 @@ main {
   width: 180px;
   outline:none;
 }
-
 .active-study, .active-meditate, .active-exercise{
   display: block;
   width: 3.5vw;
@@ -76,7 +70,6 @@ main {
   background: transparent;
   padding-bottom: 10px;
 }
-
 .active-color-study, .active-color-meditate, .active-color-exercise{
   display: block;
   width: 3.5vw;
@@ -85,43 +78,34 @@ main {
   background: transparent;
   padding-bottom: 10px;
 }
-
 .studycolor {
   border-color: #B3FD78;
   color:#B3FD78;
 }
-
 .green {
   color:#B3FD78;
 }
-
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
 }
-
 .purple {
   color:#C278FD;
 }
-
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
 }
-
 .orange {
   color:#FD8078;
 }
-
 .questionText {
   font-size: 21px;
   margin-bottom: 20px;
 }
-
 .accomplish{
   font-size: 0.813em;
 }
-
 .description {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1.5em;
@@ -136,23 +120,20 @@ main {
   outline: none;
   box-shadow:none;
 }
-
 .warning {
   width: 3.5vw;
   height: 2.5vh;
 }
-
 .minutes-label {
   margin-bottom: 55px;
   margin-right: -85px;
   font-size: 21px;
 }
-
 .minutes {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1em;
   color: white;
-  width: 38%;
+  width: 73%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -162,19 +143,17 @@ main {
   outline: none;
   box-shadow: none;
 }
-
 .seconds-label {
   margin-bottom: 40px;
   margin-left: 115px;
   margin-right: -90px;
   font-size: 21px;
 }
-
 .seconds {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1em;
   color: white;
-  width: 40%;
+  width: 73%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -184,11 +163,9 @@ main {
   outline: none;
   box-shadow: none;
 }
-
 .visibility-hidden {
   visibility: hidden;
 }
-
 .input {
   display: flex;
   flex-direction: row;
@@ -196,21 +173,19 @@ main {
   justify-content: flex-start;
   margin-top: 5.000em;
 }
-
 .start-activity {
   border-radius: 5px;
   text-align: center;
-  width:11vw;
+  width: 16vw;
   height: 2.5vw;
   font-size: 18px;
   margin-bottom: 8vh;
   padding: 0;
-  margin-top: 65px;
-  margin-left: 540px;
+  margin-top: 6vh;
+  margin-left: 32vw;
   outline: none;
   border: none
 }
-
 /* Right side of main form */
 .boxes2 {
   background-color: #2B2733;
@@ -218,29 +193,25 @@ main {
   font-family: 'Montserrat', sans-serif;
   height: 78.4em;
   width: 34%;
+  padding-top: 4vh;
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
 }
-
 .none-logged-text {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
 }
-
 .box2-lead {
   font-size: 24px;
   display: inline;
 }
-
 .none-logged-text {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
 }
-
-
 .activity-card {
   background-color: #46424D;
   width: 125%;
@@ -248,22 +219,18 @@ main {
   padding-left: 3%;
   margin-top: 4%;
 }
-
 .activities-wrapper {
   width: 70%;
   height: 100%;
   padding-bottom: 4%;
   padding-left: 3%;
 }
-
 .card-minutes {
   border-bottom: none;
 }
-
 .card-seconds {
   border-bottom: none;
 }
-
 .category-color-study {
   border-left: 6px solid #B3FD78;
   height: 2em;
@@ -271,7 +238,6 @@ main {
   margin-top: 3%;
   position: absolute;
 }
-
 .category-color-meditate {
   border-left: 6px solid #C278FD;
   height: 2em;
@@ -279,12 +245,10 @@ main {
   margin-top: 3%;
   position: absolute;
 }
-
 .category-color-container {
   display: flex;
   justify-content: flex-end;
 }
-
 .category-color-exercise {
   border-left: 6px solid #FD8078;
   height: 2em;
@@ -293,42 +257,34 @@ main {
   position: absolute;
 }
 /* Timer Screen */
-
 .current-activity {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: -15%;
 }
-
 .activity-display {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.7em;
   margin-bottom: -1%;
 }
-
 .description-display {
   font-size: 3em;
   font-weight: 500;
 }
-
 .countdown {
   font-family: 'Arial', sans-serif;
   font-size: 9em;
 }
-
 .minutes-left {
   margin-right: -.3em;
 }
-
 .seconds-left {
   margin-left: -.3em;
 }
-
 .circle-button-container {
   position: relative;
 }
-
 .start-button {
   background-color: #46424D;
   font-size: 2em;
@@ -340,16 +296,13 @@ main {
   outline: none;
   border-radius: 5px;
 }
-
 #complete {
   margin-left: 22%;
 }
-
 .circle-container {
   width: 20em;
   height: 19em;
 }
-
 .circle-characteristics {
   fill: none;
   stroke-width: .3em;
@@ -357,19 +310,15 @@ main {
   cy: 9.5em;
   r: 9em;
 }
-
 .circle-orange {
   stroke: #FD8078;
 }
-
 .circle-purple {
   stroke: #C278FD;
 }
-
 .circle-green {
   stroke: #B3FD78;
 }
-
 .log-button {
   font-family: 'Montaga', sans-serif;
   font-size: 1em;
@@ -377,7 +326,6 @@ main {
   width: 15em;
   height: 2.3em;
 }
-
 .clear-button {
   height: 5vh;
   width: 28vw;
@@ -385,7 +333,6 @@ main {
   margin-top: 10vh;
   border-radius: 5px;
 }
-
 .clear-past-button {
   height: 3vh;
   width: 6vw;
@@ -397,7 +344,25 @@ main {
   outline: none;
   border-radius: : 6px;
 }
-
 .hidden {
   display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
