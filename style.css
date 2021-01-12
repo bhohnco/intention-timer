@@ -15,7 +15,6 @@ body {
   font-size: 0.758em;
   padding-top: .0015em;
   padding-bottom: .2em;
-
 }
 
 main {
@@ -88,10 +87,12 @@ main {
   border-color: #B3FD78;
   color:#B3FD78;
 }
+
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
 }
+
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
@@ -119,17 +120,6 @@ main {
 .warning {
   width: 3.5vw;
   height: 2.5vh;
-}
-
-.description {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  border-bottom-color: white;
-  border-bottom-width: thin;
-  padding:5px 300px;
-  outline:none;
-  box-shadow:none;
 }
 
 .minutes-label {
@@ -218,32 +208,31 @@ main {
   padding-top: 25px;
 }
 
-/* .activities-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 77vh;
-  width: 28vw
-} */
-
 .box2-lead {
   font-size: 24px;
 }
 
+.activity-card {
+  background-color: #46424D;
+  width: 80%;
+  height: 8vh%;
+  padding-bottom: 4%;
+  padding-left: 3%;
+}
+  
 .activities-wrapper {
   background-color: #46424D;
   width: 89%;
-  height: 8%;
+  height: 8vh%;
   padding-bottom: 4%;
   padding-left: 3%;
-  
 }
 
-.minutes {
+.card-minutes {
   border-bottom: none;
 }
 
-.seconds {
+.card-seconds {
   border-bottom: none;
 }
 
@@ -254,6 +243,7 @@ main {
   top: 12%; 
   left: 89%;
 }
+
 /* Timer Screen */
 
 .current-activity {
