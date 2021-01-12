@@ -226,6 +226,7 @@ main {
 
 .box2-lead {
   font-size: 24px;
+  display: inline;
 }
 
 .none-logged-text {
@@ -257,8 +258,24 @@ main {
 .card-seconds {
   border-bottom: none;
 }
-.category-color {
-  border-left: 6px solid #9370DB;
+.category-color-study {
+  border-left: 6px solid #B3FD78;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
+}
+
+.category-color-meditate {
+  border-left: 6px solid #C278FD;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
+}
+
+.category-color-exercise {
+  border-left: 6px solid #FD8078;
   height: 2em;
   position:absolute;
   top: 12%;
@@ -354,6 +371,14 @@ main {
   width: 28vw;
   margin-left: 10vw;
   margin-top: 10vh;
+}
+
+.clear-past-button {
+  height: 3vh;
+  width: 6vw;
+  margin-left: 7vw;
+  margin-top: 2vh;
+  background-color: #46424D
 }
 
 .hidden {

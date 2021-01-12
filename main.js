@@ -34,6 +34,7 @@ var logButton = document.querySelector('.log-button');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
 var clearButton = document.querySelector('.clear-button');
 var pastActivitiesButtons = document.querySelector('.past-activities');
+var clearPastButton = document.querySelector('.clear-past-button');
 var minutes;
 var seconds;
 var currentActivity;
@@ -49,6 +50,7 @@ storeActivityButton.addEventListener('click', storeActivity);
 startButton.addEventListener('click', beginTimer);
 logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
+clearPastButton.addEventListener('click', clearAllPast);
 window.addEventListener('load', retrieveActivities);
 
 
@@ -231,10 +233,18 @@ var pastActivity; // node //object to load
 // color-coding the sidebar:
 // change class of div by using variables to access
 function createActivityBox(act, i) {
-    //act.category
+    var cat = act.category;
+    var color = "";
+    if (cat === 'Study') {
+      color = "category-color-study";
+    } else if (cat === "Meditate") {
+      color = "category-color-meditate";
+    } else if (cat === "Exercise") {
+      color = "category-color-exercise";
+    };
     activitiesWrapper.innerHTML += `
         <div class="activity-card" id="act${i}">
-          <div class="category-color"></div>
+          <div class="${color}">DIV</div>
           <p class="activity-type">${act.category}</p>
           <span class="card-minutes">${act.minutes} MIN</span>
           <p class="activity-description">${act.description}</p>
@@ -249,6 +259,13 @@ function loadPastActivity() {
   show([tab2]);
   currentActivity = pastActivity;
 };
+
+function clearAllPast() {
+  localStorage.clear();
+  retrieveActivities();
+  activitiesWrapper.innerHTML = "";
+  show([activitiesDialogue]);
+}
 
 // Our userActivities array has objects retrieved from JSON
 // upon completion of an event we
