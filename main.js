@@ -244,7 +244,9 @@ function createActivityBox(act, i) {
     };
     activitiesWrapper.innerHTML += `
         <div class="activity-card" id="act${i}">
-          <div class="${color}">DIV</div>
+          <div class="category-color-container">
+            <div class="category-color"></div>
+          </div>  
           <p class="activity-type">${act.category}</p>
           <span class="card-minutes">${act.minutes} MIN</span>
           <p class="activity-description">${act.description}</p>

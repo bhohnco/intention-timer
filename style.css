@@ -187,7 +187,7 @@ main {
 
 .visibility-hidden {
   visibility: hidden;
-  }
+}
 
 .input {
   display: flex;
@@ -242,26 +242,27 @@ main {
 
 .activity-card {
   background-color: #46424D;
-  width: 80%;
-  height: 8vh%;
-  padding-bottom: 4%;
+  width: 125%;
+  padding-bottom: .5%;
   padding-left: 3%;
-  }
-
+  margin-top: 4%; 
+}
 
 .activities-wrapper {
-  width: 88%;
-  height: 8vh%;
+  width: 70%;
+  height: 100%;
   padding-bottom: 4%;
   padding-left: 3%;
-  border-radius: 4px;
 }
+
 .card-minutes {
   border-bottom: none;
 }
+
 .card-seconds {
   border-bottom: none;
 }
+
 .category-color-study {
   border-left: 6px solid #B3FD78;
   height: 2em;
@@ -374,7 +375,6 @@ main {
 .circle-green {
   stroke: #B3FD78;
 }
-
 
 .log-button {
   font-family: 'Montaga', sans-serif;
