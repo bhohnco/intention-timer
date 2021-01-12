@@ -43,9 +43,16 @@ main {
   color: white;
   height: 37.500em;
   padding: 2% 0 5% 8%;
-  margin: 0 36% 0 1%;
+  margin: 0 38% 0 1%;
   top: -67em;
   position: relative;
+  border-radius: 4px;
+}
+
+
+.category {
+  background-size: contain;
+  padding-bottom: 3.125em;
 }
 
 .active-button-study, .active-button-meditate, .active-button-exercise {
@@ -84,14 +91,31 @@ main {
   color:#B3FD78;
 }
 
+.green {
+  color:#B3FD78;
+}
+
 .meditatecolor {
   border-color: #C278FD;
+  color:#C278FD;
+}
+
+.purple {
   color:#C278FD;
 }
 
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
+}
+
+.orange {
+  color:#FD8078;
+}
+
+.questionText {
+  font-size: 21px;
+  margin-bottom: 20px;
 }
 
 .accomplish{
@@ -163,8 +187,7 @@ main {
 
 .visibility-hidden {
   visibility: hidden;
-}
-
+  }
 
 .input {
   display: flex;
@@ -207,30 +230,52 @@ main {
 
 .box2-lead {
   font-size: 24px;
+  display: inline;
 }
 
-.activities-wrapper {
-  width: 70%;
-  height: 100%;
-  padding-bottom: 4%;
-  padding-left: 3%;
+.none-logged-text {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 25px;
 }
+
 
 .activity-card {
   background-color: #46424D;
-  width: 125%;
+  width: 80%;
   height: 8vh%;
-  padding-bottom: .5%;
+  padding-bottom: 4%;
   padding-left: 3%;
-  margin-top: 4%; 
-}
+  }
 
+
+.activities-wrapper {
+  width: 88%;
+  height: 8vh%;
+  padding-bottom: 4%;
+  padding-left: 3%;
+  border-radius: 4px;
+}
 .card-minutes {
   border-bottom: none;
 }
-
 .card-seconds {
   border-bottom: none;
+}
+.category-color-study {
+  border-left: 6px solid #B3FD78;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
+}
+
+.category-color-meditate {
+  border-left: 6px solid #C278FD;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
 }
 
 .category-color-container {
@@ -246,6 +291,13 @@ main {
   position: absolute;
 }
 
+.category-color-exercise {
+  border-left: 6px solid #FD8078;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
+}
 /* Timer Screen */
 
 .current-activity {
@@ -305,12 +357,24 @@ main {
 
 .circle-characteristics {
   fill: none;
-  stroke: #9370DB;
   stroke-width: .3em;
   cx: 10em;
   cy: 9.5em;
   r: 9em;
 }
+
+.circle-orange {
+  stroke: #FD8078;
+}
+
+.circle-purple {
+  stroke: #C278FD;
+}
+
+.circle-green {
+  stroke: #B3FD78;
+}
+
 
 .log-button {
   font-family: 'Montaga', sans-serif;
@@ -325,6 +389,14 @@ main {
   width: 28vw;
   margin-left: 10vw;
   margin-top: 10vh;
+}
+
+.clear-past-button {
+  height: 3vh;
+  width: 6vw;
+  margin-left: 7vw;
+  margin-top: 2vh;
+  background-color: #46424D
 }
 
 .hidden {
