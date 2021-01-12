@@ -1,8 +1,3 @@
-* {
-   border: 1px solid red;
-}
-
-
 body {
   background-color: #46424D;
   /* overflow-y: hidden; */
@@ -191,6 +186,11 @@ main {
   box-shadow: none;
 }
 
+.visibility-hidden {
+  visibility: hidden;
+  }
+
+
 .input {
   display: flex;
   flex-direction: row;
@@ -218,7 +218,7 @@ main {
   color: #CBC9CF;
   font-family: 'Montserrat', sans-serif;
   height: 78.4em;
-  width: 54.5em;
+  width: 34%;
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
@@ -228,31 +228,42 @@ main {
   font-size: 24px;
 }
 
-.logged-form {
+.none-logged-text {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
 }
 
-.activities-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 77vh;
-  width: 28vw;
+
+.activity-card {
+  background-color: #46424D;
+  width: 80%;
+  height: 8vh%;
+  padding-bottom: 4%;
+  padding-left: 3%;
+  }
+
+
+.activities-wrapper {
+  width: 88%;
+  height: 8vh%;
+  padding-bottom: 4%;
+  padding-left: 3%;
   border-radius: 4px;
 }
-
-.past-activities {
-  width: inherit;
-  height: 5vh;
-  background-color: blue;
+.card-minutes {
+  border-bottom: none;
 }
-
-.box2-lead {
-  font-size: 24px;
+.card-seconds {
+  border-bottom: none;
 }
-
+.category-color {
+  border-left: 6px solid #9370DB;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
+}
 /* Timer Screen */
 
 .current-activity {
