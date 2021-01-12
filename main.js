@@ -115,7 +115,7 @@ function showForm() {
 function hideForm() {
   activityHeader.innerText = "Current Activity";
   changeCircleColor();
-  hide([tab1]);
+  hide([tab1, logButton]);
   show([tab2]);
 };
 
@@ -245,8 +245,8 @@ function createActivityBox(act, i) {
     activitiesWrapper.innerHTML += `
         <div class="activity-card" id="act${i}">
           <div class="category-color-container">
-            <div class="category-color"></div>
-          </div>  
+            <div class="${color}"></div>
+          </div>
           <p class="activity-type">${act.category}</p>
           <span class="card-minutes">${act.minutes} MIN</span>
           <p class="activity-description">${act.description}</p>

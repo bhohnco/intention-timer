@@ -245,7 +245,7 @@ main {
   width: 125%;
   padding-bottom: .5%;
   padding-left: 3%;
-  margin-top: 4%; 
+  margin-top: 4%;
 }
 
 .activities-wrapper {
@@ -266,17 +266,17 @@ main {
 .category-color-study {
   border-left: 6px solid #B3FD78;
   height: 2em;
-  position:absolute;
-  top: 12%;
-  left: 88%;
+  padding-right: 3%;
+  margin-top: 3%;
+  position: absolute;
 }
 
 .category-color-meditate {
   border-left: 6px solid #C278FD;
   height: 2em;
-  position:absolute;
-  top: 12%;
-  left: 88%;
+  padding-right: 3%;
+  margin-top: 3%;
+  position: absolute;
 }
 
 .category-color-container {
@@ -284,20 +284,12 @@ main {
   justify-content: flex-end;
 }
 
-.category-color {
-  border-left: 6px solid #9370DB;
+.category-color-exercise {
+  border-left: 6px solid #FD8078;
   height: 2em;
   padding-right: 3%;
   margin-top: 3%;
   position: absolute;
-}
-
-.category-color-exercise {
-  border-left: 6px solid #FD8078;
-  height: 2em;
-  position:absolute;
-  top: 12%;
-  left: 88%;
 }
 /* Timer Screen */
 
