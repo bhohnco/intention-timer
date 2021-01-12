@@ -228,6 +228,7 @@ var pastActivity; // node //object to load
 // color-coding the sidebar:
 // change class of div by using variables to access
 function createActivityBox(act, i) {
+    //act.category
     activitiesWrapper.innerHTML += `
         <div class="activity-card" id="act${i}">
           <div class="category-color"></div>
