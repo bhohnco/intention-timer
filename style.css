@@ -198,7 +198,7 @@ main {
   position: absolute;
 }
 
-.logged-form {
+.none-logged-text {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
@@ -236,7 +236,7 @@ main {
   border-left: 6px solid #9370DB; 
   height: 2em; 
   position:absolute; 
-  top: 12%; 
+  top: 14%; 
   left: 88%;
 }
 
