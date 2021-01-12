@@ -46,7 +46,7 @@ main {
   margin: 0 38% 0 1%;
   top: -67em;
   position: relative;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 
@@ -198,7 +198,7 @@ main {
 }
 
 .start-activity {
-  border-radius: 4px;
+  border-radius: 5px;
   text-align: center;
   width:11vw;
   height: 2.5vw;
@@ -208,6 +208,7 @@ main {
   margin-top: 65px;
   margin-left: 540px;
   outline: none;
+  border: none
 }
 
 /* Right side of main form */
@@ -245,7 +246,7 @@ main {
   width: 125%;
   padding-bottom: .5%;
   padding-left: 3%;
-  margin-top: 4%; 
+  margin-top: 4%;
 }
 
 .activities-wrapper {
@@ -266,17 +267,17 @@ main {
 .category-color-study {
   border-left: 6px solid #B3FD78;
   height: 2em;
-  position:absolute;
-  top: 12%;
-  left: 88%;
+  padding-right: 3%;
+  margin-top: 3%;
+  position: absolute;
 }
 
 .category-color-meditate {
   border-left: 6px solid #C278FD;
   height: 2em;
-  position:absolute;
-  top: 12%;
-  left: 88%;
+  padding-right: 3%;
+  margin-top: 3%;
+  position: absolute;
 }
 
 .category-color-container {
@@ -284,20 +285,12 @@ main {
   justify-content: flex-end;
 }
 
-.category-color {
-  border-left: 6px solid #9370DB;
+.category-color-exercise {
+  border-left: 6px solid #FD8078;
   height: 2em;
   padding-right: 3%;
   margin-top: 3%;
   position: absolute;
-}
-
-.category-color-exercise {
-  border-left: 6px solid #FD8078;
-  height: 2em;
-  position:absolute;
-  top: 12%;
-  left: 88%;
 }
 /* Timer Screen */
 
@@ -345,6 +338,7 @@ main {
   margin-top: 43%;
   margin-left: 33%;
   outline: none;
+  border-radius: 5px;
 }
 
 #complete {
@@ -389,14 +383,19 @@ main {
   width: 28vw;
   margin-left: 10vw;
   margin-top: 10vh;
+  border-radius: 5px;
 }
 
 .clear-past-button {
   height: 3vh;
   width: 6vw;
-  margin-left: 7vw;
+  margin-left: 14vw;
   margin-top: 2vh;
   background-color: #46424D
+  color: #CBC9CF;
+  border: none;
+  outline: none;
+  border-radius: : 6px;
 }
 
 .hidden {
