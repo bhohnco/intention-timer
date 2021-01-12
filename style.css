@@ -11,7 +11,6 @@ body {
   font-size: 0.758em;
   padding-top: .0015em;
   padding-bottom: .2em;
-
 }
 
 main {
@@ -188,8 +187,7 @@ main {
 
 .visibility-hidden {
   visibility: hidden;
-  }
-
+}
 
 .input {
   display: flex;
@@ -224,6 +222,12 @@ main {
   position: absolute;
 }
 
+.none-logged-text {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 25px;
+}
+
 .box2-lead {
   font-size: 24px;
   display: inline;
@@ -238,26 +242,27 @@ main {
 
 .activity-card {
   background-color: #46424D;
-  width: 80%;
-  height: 8vh%;
-  padding-bottom: 4%;
+  width: 125%;
+  padding-bottom: .5%;
   padding-left: 3%;
-  }
-
+  margin-top: 4%; 
+}
 
 .activities-wrapper {
-  width: 88%;
-  height: 8vh%;
+  width: 70%;
+  height: 100%;
   padding-bottom: 4%;
   padding-left: 3%;
-  border-radius: 4px;
 }
+
 .card-minutes {
   border-bottom: none;
 }
+
 .card-seconds {
   border-bottom: none;
 }
+
 .category-color-study {
   border-left: 6px solid #B3FD78;
   height: 2em;
@@ -272,6 +277,19 @@ main {
   position:absolute;
   top: 12%;
   left: 88%;
+}
+
+.category-color-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.category-color {
+  border-left: 6px solid #9370DB;
+  height: 2em;
+  padding-right: 3%;
+  margin-top: 3%;
+  position: absolute;
 }
 
 .category-color-exercise {
@@ -300,6 +318,7 @@ main {
   font-size: 3em;
   font-weight: 500;
 }
+
 .countdown {
   font-family: 'Arial', sans-serif;
   font-size: 9em;
@@ -356,7 +375,6 @@ main {
 .circle-green {
   stroke: #B3FD78;
 }
-
 
 .log-button {
   font-family: 'Montaga', sans-serif;
