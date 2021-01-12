@@ -4,8 +4,8 @@ border: 1px solid red
 
 body {
   background-color: #46424D;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 }
 
 .header {
@@ -165,6 +165,11 @@ main {
   box-shadow: none;
 }
 
+.visibility-hidden {
+  visibility: hidden;
+  }
+
+
 .input {
   display: flex;
   flex-direction: row;
@@ -224,22 +229,31 @@ main {
   padding-left: 3%;
 }
 
-.card-minutes {
-  border-bottom: none;
-}
-
-.card-seconds {
-  border-bottom: none;
-}
-
-.category-color {
+/* .category-color {
   border-left: 6px solid #9370DB; 
   height: 2em; 
   position:absolute; 
   top: 7%; 
   left: 90%;
-}
+  width: 80%;
+  height: 8vh%;
+  padding-bottom: 4%;
+  padding-left: 3%;
+  } */
 
+.card-minutes {
+  border-bottom: none;
+}
+.card-seconds {
+  border-bottom: none;
+}
+.category-color {
+  border-left: 6px solid #9370DB;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
+}
 /* Timer Screen */
 
 .current-activity {
