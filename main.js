@@ -1,4 +1,5 @@
 var category = "";
+
 var activityHeader = document.querySelector('.activity-header');
 
 // tab1 - Choice Window
@@ -27,6 +28,7 @@ var userDescription = document.querySelector('.description-display')
 var minutesLeft = document.querySelector('.minutes-left');
 var secondsLeft = document.querySelector('.seconds-left');
 var activitiesDialogue = document.querySelector('.none-logged-text');
+var circle = document.querySelector('.circle-characteristics');
 var completeAlert = document.getElementById('complete');
 var logButton = document.querySelector('.log-button');
 var activitiesWrapper = document.querySelector('.activities-wrapper');
@@ -40,7 +42,7 @@ var userActivitiesList = [];
 
 // EVENT LISTENERS
 
-studyButton.addEventListener('click', study);
+studyButton.addEventListener('click', study)
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
 storeActivityButton.addEventListener('click', storeActivity);
@@ -53,25 +55,25 @@ window.addEventListener('load', retrieveActivities);
 // EVENT HANDLERS
 
 function study () {
-  // event.preventDefault()
   category = "Study";
-  studyButton.classList.add('studycolor');
-  inActiveStudy.classList.add('hidden');
-  activeStudy.classList.remove('hidden');
-
+  studyButton.classList.toggle('studycolor');
+  inActiveStudy.classList.toggle('hidden');
+  activeStudy.classList.toggle('hidden');
 };
+
+
 function meditate() {
   category = "Meditate";
-  meditateButton.classList.add('meditatecolor');
-  hide([inActiveMeditate]);
-  show([activeMeditate]);
-
+  meditateButton.classList.toggle('meditatecolor');
+  inActiveMeditate.classList.toggle('hidden');
+  activeMeditate.classList.toggle('hidden');
 };
+
 function exercise() {
   category = "Exercise";
-  exerciseButton.classList.add('exercisecolor');
-  hide([inActiveExercise]);
-  show([activeExercise]);
+  exerciseButton.classList.toggle('exercisecolor');
+  inActiveExercise.classList.toggle('hidden');
+  activeExercise.classList.toggle('hidden');
 };
 
 function storeActivity() {
@@ -110,6 +112,7 @@ function showForm() {
 
 function hideForm() {
   activityHeader.innerText = "Current Activity";
+  changeCircleColor();
   hide([tab1]);
   show([tab2]);
 };
@@ -249,13 +252,13 @@ function loadPastActivity() {
 
 // Our userActivities array has objects retrieved from JSON
 // upon completion of an event we
-  //add the event to array then store the whole array
-  //as the same descriptor(and different id), overwriting old array
+//add the event to array then store the whole array
+//as the same descriptor(and different id), overwriting old array
 
 // upon load and after every save we retrieve the array and parse
 
 
-  // HIDE FUNCTIONS
+// HIDE FUNCTIONS
 
 function show(elements) {
   for (var i = 0; i < elements.length; i++) {
@@ -269,6 +272,22 @@ function hide(elements) {
     elements[i].classList.add('hidden');
   };
 };
+
+function toggle(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.toggle('hidden');
+  }
+}
+
+  function changeCircleColor() {
+    if (currentActivity.category === 'Study') {
+      circle.classList.add('circle-green');
+    } else if (currentActivity.category === 'Exercise') {
+      circle.classList.add('circle-orange');
+    } else if (currentActivity.category === 'Meditate') {
+      circle.classList.add('circle-purple');
+    }
+  };
 
 function visualShow(elements) {
   for (var i = 0; i < elements.length; i++) {
