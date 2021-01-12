@@ -1,11 +1,11 @@
-/* {
+/* * {
 border: 1px solid red
 } */
 
 body {
   background-color: #46424D;
-  /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .header {
@@ -192,15 +192,11 @@ main {
   color: #CBC9CF;
   font-family: 'Montserrat', sans-serif;
   height: 78.4em;
-  width: 54.5em;
+  width: 34%;
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
 }
-
-/* .box2-lead {
-  font-size: 24px;
-} */
 
 .logged-form {
   text-align: center;
@@ -212,17 +208,17 @@ main {
   font-size: 24px;
 }
 
-.activity-card {
-  background-color: #46424D;
-  width: 80%;
-  height: 8vh%;
+.activities-wrapper {
+  background-color: #2B2733;
+  width: 70%;
+  height: 100%;
   padding-bottom: 4%;
   padding-left: 3%;
 }
-  
-.activities-wrapper {
+
+.activity-card {
   background-color: #46424D;
-  width: 89%;
+  width: 125%;
   height: 8vh%;
   padding-bottom: 4%;
   padding-left: 3%;
@@ -241,7 +237,7 @@ main {
   height: 2em; 
   position:absolute; 
   top: 12%; 
-  left: 89%;
+  left: 88%;
 }
 
 /* Timer Screen */
