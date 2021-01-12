@@ -89,10 +89,12 @@ main {
   border-color: #B3FD78;
   color:#B3FD78;
 }
+
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
 }
+
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
@@ -122,16 +124,6 @@ main {
   height: 2.5vh;
 }
 
-.description {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  border-bottom-color: white;
-  border-bottom-width: thin;
-  padding:5px 300px;
-  outline:none;
-  box-shadow:none;
-}
 
 .minutes-label {
   margin-bottom: 55px;
@@ -176,6 +168,11 @@ main {
   box-shadow: none;
 }
 
+.visibility-hidden {
+  visibility: hidden;
+  }
+
+
 .input {
   display: flex;
   flex-direction: row;
@@ -203,7 +200,7 @@ main {
   color: #CBC9CF;
   font-family: 'Montserrat', sans-serif;
   height: 78.4em;
-  width: 54.5em;
+  width: 34%;
   padding-left: 2%;
   left: 64.05%;
   position: absolute;
@@ -213,30 +210,40 @@ main {
   font-size: 24px;
 }
 
-.logged-form {
+.none-logged-text {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
 }
 
-.activities-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 77vh;
-  width: 28vw
-}
+.activity-card {
+  background-color: #46424D;
+  width: 80%;
+  height: 8vh%;
+  padding-bottom: 4%;
+  padding-left: 3%;
+  }
 
-.past-activities {
-  width: inherit;
-  height: 5vh;
-  background-color: blue;
+.activities-wrapper {
+  background-color: #46424D;
+  width: 53%;
+  height: 8vh%;
+  padding-bottom: 4%;
+  padding-left: 3%;
 }
-
-.box2-lead {
-  font-size: 24px;
+.card-minutes {
+  border-bottom: none;
 }
-
+.card-seconds {
+  border-bottom: none;
+}
+.category-color {
+  border-left: 6px solid #9370DB;
+  height: 2em;
+  position:absolute;
+  top: 12%;
+  left: 88%;
+}
 /* Timer Screen */
 
 .current-activity {

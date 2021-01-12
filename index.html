@@ -30,18 +30,18 @@
               <label class="accomplish">
               <h1 class="question-text">What would you like to accomplish during this time?</h1>
               <input class="description" id="description" type="text"/>
-              <p class="description-error hidden" src="./assets/warning.svg">A description is required!</p>
+              <p class="description-error visibility-hidden" src="./assets/warning.svg">A description is required!</p>
             </div>
             <div class="input">
               <label class="minutes-label" for="minutes">Minutes</label>
               <br>
               <input class="minutes" id="minutes" type="text"></input>
-              <p class="minutes-error hidden" src="./assets/warning.svg">Invalid number!</p>
+              <p class="minutes-error visibility-hidden" src="./assets/warning.svg">Invalid number!</p>
               <br>
-              <label class="seconds-label" for="seconds">Seconds</label>
+              <label class="seconds-label visi" for="seconds">Seconds</label>
               <br>
               <input class="seconds" id="seconds" type="text"/>
-              <p class="seconds-error hidden" src="./assets/warning.svg">Invalid number!</p>
+              <p class="seconds-error visibility-hidden" src="./assets/warning.svg">Invalid number!</p>
             </div>
             <button class="start-activity" id="startActivity" type="button">START ACTIVITY</button>
           </form>
@@ -60,7 +60,7 @@
               <circle class="circle-characteristics"></circle>
             </svg>
           </div>
-          <button class="log-button">LOG ACTIVITY</button>
+          <button class="log-button hidden">LOG ACTIVITY</button>
         </section>
         <button class="clear-button hidden">CREATE A NEW ACTIVITY</button>
       </section>
@@ -69,7 +69,7 @@
         <p class="none-logged-text">You haven't logged any activities yet.<br>Complete the form to the left to get started!</p>
         <section class="activities-wrapper">
           <!-- These are the User activities Array -->
-          <div class="past-activities" >Past Activity Box</div>
+
         </section>
     </section>
 </main>

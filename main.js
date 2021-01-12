@@ -70,20 +70,20 @@ function meditate() {
 function exercise() {
   category = "Exercise";
   exerciseButton.classList.add('exercisecolor');
-  inActiveExercise.classList.add('hidden');
-  activeExercise.classList.remove('hidden');
+  hide([inActiveExercise]);
+  show([activeExercise]);
 };
 
 function storeActivity() {
   userActivity.category = category;
+  visualHide([descriptionError, minutesError, secondsError]); // any previous errors
     if (validate()) {
-    hide([descriptionError, minutesError, secondsError]);
-    currentActivity = new Activity(userActivity);
-    userDescription.innerText = currentActivity["description"];
-    clearForm();
-    hideForm();
-    setTimer();
-    show([tab2]);
+      currentActivity = new Activity(userActivity);
+      userDescription.innerText = currentActivity["description"];
+      clearForm();
+      hideForm();
+      setTimer();
+      show([tab2]);
     };
 };
 
@@ -93,7 +93,7 @@ function beginTimer() {
 };
 
 function logActivity() {
-  userActivitiesList.push(currentActivity);
+  userActivitiesList.unshift(currentActivity);
   var localActivity = JSON.stringify(userActivitiesList);
   localStorage.setItem("storedActivities", localActivity);
   hide([tab2, activitiesDialogue]);
@@ -120,11 +120,16 @@ function clearForm() {
   inputMinutes.value = "";
   inputSeconds.value = "";
 };
+
 function retrieveActivities() {
-  if (!userActivitiesList || !userActivitiesList.length) {
-  } else {
-    var packedActivity = localStorage.getItem("storedActivities");
+  var packedActivity = localStorage.getItem("storedActivities");
+  if (packedActivity) {
     userActivitiesList = JSON.parse(packedActivity);
+  };
+  if (!userActivitiesList || !userActivitiesList.length) {
+    return;
+    } else {
+    hide([activitiesDialogue]);
     show([activitiesWrapper]);
     list();
   };
@@ -140,34 +145,34 @@ function verifyNumber(node, data) {  //gets called from validate()
 };
 
 function validate() {
-  if (description.value != "") {
-    userActivity.description = description.value;
-  } else {
-    alert('No description entered!') //showError('desc');
-    return false;       //false returns ensure that the form won't submit with click
-  };
   if (verifyNumber(inputMinutes, inputMinutes.value)) {
     userActivity.minutes = inputMinutes.value;
   } else {
-    alert('Not a number!'); //showError('min');
+    showError('min');
     return false;
   };
   if (verifyNumber(inputSeconds, inputSeconds.value)) {
     userActivity.seconds = inputSeconds.value;
   } else {
-    alert('Not a number!'); //showError('sec');
+    showError('sec');
     return false;
   };
+  if (description.value != "") {
+    userActivity.description = description.value;
+  } else {
+    showError('desc');
+    return false;      //false returns ensure that the form won't submit with click
+};
   return true;
 };
 
 function showError(data) {
-  if (data = 'desc') {
-    show(descriptionError);
-  } else if (data = 'min') {
-    show(minutesError);
-  } else if (data = 'sec') {
-    show(secondsError)
+  if (data === 'sec') {
+    visualShow([secondsError])
+  } else if (data === 'min') {
+    visualShow([minutesError]);
+  } else if (data === 'desc') {
+    visualShow([descriptionError]);
   };
 };
 
@@ -210,6 +215,7 @@ function clearTimer() {
 };
 
 function list() {
+  activitiesWrapper.innerHTML = "";  // clear Past activities box
   if (userActivitiesList.length > 0) {
     for (i = 0; i < userActivitiesList.length; i++) {
       createActivityBox(userActivitiesList[i], i);
@@ -219,20 +225,23 @@ function list() {
 
 var pastActivity; // node //object to load
 
+// color-coding the sidebar:
+// change class of div by using variables to access
 function createActivityBox(act, i) {
-    console.log(act);
-    var objCategory = act.category
-    activitiesWrapper.innerHTML += `<div class="past-activities" id="act${i}">${act.category}</div>`;
-    //pastActivitiesButtons.innerHTML += `<div class="past-activities" >Howdy</div>`;
+    activitiesWrapper.innerHTML += `
+        <div class="activity-card" id="act${i}">
+          <div class="category-color"></div>
+          <p class="activity-type">${act.category}</p>
+          <span class="card-minutes">${act.minutes} MIN</span>
+          <p class="activity-description">${act.description}</p>
+        </div>`;
 
-
-  // pastActivity = document.getElementById(`act${i}`);  //assign node
-  // pastActivity.addEventListener('click', loadPastActivity);
-  //};
+  pastActivity = document.getElementById(`act${i}`);  //assign node
+  pastActivity.addEventListener('click', loadPastActivity);
 };
 
-function loadPastActivity(thisIsMyArrayAndIndex) {
-  hide([clear, tab1]);
+function loadPastActivity() {
+  hide([clearButton, tab1]);
   show([tab2]);
   currentActivity = pastActivity;
 };
@@ -257,5 +266,17 @@ function show(elements) {
 function hide(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
+  };
+};
+
+function visualShow(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.remove('visibility-hidden');
+  };
+};
+
+function visualHide(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.add('visibility-hidden');
   };
 };
