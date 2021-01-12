@@ -1,7 +1,7 @@
-var activityHeader = document.querySelector('.activity-header');
 
 // tab1 - Choice Window
 var tab1 = document.getElementById('tab1');
+var activityHeader = document.querySelector('.activity-header');
 var description = document.querySelector('.description');
 var inputMinutes = document.querySelector('.minutes');
 var inputSeconds = document.querySelector('.seconds');
@@ -20,6 +20,7 @@ var inActiveMeditate = document.querySelector('.active-meditate');
 var activeMeditate = document.querySelector('.active-color-meditate');
 var inActiveExercise = document.querySelector('.active-exercise');
 var activeExercise = document.querySelector('.active-color-exercise');
+
 // tab2 - Current Activity Window
 var tab2 = document.getElementById('tab2');
 var userDescription = document.querySelector('.description-display')
@@ -37,10 +38,10 @@ var minutes;
 var seconds;
 var category = "";
 var currentActivity;
+var pastActivity;
 var userActivity = {};
 var userActivitiesList = [];
 
-// EVENT LISTENERS
 
 studyButton.addEventListener('click', study)
 meditateButton.addEventListener('click', meditate);
@@ -52,8 +53,6 @@ clearButton.addEventListener('click', showForm);
 clearPastButton.addEventListener('click', clearAllPast);
 window.addEventListener('load', retrieveActivities);
 
-
-// EVENT HANDLERS
 
 function study () {
   category = "Study";
@@ -79,16 +78,15 @@ function exercise() {
 
 function storeActivity() {
   userActivity.category = category;
-  visualHide([descriptionError, minutesError, secondsError]); // any previous errors
-    if (validate()) {
-      console.log('foo')
+  visualHide([descriptionError, minutesError, secondsError]);
+  if (validate()) {
       currentActivity = new Activity(userActivity);
       userDescription.innerText = currentActivity["description"];
       clearForm();
       hideForm();
       setTimer();
       show([tab2]);
-    };
+  };
 };
 
 function beginTimer() {
@@ -229,7 +227,6 @@ function list() {
   };
 };
 
-var pastActivity = []; // node //object to load //can be array?
 
 function createActivityBox(act, i) {
     var cat = act.category;
@@ -251,14 +248,14 @@ function createActivityBox(act, i) {
           <p class="activity-description">${act.description}</p>
         </div>`;
 
-  pastActivity[i] = document.getElementById(`act${i}`);  //assign node
-  pastActivity[i].addEventListener('click', loadPastActivity);
+  pastActivity = document.getElementById(`act${i}`);  //assign node
+  pastActivity.addEventListener('click', loadPastActivity);
 };
 
 function loadPastActivity() {
   hide([clearButton, tab1]);
   show([tab2]);
-  currentActivity = pastActivity[i];
+  currentActivity = pastActivity;
 };
 
 function clearAllPast() {
