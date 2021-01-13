@@ -28,7 +28,7 @@ This program does not need to be motified or adjusted beforehand by the user.
 Fill out all of the input fields (desciption of what you would like to accomplish, minutes and seconds) before you have the ability to start the activity.
 
 ## Authors
-* Chuck Morris [@percworld]
-* Bryan Hohn [@bhohnco]
-* Melanie Daoheuang [@daomeow] (edited)
+* Chuck Morris [@percworld](https://github.com/percworld)
+* Bryan Hohn [@bhohnco](https://github.com/bhohnco)
+* Melanie Daoheuang [@daomeow](https://github.com/daomeow)
 
