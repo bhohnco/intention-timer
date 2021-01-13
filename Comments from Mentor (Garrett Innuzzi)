@@ -1,0 +1,20 @@
+HTML:
+<!-- Nice job on clear and easy to read HTML -->
+<!-- Remember to check you indents with the body and main tags  -->
+<!-- Good jop with semantic HTML, only using divs for styling  -->
+CSS:
+/* Stacking your CSS classes can help for readability */
+  /* I provided an example in the style.css file */
+/* Also if you alphabetize you CSS it can help other developers find things easier */
+/* Nice job using em for font-size to help accessibility! */
+/* Nice job making small classes like .orange to reuse across your app */
+JS:
+- Good organization of variables into sections, very easy to read and find my way around! 
+- Most all of your functions are very short and concise,  nice job! 
+- Some function names could be a little more clear, for example hide(), there's a chance people 
+    can guess what might be happening but it would nice to be a little more descriptive. Something 
+    like toggleHiddenClass() might do a better job of explaining what is going on. Might seem small 
+    right now but as your apps grow your names will need to be more descriptive.
+- Could there possibly be some places to make things more dynamic? Possibly in your first three functions? 
+    Seems like you can doing a lot of same actions, could be a good palce to refactor? 
+- Overall I think this is a really well done project! Great organization, clean code, well done!
