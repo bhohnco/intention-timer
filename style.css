@@ -13,6 +13,10 @@ body {
   padding-bottom: .2em;
 }
 
+.activity-header {
+  margin-bottom: 0px;
+  margin-top: 5vh;
+}
 main {
   display:flex;
   flex-direction: column;
@@ -26,7 +30,7 @@ main {
   color: #CBC9CF;
   height: 62.500em;
   width: 63%;
-  padding-top: 2vh;
+  padding-top: 0vh;
   padding-bottom: 10%;
   padding-left: 2%;
   margin-left: -1%;
@@ -36,26 +40,28 @@ main {
 
 .box1-lead {
   font-size:21px;
+  margin-bottom: 0px;
 }
 
-.boxes {
+.box1 {
   background-color: #46424D;
   font-family: 'Montserrat', sans-serif;
   color: white;
-  height: 37.500em;
-  padding: 2% 0 5% 8%;
-  top: -67em;
+  height: 32.5em;
+  padding: 2% 0 5% 4%;
+  top: -65em;
   position: relative;
   border-radius: 5px;
-  max-width: 56vw;
+  max-width: 55vw;
+  margin-left: 1vw;
 }
 
 
 .category {
   background-size: contain;
-  padding-bottom: 3.125em;
+  padding-bottom: 1em;
   display: inline-flex;
-
+  width: 100%;
 }
 
 .active-button-study, .active-button-meditate, .active-button-exercise {
@@ -125,6 +131,10 @@ main {
   font-size: 0.813em;
 }
 
+.description-error {
+    margin: 0px;
+}
+
 .description {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1.5em;
@@ -144,7 +154,19 @@ main {
   width: 3.5vw;
   height: 2.5vh;
 }
+.warning .minutes-error {
+  margin-left: 115px;
+  margin-right: -90px;
+  display: inline
+}
 
+#secWarn {
+  margin-left: 15vw;
+}
+
+.desc-error {
+  display: inline-flex;
+}
 .minutes-label {
   margin-bottom: 55px;
   margin-right: -85px;
@@ -155,7 +177,7 @@ main {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1em;
   color: white;
-  width: 73%;
+  width: 35%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -173,11 +195,15 @@ main {
   font-size: 21px;
 }
 
+.seconds-error, .minutes-error {
+  margin: 0px;
+}
+
 .seconds {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1em;
   color: white;
-  width: 73%;
+  width: 40%;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -197,7 +223,13 @@ main {
   flex-direction: row;
   align-self: flex-end;
   justify-content: flex-start;
-  margin-top: 5.000em;
+  margin-top: 2em;
+}
+
+.integer-error {
+  height: 5vh;
+  width: 30vw;
+  display: -webkit-inline-box;
 }
 
 .start-activity {
@@ -215,7 +247,7 @@ main {
 }
 
 /* Right side of main form */
-.boxes2 {
+.box2 {
   background-color: #2B2733;
   color: #CBC9CF;
   font-family: 'Montserrat', sans-serif;
@@ -249,7 +281,7 @@ main {
   background-color: #46424D;
   width: 125%;
   padding-bottom: .5%;
-  padding-left: 3%;
+  padding-left: 10px;
   margin-top: 4%;
 }
 
@@ -257,7 +289,6 @@ main {
   width: 70%;
   height: 100%;
   padding-bottom: 4%;
-  padding-left: 3%;
 }
 
 .card-minutes {
@@ -314,11 +345,12 @@ main {
 .description-display {
   font-size: 3em;
   font-weight: 500;
+  margin: 0px;
 }
 
 .countdown {
   font-family: 'Arial', sans-serif;
-  font-size: 9em;
+  font-size: 6em;
 }
 
 .minutes-left {
@@ -393,7 +425,7 @@ main {
 .clear-past-button {
   height: 3vh;
   width: 6vw;
-  margin-left: 14vw;
+  margin-left: 13vw;
   margin-top: 2vh;
   background-color: #46424D
   color: #CBC9CF;
@@ -404,4 +436,8 @@ main {
 
 .hidden {
   display: none;
+}
+
+.visibility-hidden {
+  visibility: hidden;
 }

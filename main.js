@@ -5,9 +5,9 @@ var activityHeader = document.querySelector('.activity-header');
 var description = document.querySelector('.description');
 var inputMinutes = document.querySelector('.minutes');
 var inputSeconds = document.querySelector('.seconds');
-var studyButton = document.querySelector('#study');
-var meditateButton = document.querySelector('#meditate');
-var exerciseButton = document.querySelector('#exercise');
+var studyButton = document.getElementById('study');
+var meditateButton = document.getElementById('meditate');
+var exerciseButton = document.getElementById('exercise');
 var storeActivityButton = document.querySelector('.start-activity');
 var startButton = document.querySelector('.start-button');
 var chooseActivityText = document.querySelector('.box1-lead');
@@ -20,6 +20,9 @@ var inActiveMeditate = document.querySelector('.active-meditate');
 var activeMeditate = document.querySelector('.active-color-meditate');
 var inActiveExercise = document.querySelector('.active-exercise');
 var activeExercise = document.querySelector('.active-color-exercise');
+var descWarn = document.getElementById('descWarn');
+var minWarn = document.getElementById('minWarn');
+var secWarn = document.getElementById('secWarn');
 
 // tab2 - Current Activity Window
 var tab2 = document.getElementById('tab2');
@@ -37,9 +40,8 @@ var clearPastButton = document.querySelector('.clear-past-button');
 var minutes;
 var seconds;
 var category = "";
-var currentActivity;
-var pastActivity;
 var userActivity = {};
+var currentActivity;
 var userActivitiesList = [];
 
 
@@ -78,7 +80,7 @@ function exercise() {
 
 function storeActivity() {
   userActivity.category = category;
-  visualHide([descriptionError, minutesError, secondsError]);
+  visualHide([descriptionError, minutesError, secondsError, descWarn, minWarn, secWarn]);
   if (validate()) {
       currentActivity = new Activity(userActivity);
       userDescription.innerText = currentActivity["description"];
@@ -172,11 +174,14 @@ function validate() {
 
 function showError(data) {
   if (data === 'sec') {
-    visualShow([secondsError])
+    visualShow([secondsError]);
+    visualShow(secWarn);
   } else if (data === 'min') {
     visualShow([minutesError]);
+    visualShow(minWarn);
   } else if (data === 'desc') {
     visualShow([descriptionError]);
+    visualShow(descWarn);
   };
 };
 
@@ -247,12 +252,14 @@ function createActivityBox(act, i) {
           <span class="card-minutes">${act.minutes} MIN</span>
           <p class="activity-description">${act.description}</p>
         </div>`;
-
+  var pastActivity;
   pastActivity = document.getElementById(`act${i}`);  //assign node
-  pastActivity.addEventListener('click', loadPastActivity);
+  pastActivity.addEventListener('click', function() {
+    loadPastActivity(pastActivity);
+  });
 };
 
-function loadPastActivity() {
+function loadPastActivity(pastActivity) {
   hide([clearButton, tab1]);
   show([tab2]);
   currentActivity = pastActivity;
