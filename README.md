@@ -14,9 +14,9 @@ This program does not need to be motified or adjusted beforehand by the user.
 
 ### Executing program
 1. **Select** a category type of the activity you would like to accomplish
-![intentionTimer2](./assets/intentionTimer2.png)
 2. Write a brief description of the activity
 3. Enter the amount of time and **click** the start activity button to move to the next page
+![intentionTimer2](./assets/intentionTimer2.png)
 4. On the Current Activity page, start the timer by **selecting** the start button
 ![intentionTimer3](./assets/intentionTimer3.png)
 ![intentionTimer4](./assets/intentionTimer4.png)
