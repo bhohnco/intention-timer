@@ -1,3 +1,4 @@
+
 // tab1 - Choice Window
 var tab1 = document.getElementById('tab1');
 var activityHeader = document.querySelector('.activity-header');
@@ -22,6 +23,7 @@ var activeExercise = document.querySelector('.active-color-exercise');
 var descWarn = document.getElementById('descWarn');
 var minWarn = document.getElementById('minWarn');
 var secWarn = document.getElementById('secWarn');
+
 // tab2 - Current Activity Window
 var tab2 = document.getElementById('tab2');
 var userDescription = document.querySelector('.description-display')
@@ -41,6 +43,7 @@ var category = "";
 var userActivity = {};
 var currentActivity;
 var userActivitiesList = [];
+
 studyButton.addEventListener('click', study)
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
@@ -50,6 +53,7 @@ logButton.addEventListener('click', logActivity);
 clearButton.addEventListener('click', showForm);
 clearPastButton.addEventListener('click', clearAllPast);
 window.addEventListener('load', retrieveActivities);
+
 function study () {
   category = "Study";
   studyButton.classList.toggle('studycolor');
@@ -204,6 +208,7 @@ function list() {
     };
   };
 };
+
 function createActivityBox(act, i) {
     var cat = act.category;
     var color = "";
@@ -229,6 +234,7 @@ function createActivityBox(act, i) {
     loadPastActivity(pastActivity);
   });
 };
+
 function loadPastActivity(pastActivity) {
   hide([clearButton, tab1]);
   show([tab2]);

@@ -11,6 +11,7 @@ body {
   padding-top: .0015em;
   padding-bottom: .2em;
 }
+
 .activity-header {
   margin-bottom: 0px;
   margin-top: 5vh;
@@ -38,6 +39,7 @@ main {
   font-size:21px;
   margin-bottom: 0px;
 }
+
 .box1 {
   background-color: #46424D;
   font-family: 'Montserrat', sans-serif;
@@ -112,9 +114,11 @@ main {
 .accomplish{
   font-size: 0.813em;
 }
+
 .description-error {
     margin: 0px;
 }
+
 .description {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1.5em;
@@ -138,17 +142,21 @@ main {
   margin-right: -90px;
   display: inline
 }
+
 #secWarn {
   margin-left: 15vw;
 }
+
 .desc-error {
   display: inline-flex;
 }
+
 .minutes-label {
   margin-bottom: 55px;
   margin-right: -85px;
   font-size: 21px;
 }
+
 .minutes {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1em;
@@ -163,15 +171,18 @@ main {
   outline: none;
   box-shadow: none;
 }
+
 .seconds-label {
   margin-bottom: 40px;
   margin-left: 115px;
   margin-right: -90px;
   font-size: 21px;
 }
+
 .seconds-error, .minutes-error {
   margin: 0px;
 }
+
 .seconds {
   font-family: ‘Montserrat’, sans-serif;
   font-size: 1em;
@@ -186,9 +197,11 @@ main {
   outline: none;
   box-shadow: none;
 }
+
 .visibility-hidden {
   visibility: hidden;
 }
+
 .input {
   display: flex;
   flex-direction: row;
@@ -196,11 +209,13 @@ main {
   justify-content: flex-start;
   margin-top: 2em;
 }
+
 .integer-error {
   height: 5vh;
   width: 30vw;
   display: -webkit-inline-box;
 }
+
 .start-activity {
   border-radius: 5px;
   text-align: center;
@@ -214,6 +229,7 @@ main {
   outline: none;
   border: none
 }
+
 /* Right side of main form */
 .box2 {
   background-color: #2B2733;
@@ -226,20 +242,24 @@ main {
   left: 64.05%;
   position: absolute;
 }
+
 .none-logged-text {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
 }
+
 .box2-lead {
   font-size: 24px;
   display: inline;
 }
+
 .none-logged-text {
   text-align: center;
   font-size: 18px;
   padding-top: 25px;
 }
+
 .activity-card {
   background-color: #46424D;
   width: 125%;
@@ -247,17 +267,21 @@ main {
   padding-left: 10px;
   margin-top: 4%;
 }
+
 .activities-wrapper {
   width: 70%;
   height: 100%;
   padding-bottom: 4%;
 }
+
 .card-minutes {
   border-bottom: none;
 }
+
 .card-seconds {
   border-bottom: none;
 }
+
 .category-color-study {
   border-left: 6px solid #B3FD78;
   height: 2em;
@@ -265,6 +289,7 @@ main {
   margin-top: 3%;
   position: absolute;
 }
+
 .category-color-meditate {
   border-left: 6px solid #C278FD;
   height: 2em;
@@ -272,6 +297,7 @@ main {
   margin-top: 3%;
   position: absolute;
 }
+
 .category-color-container {
   display: flex;
   justify-content: flex-end;
@@ -283,6 +309,7 @@ main {
   margin-top: 3%;
   position: absolute;
 }
+
 /* Timer Screen */
 .current-activity {
   display: flex;
@@ -290,6 +317,7 @@ main {
   align-items: center;
   margin-left: -15%;
 }
+
 .activity-display {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.7em;
@@ -300,19 +328,24 @@ main {
   font-weight: 500;
   margin: 0px;
 }
+
 .countdown {
   font-family: 'Arial', sans-serif;
   font-size: 6em;
 }
+
 .minutes-left {
   margin-right: -.3em;
 }
+
 .seconds-left {
   margin-left: -.3em;
 }
+
 .circle-button-container {
   position: relative;
 }
+
 .start-button {
   background-color: #46424D;
   font-size: 2em;
@@ -328,10 +361,12 @@ main {
 #complete {
   margin-left: 22%;
 }
+
 .circle-container {
   width: 20em;
   height: 19em;
 }
+
 .circle-characteristics {
   fill: none;
   stroke-width: .3em;
@@ -339,15 +374,19 @@ main {
   cy: 9.5em;
   r: 9em;
 }
+
 .circle-orange {
   stroke: #FD8078;
 }
+
 .circle-purple {
   stroke: #C278FD;
 }
+
 .circle-green {
   stroke: #B3FD78;
 }
+
 .log-button {
   font-family: 'Montaga', sans-serif;
   font-size: 1em;
@@ -355,6 +394,7 @@ main {
   width: 15em;
   height: 2.3em;
 }
+
 .clear-button {
   height: 5vh;
   width: 28vw;
@@ -362,6 +402,7 @@ main {
   margin-top: 10vh;
   border-radius: 5px;
 }
+
 .clear-past-button {
   height: 3vh;
   width: 6vw;
@@ -373,29 +414,12 @@ main {
   outline: none;
   border-radius: : 6px;
 }
+
 .hidden {
   display: none;
 }
+
 .visibility-hidden {
   visibility: hidden;
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
