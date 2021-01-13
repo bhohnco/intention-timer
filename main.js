@@ -44,7 +44,6 @@ var userActivity = {};
 var currentActivity;
 var userActivitiesList = [];
 
-
 studyButton.addEventListener('click', study)
 meditateButton.addEventListener('click', meditate);
 exerciseButton.addEventListener('click', exercise);
@@ -55,29 +54,24 @@ clearButton.addEventListener('click', showForm);
 clearPastButton.addEventListener('click', clearAllPast);
 window.addEventListener('load', retrieveActivities);
 
-
 function study () {
   category = "Study";
   studyButton.classList.toggle('studycolor');
   inActiveStudy.classList.toggle('hidden');
   activeStudy.classList.toggle('hidden');
 };
-
-
 function meditate() {
   category = "Meditate";
   meditateButton.classList.toggle('meditatecolor');
   inActiveMeditate.classList.toggle('hidden');
   activeMeditate.classList.toggle('hidden');
 };
-
 function exercise() {
   category = "Exercise";
   exerciseButton.classList.toggle('exercisecolor');
   inActiveExercise.classList.toggle('hidden');
   activeExercise.classList.toggle('hidden');
 };
-
 function storeActivity() {
   userActivity.category = category;
   visualHide([descriptionError, minutesError, secondsError, descWarn, minWarn, secWarn]);
@@ -90,12 +84,10 @@ function storeActivity() {
       show([tab2]);
   };
 };
-
 function beginTimer() {
   currentActivity.startTimer();
   hide([startButton]);
 };
-
 function logActivity() {
   userActivitiesList.unshift(currentActivity);
   var localActivity = JSON.stringify(userActivitiesList);
@@ -104,28 +96,24 @@ function logActivity() {
   show([clearButton]);
   retrieveActivities();
 };
-
 function showForm() {
   clearForm();
   activityHeader.innerText = "New Activity";
   hide([clearButton, completeAlert]);
   show([tab1, startButton]);
 };
-
 function hideForm() {
   activityHeader.innerText = "Current Activity";
   changeCircleColor();
   hide([tab1, logButton]);
   show([tab2]);
 };
-
 function clearForm() {
   category = "";
   description.value = "";
   inputMinutes.value = "";
   inputSeconds.value = "";
 };
-
 function retrieveActivities() {
   var packedActivity = localStorage.getItem("storedActivities");
   if (packedActivity) {
@@ -140,16 +128,13 @@ function retrieveActivities() {
     list();
   };
 };
-
 // HELPER FUNCTIONS
-
 function verifyNumber(node, data) {
   if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 99) {
     node.innerText = "";
     return false;
   } else return true;
 };
-
 function validate() {
   if (verifyNumber(inputMinutes, inputMinutes.value)) {
     userActivity.minutes = inputMinutes.value;
@@ -171,7 +156,6 @@ function validate() {
   };
   return true;
 };
-
 function showError(data) {
   if (data === 'sec') {
     visualShow([secondsError]);
@@ -184,25 +168,20 @@ function showError(data) {
     visualShow(descWarn);
   };
 };
-
 function setTimer() {
   minutes = currentActivity.minutes;
   seconds = currentActivity.seconds;
   updateTimer();
 };
-
 function updateTimer() {
   minutesLeft.innerHTML = minutes;
   if (minutes < 10) {
     minutesLeft.innerHTML = "0" + minutes;
   } else minutesLeft.innerHTML = minutes;
-
   if (seconds < 10) {
     secondsLeft.innerHTML = "0" + seconds;
   } else secondsLeft.innerHTML = seconds;
 };
-
-
 function showRemaining() {
   seconds--;
   if (seconds === -1) {
@@ -216,13 +195,11 @@ function showRemaining() {
     return;
   };
 };
-
 function clearTimer() {
   show([completeAlert, logButton]);
   currentActivity.markComplete();
   currentActivity.stopTimer();
 };
-
 function list() {
   activitiesWrapper.innerHTML = "";
   if (userActivitiesList.length > 0) {
@@ -231,7 +208,6 @@ function list() {
     };
   };
 };
-
 
 function createActivityBox(act, i) {
     var cat = act.category;
@@ -264,7 +240,6 @@ function loadPastActivity(pastActivity) {
   show([tab2]);
   currentActivity = pastActivity;
 };
-
 function clearAllPast() {
   localStorage.clear();
   retrieveActivities();
@@ -272,28 +247,22 @@ function clearAllPast() {
   show([activitiesDialogue]);
   visualHide([clearPastButton]);
 }
-
 // HIDE FUNCTIONS
-
 function show(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.remove('hidden');
   };
 };
-
-
 function hide(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
   };
 };
-
 function toggle(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.toggle('hidden');
   };
 }
-
   function changeCircleColor() {
     if (currentActivity.category === 'Study') {
       circle.classList.add('circle-green');
@@ -303,13 +272,11 @@ function toggle(elements) {
       circle.classList.add('circle-purple');
     }
   };
-
 function visualShow(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.remove('visibility-hidden');
   };
 };
-
 function visualHide(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('visibility-hidden');

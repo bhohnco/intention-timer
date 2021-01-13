@@ -3,7 +3,6 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
-
 .header {
   font-family: 'Montserrat', sans-serif;
   color: #CBC9CF;
@@ -22,7 +21,6 @@ main {
   flex-direction: column;
   height: auto;
 }
-
 /* Left side of main form */
 .header1 {
   background-color: #2B2733;
@@ -37,7 +35,6 @@ main {
   margin-bottom: -10px;
   position: relative;
 }
-
 .box1-lead {
   font-size:21px;
   margin-bottom: 0px;
@@ -55,15 +52,12 @@ main {
   max-width: 55vw;
   margin-left: 1vw;
 }
-
-
 .category {
   background-size: contain;
   padding-bottom: 1em;
   display: inline-flex;
   width: 100%;
 }
-
 .active-button-study, .active-button-meditate, .active-button-exercise {
   background-color: #46424D;
   border-color: white;
@@ -76,7 +70,6 @@ main {
   width: 180px;
   outline:none;
 }
-
 .active-study, .active-meditate, .active-exercise{
   display: block;
   width: 3.5vw;
@@ -85,7 +78,6 @@ main {
   background: transparent;
   padding-bottom: 10px;
 }
-
 .active-color-study, .active-color-meditate, .active-color-exercise{
   display: block;
   width: 3.5vw;
@@ -94,39 +86,31 @@ main {
   background: transparent;
   padding-bottom: 10px;
 }
-
 .studycolor {
   border-color: #B3FD78;
   color:#B3FD78;
 }
-
 .green {
   color:#B3FD78;
 }
-
 .meditatecolor {
   border-color: #C278FD;
   color:#C278FD;
 }
-
 .purple {
   color:#C278FD;
 }
-
 .exercisecolor {
   border-color:#FD8078;
   color:#FD8078;
 }
-
 .orange {
   color:#FD8078;
 }
-
 .questionText {
   font-size: 21px;
   margin-bottom: 20px;
 }
-
 .accomplish{
   font-size: 0.813em;
 }
@@ -149,7 +133,6 @@ main {
   outline: none;
   box-shadow:none;
 }
-
 .warning {
   width: 3.5vw;
   height: 2.5vh;
@@ -167,6 +150,7 @@ main {
 .desc-error {
   display: inline-flex;
 }
+
 .minutes-label {
   margin-bottom: 55px;
   margin-right: -85px;
@@ -276,7 +260,6 @@ main {
   padding-top: 25px;
 }
 
-
 .activity-card {
   background-color: #46424D;
   width: 125%;
@@ -319,7 +302,6 @@ main {
   display: flex;
   justify-content: flex-end;
 }
-
 .category-color-exercise {
   border-left: 6px solid #FD8078;
   height: 2em;
@@ -327,8 +309,8 @@ main {
   margin-top: 3%;
   position: absolute;
 }
-/* Timer Screen */
 
+/* Timer Screen */
 .current-activity {
   display: flex;
   flex-direction: column;
@@ -341,7 +323,6 @@ main {
   font-size: 1.7em;
   margin-bottom: -1%;
 }
-
 .description-display {
   font-size: 3em;
   font-weight: 500;
@@ -441,3 +422,4 @@ main {
 .visibility-hidden {
   visibility: hidden;
 }
+
