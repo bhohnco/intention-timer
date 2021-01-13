@@ -1,5 +1,5 @@
 # Project Title
-Intention Timer
+### Intention Timer
 ![intentionTimer1](./assets/intentionTimer1.png)
 
 ## Description
