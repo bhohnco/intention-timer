@@ -1,4 +1,3 @@
-
 // tab1 - Choice Window
 var tab1 = document.getElementById('tab1');
 var activityHeader = document.querySelector('.activity-header');
@@ -23,7 +22,6 @@ var activeExercise = document.querySelector('.active-color-exercise');
 var descWarn = document.getElementById('descWarn');
 var minWarn = document.getElementById('minWarn');
 var secWarn = document.getElementById('secWarn');
-
 // tab2 - Current Activity Window
 var tab2 = document.getElementById('tab2');
 var userDescription = document.querySelector('.description-display')
@@ -141,8 +139,6 @@ function retrieveActivities() {
   };
 };
 
-// HELPER FUNCTIONS
-
 function verifyNumber(node, data) {
   if (isNaN(parseInt(data)) || parseInt(data) < 0 || parseInt(data) > 99) {
     node.innerText = "";
@@ -202,7 +198,6 @@ function updateTimer() {
   } else secondsLeft.innerHTML = seconds;
 };
 
-
 function showRemaining() {
   seconds--;
   if (seconds === -1) {
@@ -231,7 +226,6 @@ function list() {
     };
   };
 };
-
 
 function createActivityBox(act, i) {
     var cat = act.category;
@@ -273,14 +267,11 @@ function clearAllPast() {
   visualHide([clearPastButton]);
 }
 
-// HIDE FUNCTIONS
-
 function show(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.remove('hidden');
   };
 };
-
 
 function hide(elements) {
   for (var i = 0; i < elements.length; i++) {
@@ -294,15 +285,15 @@ function toggle(elements) {
   };
 }
 
-  function changeCircleColor() {
-    if (currentActivity.category === 'Study') {
-      circle.classList.add('circle-green');
-    } else if (currentActivity.category === 'Exercise') {
-      circle.classList.add('circle-orange');
-    } else if (currentActivity.category === 'Meditate') {
-      circle.classList.add('circle-purple');
-    }
-  };
+function changeCircleColor() {
+  if (currentActivity.category === 'Study') {
+    circle.classList.add('circle-green');
+  } else if (currentActivity.category === 'Exercise') {
+    circle.classList.add('circle-orange');
+  } else if (currentActivity.category === 'Meditate') {
+    circle.classList.add('circle-purple');
+  }
+};
 
 function visualShow(elements) {
   for (var i = 0; i < elements.length; i++) {
